@@ -1,0 +1,730 @@
+	$(document).ready( function()
+	{
+		// remove the js warning
+		$('#js_cop').remove();
+		
+		// set up the tooltip
+		$('.tooltip').tooltip({
+			track: false,
+			delay: 800,
+			showURL: false, 
+			fixPNG: true, 
+			extraClass: "bubble",
+			showBody: " - ",
+			fade: 250, 
+	    	top: -10, 
+	    	left: 5
+		});
+		
+		// set up date handlers
+		initDateHandlers();
+		
+		// set up phone number handlers
+		initPhoneNumberHandlers();
+		
+		// x_help
+		initXHelp();
+		
+		// user tracking
+		$('#tell_a_colleague').bind( 'click', function(){ addTouch( 400 ); } ); // 400 = USER_BEGAN_MAILTO
+	
+		makeIOSFriendlyInputs();
+	});
+
+	function makeIOSFriendlyInputs()
+	{
+		// inexplicably, in mobile safari this only works in js, not jquery
+		var elems = document.getElementsByTagName('input');
+		for (var j = 0; j < elems.length; j++)
+		{
+    			elems[j].setAttribute('autocapitalize', 'off');
+			elems[j].setAttribute('autocorrect', 'off');
+  		}
+	}
+
+	function initDateHandlers()
+	{
+		$('.date').bind("keyup", dateConvertHandler);
+		$('.date').bind("blur", function (event) 
+		{
+			clearTimeout(timeout_handle); // ? EB
+			permissiveDate(event.target);
+		});
+	}
+	
+	function initPhoneNumberHandlers() {
+		$('.validate_phone').each(function()
+		{
+			if($(this).val()){
+				phoneFormatValidateField($(this).attr("name"),"Use 555-555-5555 format.")
+			}
+			$(this).blur(function(event){
+				if(!$(event.target).val()) {
+					return; // don't complain about bad format if the field is empty
+				}
+				phoneFormatValidateField($(event.target).attr("name"),"Use 555-555-5555 format.")
+			});
+		});
+	}
+
+	function addTouch( touch_type )
+	{
+		// $.post( root + 'async/touch/', { type: touch_type }, uiDebug );
+		$.post( root + 'async/touch/', { type: touch_type }, function () {} );
+	}
+	
+	function uiDebug( response )
+	{
+		alert( response );
+	}
+	
+	var timeout_handle;
+	function dateConvertHandler(event)
+	{
+		clearTimeout(timeout_handle);
+		timeout_handle = setTimeout(
+			function () { permissiveDate(event.target); }, 
+			6000);
+	}
+
+	// Insert content at caret position (converted to jquery function)
+	// @link 
+	// http://alexking.org/blog/2003/06/02/inserting-at-the-cursor-using-javascript
+	 
+	$.fn.insertAtCaret = function (myValue) {
+	        return this.each(function(){
+	                //IE support
+	                if (document.selection) {
+	                        this.focus();
+	                        sel = document.selection.createRange();
+	                        sel.text = myValue;
+	                        this.focus();
+	                }
+	                //MOZILLA/NETSCAPE support
+	                else if (this.selectionStart || this.selectionStart == '0') {
+	                        var startPos = this.selectionStart;
+	                        var endPos = this.selectionEnd;
+	                        var scrollTop = this.scrollTop;
+	                        this.value = this.value.substring(0, startPos)
+	                                      + myValue
+	                              + this.value.substring(endPos, this.value.length);
+	                        this.focus();
+	                        this.selectionStart = startPos + myValue.length;
+	                        this.selectionEnd = startPos + myValue.length;
+	                        this.scrollTop = scrollTop;
+	                } else {
+	                        this.value += myValue;
+	                        this.focus();
+	                }
+	        });
+	
+	};
+		
+	//--------------------------------------------------------
+	// Dialogs
+	//--------------------------------------------------------
+	window.pendingDialog = false;
+
+	function fetchDialog( args )
+	{
+		if (window.pendingDialog) {
+			return;
+		}
+
+		window.pendingDialog = true;
+
+		// formalize simple string-based requests
+		if( typeof( args ) == 'string' )
+		{
+			args = { asset: args };
+		}
+		//	otherwise, if args is an object, pluck its values to post...
+		else if ( typeof( args ) == 'object' )
+		{
+			// however, guarantee an asset key, either from args or defaulted to empty
+			args = $.extend({ asset: (args['asset'] ? args['asset'] : '')}, args);
+		}
+		
+		// close any existing dialogs
+		$('.ud_dialog').remove();
+		
+		// fetch the html from asynccontroller
+		$.ajax({
+			type: 'POST',
+			url: root + 'async/dialog',
+			data: args,
+      success: showDialog,
+      error: function (jqXHR, textStatus, errorThrown) {
+        // Allow fetchDialog to be run again
+        window.pendingDialog = false;
+        
+        if (jqXHR.status == 401) {
+          // their session died or similar, redirect them
+          var request_href = root + 'request/list';
+          window.location.href = request_href;
+        }
+			}
+		});
+	}
+	
+	function showDialog( json )
+	{
+		window.pendingDialog = false;
+
+		try
+		{
+			var response = eval( '(' + json + ')' );
+		}
+		catch( e )
+		{
+			alert( json );
+		}
+
+		if( response.override ) {
+			response.override();
+			return;
+		}
+		
+		// display the modal video
+		$('body').append( "<div id='m_dialog'></div>" );
+		
+		// regular content
+		if( response.content )
+		{
+			$('#m_dialog').append( "<div class='m_content'>" + response.content + "</div>" );
+		}
+		
+		// video (or placeholder-link-to-video for MSIE...)
+		if ( $.browser.msie && response.placeholder)
+		{
+			$('#m_dialog').append( 
+					'<a href="' + response.video.external 
+				+ '" target="_blank"><img src="' + root + response.placeholder 
+				+ '" width="' + response.video.width 
+				+ '" height="' + response.video.height + '"/></a>' );
+		}
+		else if ( response.video )
+		// if ( response.video )
+		{
+			var html = embeddedSWFObject( 'video', response.video );
+			$('#m_dialog').append("<div id=\"video\"></div>");
+			$('#m_dialog').append( html );
+		}
+		
+		// annotation
+		if( response.annotation )
+		{
+			$('#m_dialog').append(  "<div class='m_annotation'>" + response.annotation + "</div>" );
+		}
+		
+		// actions
+		var actions;
+		
+		if( response.actions )
+		{
+			actions = response.actions;
+		}
+		else
+		{
+			actions = [ { title: "Cancel" } ];
+		}
+
+
+		
+		$('#m_dialog').uberdialog({ 
+			title: response.title,
+			modal: true,
+			actions: actions,
+			dismissable: (response.dismissable ? response.dismissable : false),
+			noclose: (response.noclose ? true : false),
+			onclose: function ()
+			{
+				if (response.name)
+				{
+					$.post(root + 'ajax/tutorial/', 
+						{close_tutorial: response.name});
+						
+					var blink_time = 400;
+					var blink_count = 3;
+					while (blink_count > 0)
+					{
+						$('.d_help')
+							.animate({ 'opacity' : '0.0'}, blink_time)
+							.animate({ 'opacity' : '1.0'}, blink_time);
+						blink_count--;
+					}
+				}
+				
+			}
+		});
+		
+		// onload is a function called *after* the dialog is built
+		if( response.onload )
+		{
+			window[response.onload](); // (assuming it's a string; might need to typecheck here)
+		}
+	}
+	
+	function embeddedSWFObject(id, video)
+	{
+		return ("<script type='text/javascript'>\n"
+			+ "var cb = " + (new Date().getTime()) + ";\n"
+			+ "var flashvars = { file: \""+ video.url +"\"};\n"
+			+ "var params = { " 
+				+ "movie: '" + video.url + "', " 
+				+ "allowfullscreen: false, " 
+				+ "allowscriptaccess: 'always' " 
+				+ "};\n"
+				+ "swfobject.embedSWF('" + root + "styles_r2/video/mediaplayer.swf?v=' + cb, " 
+				+ "'" + id + "', '" + video.width + "', '" + video.height + "', " 
+				+ "'9.0.0', '', flashvars, params);"
+			+ "\n</script>");
+	}
+	
+	//--------------------------------------------------------
+	// DomHelper
+	//--------------------------------------------------------
+	
+	function domHelper( tagname, parent, content )
+	{
+		var element = document.createElement( tagname );
+		
+		if( content )
+		{
+			element.innerHTML = content;
+		}
+		
+		if( parent )
+		{
+			parent.appendChild( element );
+		}
+		
+		return element;
+	}
+	
+	//--------------------------------------------------------
+	// Ubermenu callbacks and app-specifics
+	//--------------------------------------------------------
+	
+	function getEnvironment()
+	{
+		return env;
+	}
+	
+	function dumUpdateStatus( fieldname, status )
+	{
+		var field = $('#dum_input_' + fieldname + ' > span.status');
+		updateWithEffect( field, status );
+	}
+	
+	function dumDisplayHints( response )
+	{
+		var json = eval( '(' + response + ')' );
+		
+		for( var i = 0; i < json.length; i++ )
+		{
+			var text = json[i].text;
+			if( ! text ) text = '';
+			
+			var hintfield = $('#hint_' + json[i].fieldname );
+			updateHtmlWithEffect( hintfield, text );
+		}
+	}
+	
+	function updateUmDescribe( um )
+	{
+		// do some explainy stuff
+		var explains = [];
+		
+		if( um.indexOf( 'STEP' ) != -1 )
+		{
+			var step_text = "<div class='hint'><em>Step:</em> The patient cannot receive this drug without first trying the precursor drugs "
+							+ "(e.g., Step 1 drugs).  Complete the Step Therapy Exception form to request that the plan "
+							+ "make an exception."
+							+ "<ul>"
+							+ "<li>You must show that the patient has previously tried one or more of the precursor "
+							+ "drugs and the results were unsatisfactory due to intolerance or ineffectiveness</li>"
+							+ "<li>OR, you believe the patient is likely to suffer an adverse outcome without taking "
+							+ "the Step drug</li>"
+							+ "<li>Review the specific criteria shown in Blue as you complete the form</li>"
+							+ "</ul></div>";
+				
+			explains.push( step_text );
+		}
+		
+		if( um.indexOf( 'PA' ) != -1 )
+		{
+			var pa_text = "<div class='hint'><em>PA:</em> This drug requires a prior authorization form to be submitted "
+							+ "by the patient's doctor before the patient may receive the drug. "
+							+ "Complete the prior authorization form, using these guidelines: "
+							+ "<ul>"
+							+ "<li>You must show that the drug is medically necessary</li>"
+							+ "<li>You must show that <em>this drug</em> is justified, relative to other drugs</li>"
+							+ "<li>Review the specific criteria shown in Blue as you complete the form</li>"
+							+ "</ul></div>";
+			explains.push( pa_text );
+		}
+		
+		if( um.indexOf( 'QL' ) != -1 )
+		{
+			var ql_text = "<div class='hint'><em>QL:</em> The quantity or days's supply of medication is limited for this drug. "
+							+ "The amounts cannot exceed: XX per YY days without submitting an Exception request."  
+							+ "<ul>"
+							+ "<li>You must show that the <em>quantity prescribed</em> is medically necessary and is safe</li>"
+							+ "<li>Review the specific criteria shown in Blue as you complete the form</li>"
+							+ "</ul></div>";
+			explains.push( ql_text );
+		}
+		
+		if (um.indexOf( 'NF' ) != -1)
+		{
+			//	TODO: get this verbiage from Matt
+			var nf_text = "<div class='hint'><em>NF:</em> This drug is not covered by the plan.  " 
+				+ "To get coverage for this drug, you'll need to document one of the following:" 
+				+ "<ul>" 
+				+ "<li>The patient has previously failed a formulary drug for this indication</li>"
+				+ "<li>The patient is likely to suffer an adverse outcome without access to this non-formulary drug (intolerance to formulary agent)</li>"
+				+ "<li>The patient is well established on therapy using this non-formulary drug</li>"
+				+ "</ul></div>";
+			explains.push( nf_text );
+		}
+		
+		if (um.indexOf( 'NA' ) != -1)
+		{
+			var na_text = "<div class='hint'><em>NA: Unknown</em> ";
+			explains.push( na_text );
+		}
+		
+		$('#td_um_describe').html( explains.join('') );
+	}
+	
+	function dumSetInput( fieldname, display_as, value )
+	{
+		// set the title (visible)
+		var input = $( '#dum_input_' + fieldname );
+		updateHtmlWithEffect( input, display_as );
+		
+		// set the value (hidden)
+		$('#dum_key_' + fieldname).val( value );
+		$('#dum_value_' + fieldname).val( display_as );
+		
+		// update the environment object
+		env[fieldname] = value;
+	}
+	
+	function dumCallback(target, json, record)
+	{
+		//	set the app-specific environment
+		env[json.fieldname] = target.value;
+		
+		// do we have post-select actions to do?
+		if( json.set_status )
+		{
+			// refresh is just an array of fieldnames to update:
+			for( var i = 0; i < json.set_status.length; i++ )
+			{
+				// set the text:
+				dumUpdateStatus( json.set_status[i], record.status );
+			}
+			
+			// also update the static text explaining the UM
+			updateUmDescribe( record.status );
+		}
+		
+		// Other fields that are changed by this (eg: prompts)
+		// ---------------------------------------------------
+		
+		// static (ie: just set values)
+		if( json.after )
+		{
+			// after is an array of actions
+			for( var i = 0; i < json.after.length; i++ )
+			{
+				// set the text:
+				dumSetInput( json.after[i].fieldname, json.after[i].title, json.after[i].key );
+			}
+		}
+		
+		if( json.hints_changed )
+		{
+			$.post( root + 'ajax/hints/', env, dumDisplayHints );
+		}
+	}
+	
+	//--------------------------------------------------------
+	// Interactions
+	//--------------------------------------------------------
+	
+	function displayInteraction( id, sender )
+	{
+		
+		
+		// get the value of the checkbox
+		if( sender.checked )
+		{
+			$('#' + id).removeClass('closed');
+		}
+		else
+		{
+			$('#' + id).addClass('closed');
+		}
+		
+		// force IE to redraw the form because IE6 is so lame
+		if ( $.browser.msie && $.browser.version < 7.0)
+        {
+			$('#request_form').css( 'zoom', '1' );
+		}
+	}
+	
+	function updateInteractionTable( id, sender )
+	{
+		// in response to user selecting a type of interaction record in the form
+		// table was drawn by AjaxController::interactionsAction
+		
+		// translate the key to the new interaction type into visibility for parts of the form:
+		// inputs: adverse, fail, allergic, contraindicated
+		// outputs: amount, began, ended, outcome
+		
+		var key = sender.options[sender.selectedIndex].value;
+		
+		switch( key )
+		{
+			case 'adverse':
+				$('#' + id + 'amount').show();
+				$('#' + id + 'began').show();
+				$('#' + id + 'ended').show();
+			break;
+			
+			case 'fail':
+				$('#' + id + 'amount').show();
+				$('#' + id + 'began').show();
+				$('#' + id + 'ended').show();
+			break;
+			
+			case 'allergic':
+				$('#' + id + 'amount').hide();
+				$('#' + id + 'began').hide();
+				$('#' + id + 'ended').hide();
+			break;
+			
+			case 'contraindicated':
+				$('#' + id + 'amount').hide();
+				$('#' + id + 'began').hide();
+				$('#' + id + 'ended').hide();
+			break;
+		}
+		//$('#' + id)
+	}
+	
+	function handleRationale( e )
+	{
+		env.rationale = e.target.value;
+		
+		// get the appropriate text for the explainer:
+		$.post(		root + '/ajax/explain',
+					env,
+					updateExplainer );
+	}
+	
+	function reportError( response )
+	{
+		alert( response.replace( /<(.*?)>/gi, '' ) );
+	}
+	
+	function updateWithEffect( field, text )
+	{
+		field.fadeOut( 'slow', function()
+		{ 
+			$(this).text( text ).fadeIn( 'slow' );
+		});
+	}
+	
+	function updateHtmlWithEffect( field, text )
+	{
+		field.fadeOut( 'slow', function()
+		{ 
+			$(this).html( text ).fadeIn( 'slow' );
+		});
+	}
+	
+	function updateExplainer( response )
+	{
+		// taste the response to see if it is json
+		if( response.substr(0,1) != '{' )
+		{
+			reportError( response );
+		}
+		
+		// convert the response into a menu
+		var json = eval( '(' + response + ')' );
+		
+		// set the text:
+		//$('#help_text').html( json.explanation );
+		updateHtmlWithEffect( $('#help_text'), json.explanation );
+	}
+	
+	function focusPrompt( element_id )
+	{
+		if( $(element_id).hasClass('placeholder') )
+		{
+			$(element_id).val('');
+			$(element_id).attr('name',element_id);
+			$(element_id).removeClass('placeholder');
+		}
+	}
+	
+	function blurPrompt( element_id, text )
+	{
+		if( $(element_id).val() == false )
+		{
+			$(element_id).addClass('placeholder');
+			$(element_id).removeAttr('name');
+			$(element_id).val( text );
+		}
+	}
+	
+	function addInteraction( item )
+	{
+		$('#explanation_text').val( $('#explanation_text').val() + item + "\n" );
+	}
+	
+	function permissiveDate(target)
+	{
+		var dateStr = $(target).val();
+		var re = /^(\d{1,2})[\s\-\.\/,\\]+(\d{1,2})[\s\-\.\/,\\]+(\d{2}(\d{2})?)$/;
+
+		if (re.test(dateStr)) 
+		{
+			var result = re.exec(dateStr);
+			var cleanDate = '';
+			var today = new Date();
+			cleanDate += (result[1].length == 1 ? '0' + result[1] : result[1]) + "/";
+			cleanDate += (result[2].length == 1 ? '0' + result[2] : result[2]) + "/";
+			cleanDate += (result[3].length == 2 
+				? (parseInt(result[3]) <= today.getFullYear().toString().substring(2) ? '20' + result[3] : '19' + result[3]) 
+				: result[3]);
+				
+			var monthfield = cleanDate.split("/")[0];
+			var dayfield = cleanDate.split("/")[1];
+			var yearfield = cleanDate.split("/")[2];
+			var dayobj = new Date(yearfield,monthfield-1,dayfield);
+			if(dayobj.getMonth()+1 != monthfield) {
+				$('#warn_' + target.id).hide().addClass('warn')
+					.html(cleanDate+" is not a valid date.").fadeIn();
+				$(target).val('').focus();
+				return false;
+			}
+			
+			$(target).val(cleanDate);
+			$('#warn_' + target.id).hide();
+			return true;
+		}
+		else if (dateStr != '')
+		{
+			//	display a message that date is in a non-recognized format
+			$('#warn_' + target.id).hide().addClass('warn')
+				.html("Use mm/dd/yyyy format.").fadeIn();
+			$(target).val('').focus();
+			return false;
+		}
+	}
+	
+	var states_data = {
+		'0' : " ",
+		'AL':  "Alabama",
+		'AK':  "Alaska",
+		'AZ':  "Arizona",
+		'AR':  "Arkansas",
+		'CA':  "California",
+		'CO':  "Colorado",
+		'CT':  "Connecticut",
+		'DE':  "Delaware",
+		'DC':  "District of Columbia",
+		'FL':  "Florida",
+		'GA':  "Georgia",
+		'HI':  "Hawaii",
+		'ID':  "Idaho",
+		'IL':  "Illinois",
+		'IN':  "Indiana",
+		'IA':  "Iowa",
+		'KS':  "Kansas",
+		'KY':  "Kentucky",
+		'LA':  "Louisiana",
+		'ME':  "Maine",
+		'MD':  "Maryland",
+		'MA':  "Massachusetts",
+		'MI':  "Michigan",
+		'MN':  "Minnesota",
+		'MS':  "Mississippi",
+		'MO':  "Missouri",
+		'MT':  "Montana",
+		'NE':  "Nebraska",
+		'NV':  "Nevada",
+		'NH':  "New Hampshire",
+		'NJ':  "New Jersey",
+		'NM':  "New Mexico",
+		'NY':  "New York",
+		'NC':  "North Carolina",
+		'ND':  "North Dakota",
+		'OH':  "Ohio",
+		'OK':  "Oklahoma",
+		'OR':  "Oregon",
+		'PA':  "Pennsylvania",
+		'RI':  "Rhode Island",
+		'SC':  "South Carolina",
+		'SD':  "South Dakota",
+		'TN':  "Tennessee",
+		'TX':  "Texas",
+		'UT':  "Utah",
+		'VT':  "Vermont",
+		'VA':  "Virginia",
+		'WA':  "Washington",
+		'WV':  "West Virginia",
+		'WI':  "Wisconsin",
+		'WY':  "Wyoming"
+	};
+	
+	
+	
+	function initXHelp()
+	{
+		// hope you like closures
+		$('.x_help').each( function(){
+			
+			var x_help = $(this);
+			
+			// extract html
+			var html = x_help.html();
+			x_help.empty();
+			
+			// reveal link
+			x_help.fadeIn( 1200 );
+			
+			// hookup
+			x_help.bind('mouseenter', function(){
+					showXHelp( x_help, html );
+			});
+			
+			x_help.bind('mouseleave', function(){
+					hideXHelp( x_help );
+			});
+		});
+	}
+	
+	function showXHelp( sender, html )
+	{
+		// append the div structure
+		sender.append( "<div class='x_help_display'><div class='x_help_outer'><div class='x_help_inner'>" 
+						+ html
+						+ "</div></div></div>" );
+		
+		// tweak position
+		//var display = sender.children( '.x_help_display' );
+		//display.css( { top: -33, left: 22 } );
+	}
+	
+	function hideXHelp( sender )
+	{
+		var display = sender.children( '.x_help_display' );
+		display.fadeOut( 1200, function(){ display.remove(); } );
+	}

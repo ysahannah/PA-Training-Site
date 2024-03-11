@@ -1,0 +1,33 @@
+
+body
+{
+	font: 100 10pt/12pt Arial, sans-serif;
+}
+
+div.title_container
+{
+	/*  This is where we add the print warning image.
+		Most browsers skip printing background images, 
+		so trick them (they're dumb.) EB */
+		
+	display: list-item;                
+	list-style-image: url(images/print_warning.png); 
+	list-style-position: inside;
+	padding: 100px;
+}
+
+div#banner,
+div#contextual
+{
+	display: none;
+}
+
+div#habla_window_div
+{
+	visibility: hidden;
+}
+
+th
+{
+	text-align: left;
+}

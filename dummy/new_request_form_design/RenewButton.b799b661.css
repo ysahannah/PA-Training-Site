@@ -1,0 +1,28 @@
+#send-to-prescriber-cancel {
+  margin-left: auto;
+}
+
+.dsl-modal--send-to-prescriber {
+  width: 650px;
+}
+
+.dsl-modal--send-to-prescriber__loader {
+  margin: 50px 0 25px;
+}
+
+.dsl-modal--send-to-prescriber__icon {
+  vertical-align: middle;
+  margin-top: -2px;
+  color: #408000;
+}
+
+.dsl-modal--send-to-prescriber__fax {
+  width: 320px;
+}
+
+.dsl-modal--send-to-prescriber__buttons {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  width: 100%;
+}

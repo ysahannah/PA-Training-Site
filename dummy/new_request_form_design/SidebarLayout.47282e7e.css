@@ -1,0 +1,105 @@
+#dashboard-sidebar {
+  margin-top: 70px;
+}
+@media screen and (max-width: 1200px) {
+  #dashboard-sidebar.MobileMenu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.47);
+  }
+}
+#dashboard-sidebar .MuiDrawer-root {
+  width: 360px;
+}
+@media screen and (max-width: 1200px) {
+  #dashboard-sidebar .MuiDrawer-root {
+    position: fixed;
+    width: calc(100% - 85px);
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+    border-top: 1px solid #b5b5b5;
+  }
+}
+#dashboard-sidebar .MuiPaper-elevation {
+  top: 70px;
+  width: 360px;
+  height: calc(100% - 70px);
+}
+@media screen and (max-width: 1200px) {
+  #dashboard-sidebar .MuiPaper-elevation {
+    position: static;
+    width: 100%;
+    border: 0;
+  }
+}
+#dashboard-sidebar .SidenavContent {
+  margin-left: 85px;
+}
+@media screen and (max-width: 1200px) {
+  #dashboard-sidebar .SidenavContent {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #dashboard-sidebar .MainSidenavContent {
+    display: none;
+  }
+}
+#dashboard-sidebar .MobileSidenavContent {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  #dashboard-sidebar .MobileSidenavContent {
+    display: flex;
+  }
+}
+#dashboard-sidebar .MobileSidenavContent .moreButton {
+  flex: none;
+  width: auto;
+}
+#dashboard-sidebar .MobileSidenavContent .moreButton button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+}
+#dashboard-sidebar .MobileSidenavContent .moreButton img {
+  display: block;
+  width: 4px;
+  height: auto;
+}
+#dashboard-sidebar .ExpandedNotes {
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+@media screen and (max-width: 1200px) {
+  #dashboard-sidebar .ExpandedNotes {
+    display: none;
+  }
+}
+
+#MobileSidenavContent-menu {
+  display: none;
+  position: fixed;
+  right: 0;
+  width: 280px;
+  background-color: white;
+}
+@media screen and (max-width: 1200px) {
+  #MobileSidenavContent-menu {
+    display: block;
+  }
+}
+
+#open-other-actions-dropdown {
+  width: 100%;
+}
+#open-other-actions-dropdown button {
+  width: 100%;
+}

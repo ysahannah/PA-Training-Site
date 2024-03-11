@@ -1,0 +1,121 @@
+#header {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 85px;
+  z-index: 15;
+  margin-bottom: 0;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 0;
+  font-family: "Nunito Sans", "Helvetica Neue", arial, sans-serif;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+#header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+#header .nav__logo {
+  width: 182px;
+}
+#header .nav__logo img {
+  display: block;
+  width: 100%;
+}
+#header .nav__logo-container {
+  display: flex;
+}
+#header .nav__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.2;
+}
+#header .nav__link {
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  color: black;
+}
+#header .nav__link-text {
+  margin: 0;
+  padding: 0.5em 1em;
+  color: black;
+}
+#header .nav__link--active {
+  font-weight: 700;
+}
+#header .nav__link--inactive::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 1em);
+  border-radius: 1px;
+  background-color: #FF8F1C;
+  transition: all 0.3s ease;
+}
+#header .nav__link--inactive:hover::before, #header .nav__link--inactive:focus::before {
+  width: 30px;
+  transform: translateX(-15px);
+}
+#header .nav__link-container {
+  margin: 0;
+  position: relative;
+}
+#header .nav__link-container:not(:last-child) {
+  margin-right: 16px;
+}
+@media only screen and (max-width: 1200px) {
+  #header .nav__link-container:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  #header .nav__link-container:not(:last-child) {
+    display: none;
+  }
+  #header .nav__link-container:not(:last-child).nav__link-user, #header .nav__link-container:not(:last-child).nav__link-logout {
+    display: block;
+  }
+}
+#header .nav__link-container:last-child {
+  margin-left: 50px;
+}
+#header .nav__link-container:last-child::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 5px;
+  bottom: 5px;
+  width: 1px;
+  background-color: #DCDCDC;
+}
+@media only screen and (max-width: 1200px) {
+  #header .nav__link-container:last-child::before {
+    left: -29px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  #header .nav__link-container:last-child::before {
+    left: -25px;
+  }
+}
+#header .nav__link-container span {
+  margin: 0 0.5em;
+}
+@media only screen and (max-width: 1200px) {
+  #header .nav__link-container span {
+    display: none;
+  }
+}

@@ -1,0 +1,31 @@
+.accordion-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-icon {
+  color: #E70865;
+  transition-duration: 0.35s;
+}
+
+.accordion-icon.collapsed {
+  transform: rotate(0deg);
+}
+
+.accordion-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.accordion-base {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accordion-content {
+  transition-duration: 0.35s;
+}
+
+.accordion-content.hidden {
+  overflow: hidden;
+}

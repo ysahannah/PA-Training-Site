@@ -1,0 +1,192 @@
+.request-list {
+  width: 100%;
+  display: flex;
+}
+.request-list--condensed .request-list__page {
+  background-color: #f8f8f8;
+}
+.request-list--condensed .request-list__tab-content {
+  padding: 0.75rem;
+}
+.request-list--condensed .request-card {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.4rem;
+}
+.request-list--condensed .request-card__image-preview {
+  width: 5rem;
+  min-width: 5rem;
+}
+.request-list--condensed .request-card__statuses {
+  display: block;
+}
+.request-list--condensed .request-card__statuses-spacer {
+  display: inline;
+  padding: 0 0.5rem;
+  white-space: nowrap;
+}
+.request-list__page {
+  flex-grow: 1;
+  padding: 1rem;
+  background-color: #fff;
+}
+.request-list .call-to-action {
+  background-color: #f8f8f8;
+  width: 16.75rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0.75rem 0;
+  border-right: 1px solid #b5b5b5;
+}
+.request-list .call-to-action__btn-description {
+  font-size: 0.75rem;
+  margin-bottom: 1.3rem;
+}
+.request-list .call-to-action__separator {
+  height: 1.3rem;
+  width: 100%;
+  color: #000;
+}
+.request-list .call-to-action .reminders__title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.request-list .call-to-action .reminders__view-all {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.request-list .call-to-action .reminders .reminder {
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+}
+.request-list .call-to-action .reminders .reminder .slide-up-leave {
+  opacity: 0;
+  transform-origin: center;
+  transform: translateY(-20%);
+}
+.request-list .call-to-action .reminders .reminder__title {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.request-list .call-to-action .reminders .reminder__link {
+  font-size: 0.75rem;
+  letter-spacing: unset;
+}
+.request-list .call-to-action .reminders .reminder__dismiss-button {
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+.request-list .call-to-action .reminders .reminder > * {
+  margin: 0;
+}
+.request-list__search-form {
+  border-radius: 0;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+.request-list__search-form .search-icon {
+  margin-right: 2.1875rem;
+}
+.request-list__search-form form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.request-list__search-form .dsl-choice-list {
+  margin-right: 4rem;
+}
+.request-list__search-form .dsl-text-input {
+  margin-top: 15px;
+  margin-right: 1rem;
+}
+.request-list__no-search-results {
+  border-radius: 0;
+  background-color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.request-list--empty {
+  border-radius: 0;
+}
+.request-list__tab-nav {
+  display: flex;
+  min-width: 30rem;
+}
+.request-list__pa-status {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-end;
+}
+.request-list__tab-content {
+  background: #e8f3fa;
+  padding: 20px;
+}
+.request-list .dsl-alert {
+  background: #ffffff;
+  width: 29rem;
+  margin: 0 auto;
+}
+.request-list__notifications {
+  background: #e8f3fa;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.request-list__notifications > #notifications-container > *:not(:last-child) {
+  margin-bottom: 0.3rem;
+}
+.request-list__unsupported-browser {
+  margin-bottom: 1rem;
+}
+.request-list__notifications-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.request-list__notifications-link {
+  color: unset;
+  text-align: start;
+}
+.request-list .confirm-patient-modal .dsl-btn--primary {
+  min-width: 10.5rem;
+}
+.request-list__archive-modal .archive-modal-description-text {
+  font-size: 0.875rem;
+  margin-bottom: 15px;
+}
+.request-list__archive-modal .archive-modal-radio-group-label {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.request-list__archive-modal .archive-modal-radio-button {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.request-list__archive-modal .archive-modal-radio-button-diff-plan-text {
+  margin-bottom: 10px;
+}
+.request-list__pagination {
+  width: 100%;
+  display: flex;
+}
+@media screen and (max-width: 1200px) {
+  .request-list__search-form form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .request-list__search-form form button {
+    align-self: flex-end;
+  }
+  .request-list__search-form form > * {
+    margin-bottom: 1rem;
+  }
+}

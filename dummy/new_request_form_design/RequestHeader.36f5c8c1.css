@@ -1,0 +1,96 @@
+.request-page-header {
+  border-radius: 0;
+  border-bottom: rgba(0, 0, 0, 0.25) 1px solid;
+  box-shadow: none;
+  padding: 0;
+}
+.request-page-header__columns-status, .request-page-header__columns-info {
+  width: 50%;
+}
+.request-page-header__header {
+  background-color: #007BC2;
+  color: #FFFFFF;
+  align-items: center;
+}
+.request-page-header__header a {
+  color: #FFFFFF;
+}
+.request-page-header__header a:hover {
+  color: #FFFFFF;
+}
+.request-page-header__message {
+  background-color: #E8F3FA;
+  color: #707070;
+  align-items: center;
+}
+.request-page-header__message-row {
+  align-items: center;
+}
+.request-page-header__message-row:not(:first-child) {
+  margin-top: 0.5rem;
+}
+.request-page-header__label {
+  font-weight: 700;
+  color: #707070;
+}
+.request-page-header__status-text {
+  align-items: center;
+  font-weight: 700;
+}
+.request-page-header__info-top-drug {
+  flex: auto;
+}
+.request-page-header__info-top img {
+  width: 83px;
+}
+.request-page-header__plan-logo {
+  width: 200px;
+  max-width: 100%;
+  height: 40px;
+}
+.request-page-header__plan-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+.request-page-header--outcome-denied .request-page-header__columns-status, .request-page-header--outcome-failure .request-page-header__columns-status {
+  background-color: #F9E7EF;
+}
+.request-page-header--outcome-denied .request-page-header__status-text svg, .request-page-header--outcome-failure .request-page-header__status-text svg {
+  fill: #E22D30;
+}
+.request-page-header--outcome-denied .request-page-header__status-text svg {
+  transform: rotate(45deg);
+}
+.request-page-header--outcome-approved .request-page-header__columns-status {
+  background-color: #EBF6DF;
+}
+.request-page-header--outcome-approved .request-page-header__status-text svg {
+  fill: #408000;
+}
+.request-page-header--outcome-expired .request-page-header__columns-status, .request-page-header--outcome-canceled .request-page-header__columns-status, .request-page-header--outcome-unknown .request-page-header__columns-status, .request-page-header--outcome-unsent .request-page-header__columns-status {
+  background-color: #F8F8F8;
+}
+.request-page-header--outcome-expired .request-page-header__status-text svg, .request-page-header--outcome-canceled .request-page-header__status-text svg, .request-page-header--outcome-unknown .request-page-header__status-text svg, .request-page-header--outcome-unsent .request-page-header__status-text svg {
+  fill: #707070;
+}
+.request-page-header--outcome-additional-questions .request-page-header__columns-status {
+  background-color: #E8F3FA;
+}
+.request-page-header--outcome-additional-questions .request-page-header__status-text svg {
+  fill: #007BC2;
+}
+.request-page-header-loader {
+  border-radius: 0;
+  border-bottom: rgba(0, 0, 0, 0.25) 1px solid;
+  box-shadow: none;
+}#status_header .details {
+  display: flex;
+}
+
+.notifier-container {
+  width: 22em;
+  margin-top: 3.5rem;
+}

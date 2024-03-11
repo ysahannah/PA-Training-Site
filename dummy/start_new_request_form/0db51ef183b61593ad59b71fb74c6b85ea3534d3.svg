@@ -1,0 +1,11 @@
+<svg width="31" height="31" xmlns="http://www.w3.org/2000/svg">
+    <g stroke-width="3" fill="none" fill-rule="evenodd">
+        <path
+            stroke="#01426A"
+            d="M18.5 7V1.5h-17v28h17V24"
+        />
+        <g stroke="#E0004D">
+            <path d="M20.702 9l7.933 6.49-7.933 6.49M11 15.49h16.192" />
+        </g>
+    </g>
+</svg>

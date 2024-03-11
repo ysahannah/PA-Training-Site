@@ -1,0 +1,73 @@
+.recent-notes {
+  padding: 12px;
+  color: black;
+}
+.recent-notes__note-card {
+  border-radius: 6px;
+  padding: 8px;
+  background: #e7ecf0;
+}
+.recent-notes__note-card:not(:last-child) {
+  margin-bottom: 12px;
+}
+.recent-notes__text {
+  letter-spacing: 0.09375rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  overflow-wrap: break-word;
+}
+.recent-notes__time {
+  font-size: 1rem;
+  padding: 0.5em 0 0.25em;
+}
+
+.view-all-button {
+  text-align: right;
+  display: block;
+  color: #007BC2;
+}.recent-reminders {
+  padding: 12px;
+  color: black;
+}
+.recent-reminders__note-card {
+  border-radius: 6px;
+  padding: 8px;
+  background: #e7ecf0;
+}
+.recent-reminders__note-card:not(:last-child) {
+  margin-bottom: 12px;
+}
+.recent-reminders__time {
+  letter-spacing: 0.09375rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  overflow-wrap: break-word;
+}
+.recent-reminders__note {
+  font-size: 1rem;
+  padding: 0.5em 0 0.25em;
+}
+
+.view-all-button {
+  text-align: right;
+  display: block;
+  color: #007BC2;
+}.RecentNotesAndRemindersTabs {
+  width: 100%;
+}
+.RecentNotesAndRemindersTabs .dsl-tab-nav {
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.RecentNotesAndRemindersTabs .dsl-tab-nav__button {
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  width: 50%;
+}
+@media screen and (max-width: 1200px) {
+  .RecentNotesAndRemindersTabs {
+    display: none;
+  }
+}

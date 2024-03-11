@@ -1,0 +1,14 @@
+<svg width="34" height="42" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none">
+        <path stroke="#FFFFFF" d="M1.5 1.5h31v39h-31z"/>
+        <path stroke="#FFFFFF" d="M28.5 5.5h-23v31h23v-31z"/>
+        <path
+                d="M13 10v2h2v2h-2v2h-2v-2.001L9 14v-2l2-.001V10h2z"
+                fill="#E0004D"
+        />
+        <path
+                stroke="#FFFFFF"
+                d="M9 30.5h16M9 25.5h16M9 20.5h16M18 15.5h7"
+        />
+    </g>
+</svg>

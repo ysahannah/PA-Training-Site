@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/dashboard-ui/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site for managing your prior authorization requests"
+    />
+    <meta content="noindex" name="robots" />
+
+    <script type="application/javascript">
+  window.CMM_META_DATA = {
+    CENTRAL_USER_ID: 2934329, // TODO: deprecate
+    CURRENT_USER_ID: 2934329,
+    CENTRAL_USER: false,
+    ANONYMOUS_USER: false,
+    MASQUERADING_USER: false,
+    MASQUERADING_USER_NAME: null,
+    API_USER: false,
+    MHA_USER: false,
+    NAVINET_USER: false,
+
+    SHOW_RENEWAL_DIALOG: true,
+    WINDBREAKER_HEADER_ENABLED: true,
+    PHP_URL: "https://www.covermymeds.com",
+    PHARMACY_USER: false,
+    COPC_PILOT_USER: false,
+    APP_ID: "",
+    APP_ENV: "production",
+    PORTAL_SERVICES_URL: "https://portal-services.covermymeds.com",
+    REQUESTS_API_URL: "https://api.covermymeds.com/requests",
+    DASHBOARD_LINK: "https://www.covermymeds.com/request/list",
+    CAN_MANAGE_YOUR_PREFERENCES: true,
+    PROFILE_LINK: "/profile",
+    FORMBUILDER: false,
+    AUTHORIZED: false,
+    NPI_VERIFICATION_ENABLED: true,
+    VERIFY_PRESCRIBERS_LINK: "https://www.covermymeds.com/prescribers",
+    PHARMACY_PA_SEARCH_ENABLED: false,
+    PHARMACY_PA_SEARCH_LINK: "https://pharmacy.covermymeds.com/pa-search/requests",
+    REPORTING_ENABLED: false,
+    REPORTING_LINK: "https://www.covermymeds.com/reporting/redirect",
+    HELP_LINK: "https://www.covermymeds.com/main/support/",
+    DISPLAY_NAME: "PSS PRIORAUTHS",
+    LOGOUT_LINK: "/logout"
+  }
+</script>
+
+    <script>
+  (function(apiKey){
+    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+    v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+        o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+        y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+        z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);
+    })(window,document,'script','pendo');
+  
+  pendo.initialize({
+    visitor: {
+      id: "production-2934329"
+    },
+    account: {
+      id: 'dashboard'
+    },
+    sanitizeUrl: function(url) {
+      if (typeof url !== 'string') {
+        return
+      }
+  
+      // Scrub query string
+      url = url.replace(/\?.*/, '')
+  
+      return url
+    }
+  })
+  
+  })('89b77497-23cf-4058-6d78-e33d78245f50');
+</script>
+
+      <!-- Anti-flicker snippet (recommended) -->
+  <style>
+    .async-hide { opacity: 0 !important}
+  </style>
+  <script>
+    (function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+        h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document.documentElement,'async-hide','dataLayer',4000,
+        {'GTM-5LW6Q86':true});
+  </script>
+  <!-- Google Optimize -->
+  <script async='' await='' onerror='dataLayer.hide.end &amp;&amp; dataLayer.hide.end()' src='https://www.googleoptimize.com/optimize.js?id=GTM-5LW6Q86'></script>
+  <script>
+    // <!-- Google Tag Manager -->
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer',"GTM-54JSC3R");
+    // <!-- End Google Tag Manager -->
+  </script>
+
+
+    <title>CoverMyMeds</title>
+    <script type="module" crossorigin src="/dashboard-ui/assets/index.6234b95c.js"></script>
+
+      <link rel="stylesheet" href="/dashboard-ui/assets/index.285bdfc7.css" />
+
+    <script type="text/javascript"
+      src="//chat.covermymeds.com/javascripts/bundle-customer.js">
+    </script>
+    <script type="text/javascript">
+    // Chat V2
+      window.Chat = window.Chat || {};
+      window.Chat.app = new window.Chat.CustomerApp({
+        base: "//chat.covermymeds.com",
+        sessionApi: '/chat_session/store',
+        didLogout: false
+      });
+      </script>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="CcPR3jm9uKl1nftg5eL_5Dpb_mM6soutsMmWB8Lx04PzrIfafSSLuQBvDqzwLVN2HkzR08Kf0uHBc2L4R9FwdQ" />
+              <meta name="notifier-client-name" content="Pusher" />
+          <meta name="notifier-client-key" content="dd7f85bfcf86a502f275" />
+
+  </head>
+  <body>
+      <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe height='0' src='https://www.googletagmanager.com/ns.html?id=GTM-54JSC3R' style='display:none;visibility:hidden' width='0'></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id='modal-parent-element'></div>
+    <div id="root" data-frontend-app="react"></div>
+  </body>
+</html>

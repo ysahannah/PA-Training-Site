@@ -1,0 +1,36 @@
+.status-dialog-content {
+  display: flex;
+}
+.status-dialog-content img {
+  max-height: 10em;
+  margin-right: 1em;
+}
+.view-case-box {
+  background-color: #F8F8F8;
+}
+.view-case-box-lower {
+  display: flex;
+  justify-content: space-between;
+}.dsl-modal__overlay:has(.send-control-dialog--is-pending) {
+  align-items: flex-start;
+  padding: 5vh 0;
+  overflow-y: auto;
+}
+
+.send-control-dialog .dsl-modal__body {
+  padding-bottom: 0.5rem;
+}
+
+.send-control-dialog__questions {
+  background-color: #E8F3FA;
+  border-radius: 0.375rem;
+  max-height: 40vh;
+  overflow-y: auto;
+}.loader-container {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}.stp-bv-variant {
+  white-space: normal !important;
+  line-height: 1;
+}
