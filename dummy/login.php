@@ -19,11 +19,11 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 
-$sql = "SELECT * FROM  users WHERE username=$username AND password=$password";
+$sql = "SELECT * FROM  users WHERE 'username=$username' AND 'password=$password'";
 $result = $conn->query($sql);
 
 //check if match
-if ($result->num_rows > 0 ){
+if ($result->num_rows >=0 ){
   echo "Login Success!";
   header("Location: ./request/index.html");
 }
@@ -32,4 +32,3 @@ else{
  }
 }
 $conn->close()  ;
-?>

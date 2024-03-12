@@ -99,13 +99,7 @@
               href="https://portal.covermymeds.com/enter-key">
               <div class="mdc-line-ripple">Enter Key</div>
             </a>
-            <a
-              class="mdc-top-app-bar__action-item mdc-button"
-              href="https://portal.covermymeds.com/signup">
-              <div class="mdc-button__ripple"></div>
-              <div class="mdc-button__focus-ring"></div>
-              <div class="mdc-button__label">Create a Free Account</div>
-            </a>
+           
           </div>
         </div>
       </nav>
@@ -123,9 +117,9 @@
               class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone spacer__bottom--medium">
               <div class="mdc-card mdc-card--invisible">
                 <div class="mdc-layout-grid">
-                  <h1>Welcome back!</h1>
+                  <h1>Let's get started! </h1>
                   <p class="p--large style--dark-grey">
-                    Log into your CoverMyMeds account to create new, manage
+                    Sign up with a  CoverMyMeds account to create new, manage
                     existing and access pharmacy-initiated prior authorization
                     requests for all medications and plans.
                   </p>
@@ -144,12 +138,12 @@
               class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone fix__ie-7--left-margin">
               <div class="mdc-card mdc-card--raised">
                 <div class="mdc-layout-grid">
-                  <h1>Log in</h1>
+                  <h1>Sign up ! </h1>
 
                   <form
-                    id="login-form"
-                    class="login-form"
-                    action="login.php"
+                    id="singup-form"
+                    class="signup-form"
+                    action="signup.php"
                     accept-charset="UTF-8"
                     method="post">
                     <input
@@ -202,8 +196,8 @@
                         class="mdc-text-field__input mdc-text-field--with-trailing-icon"
                         required="required"
                         aria-describedby="password-helper-text"
-                        name="password"
-                        id="password" />
+                        name="ConfirmPass"
+                        id="ConfirmPass" />
                       <i
                         class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing style--red"
                         aria-hidden="true"
@@ -218,22 +212,65 @@
                         Password is required
                       </div>
                     </div>
+                    <div
+                      class="mdc-text-field mdc-text-field--filled mdc-text-field--full-width"
+                      data-mdc-auto-init="MDCTextField">
+                      <div class="mdc-line-ripple"></div>
+                      <label class="mdc-floating-label" for="password"
+                        >Confirm Password</label
+                      >
+
+                      <input
+                        type="password"
+                        class="mdc-text-field__input mdc-text-field--with-trailing-icon"
+                        required="required"
+                        aria-describedby="password-helper-text"
+                        name="password"
+                        id="password" />
+                      <i
+                        class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing style--red"
+                        aria-hidden="true"
+                        >error</i
+                      >
+                    </div>
+                    <div class="mdc-text-field-helper-line">
+                      <div
+                        id="password-helper-text"
+                        class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
+                        aria-hidden="true">
+                       Confirm  Password is required
+                      </div>
+                    
+                    <div
+                      class="mdc-text-field mdc-text-field--filled mdc-text-field--full-width"
+                      data-mdc-auto-init="MDCTextField">
+                      <div class="mdc-line-ripple"></div>
+                      <label class="mdc-floating-label" for="email"
+                        >Email</label
+                      >
+
+                      <input
+                        type="text"
+                        class="mdc-text-field__input mdc-text-field--with-trailing-icon"
+                        required="required"
+                        aria-describedby="password-helper-text"
+                        name="email"
+                        id="email" />
+                      <i
+                        class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing style--red"
+                        aria-hidden="true"
+                        >error</i
+                      >
+                    </div>
 
                     <div class="spacer__top--medium">
                       <input
                         type="submit"
                         name="commit"
-                        value="Log in"
+                        value="Sign up"
                         id="login-button"
                         class="mdc-button mdc-button--raised style--width-100 spacer__bottom--small"
-                        data-disable-with="Log in" />
-                      <p class="style--center style--uppercase">
-                        <a
-                          class="style--magenta"
-                          href="https://account.covermymeds.com/forgot"
-                          >Forgot your username or password?</a
-                        >
-                      </p>
+                        data-disable-with="Sign up" />
                     </div>
                   </form>
                 </div>
@@ -254,3 +291,4 @@
     </script> -->
   </body>
 </html>
+ 
