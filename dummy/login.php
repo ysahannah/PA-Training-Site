@@ -14,7 +14,7 @@ if ($conn->connect_error){
 }
 
 //Check if form is submitted
-if ($SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -25,7 +25,7 @@ $result = $conn->query($sql);
 //check if match
 if ($result->num_rows > 0 ){
   echo "Login Success!";
-  //redirect user to dashboard or another page
+  header("Location: ./request/index.html");
 }
 else{
   echo "Invalid username or password";

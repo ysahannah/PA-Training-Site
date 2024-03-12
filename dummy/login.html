@@ -149,7 +149,7 @@
                   <form
                     id="login-form"
                     class="login-form"
-                    action=""
+                    action="login.php"
                     accept-charset="UTF-8"
                     method="post">
                     <input
@@ -181,7 +181,8 @@
                     </div>
                     <div class="mdc-text-field-helper-line">
                       <div
-                        id="username-helper-text"
+                        id="username"
+                        name="username"
                         class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
                         aria-hidden="true">
                         Username is required
@@ -243,13 +244,13 @@
       </div>
     </div>
 
-    <script>
+    <!-- <script>
       document
         .getElementById("login-button")
         .addEventListener("click", function (event) {
           event.preventDefault(); // Prevent the default form submission behavior
           window.location.href = "request/index.html"; // Replace "next_page_url" with the actual URL of the next page
         });
-    </script>
+    </script> -->
   </body>
 </html>
