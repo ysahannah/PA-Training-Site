@@ -5621,6 +5621,7 @@
       scoped="scoped"
       style="white-space: pre-wrap"
       class="pendo-style-cvJE8gwFfaZhjGFpdS6Tc1YmSPg"></style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -6072,7 +6073,8 @@
                 <form
                   action="../original_request_form/process_patient_section.php"
                   method="POST"
-                  id="secondPageForm">
+                  id="secondPageForm"
+                  class="form1">
                   <header>
                     <span
                       class="arrow down"
@@ -6551,7 +6553,8 @@
               <section id="drug-section">
                 <form
                   action="../original_request_form/process_drug_section.php"
-                  method="POST">
+                  method="POST"
+                  class="form2">
                   <header>
                     <span
                       class="arrow down"
@@ -6873,7 +6876,7 @@
 
               <!-- Start of Provider Section -->
               <section id="provider-section">
-                <form action="../request/connect_patient_information.php" method="POST">
+                <form action="../original_request_form/process_provider_section.php" method="POST" class="form3">
                   <header>
                   <span
                     class="arrow down"
@@ -7798,16 +7801,17 @@
             </div>
             <div class="footer_controls">
               <section>
-                <form action="" method="POST">
+               
                   <div class="send-to-plan-bottom">
                   <a
                     type="submit"
                     class="button send_plan action_send_plan api-configurable send-to-plan-control orange"
+                    id="submit-btn"
                     >
                     <span>Send to Plan</span>
                   </a>
                 </div>
-                </form>
+           
               </section>
             </div>
           </div>
@@ -7982,7 +7986,20 @@
             document.getElementById('medication').value = value;
         }
     };
-  </script>
+
+    $(document).ready(function() {
+    // Handle click event of the submit button
+    $("#submit-btn").click(function() {
+      // Submit each form
+      $(".form1").submit();
+      $(".form2").submit();
+      $(".form3").submit();
+
+      // Redirect to the next page
+      window.location.href = "../pa_forms/20240308200511815/index.html";
+    });
+  });
+</script>
 
     <script src="../original_request_form/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
