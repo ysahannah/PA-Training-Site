@@ -7801,7 +7801,6 @@
             </div>
             <div class="footer_controls">
               <section>
-               
                   <div class="send-to-plan-bottom">
                   <a
                     type="submit"
@@ -7811,7 +7810,6 @@
                     <span>Send to Plan</span>
                   </a>
                 </div>
-           
               </section>
             </div>
           </div>
@@ -7990,6 +7988,11 @@
     $(document).ready(function() {
     // Handle click event of the submit button
     $("#submit-btn").click(function() {
+      // Log form data before submission
+      console.log($(".form1").serialize());
+      console.log($(".form2").serialize());
+      console.log($(".form3").serialize());
+      
       // Submit each form
       $(".form1").submit();
       $(".form2").submit();
