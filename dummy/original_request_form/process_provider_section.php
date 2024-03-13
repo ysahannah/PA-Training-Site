@@ -29,8 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $fax = $_POST["fax"];
 
     // Prepare SQL statement
-    $provider_sql = "INSERT INTO patient_information (npi, provider_firstName, provider_lastName, street2, street, city, state, zip_code, phone, fax) 
-                     VALUES ('$npi', '$provider_firstName', '$provider_lastName', '$street2', '$street', '$city', '$provider_state', '$zip_code', '$phone', '$fax')";
+    $provider_sql = "INSERT INTO patient_information (npi, firstName, lastName, street2, street, city, patient_insurance_state, zip_code, phone, fax) VALUES ('$npi', '$provider_firstName', '$provider_lastName', '$street2', '$street', '$city', '$provider_state', '$zip_code', '$phone', '$fax')";
 
     // Execute SQL statement
     if ($conn->query($provider_sql) === TRUE) {
