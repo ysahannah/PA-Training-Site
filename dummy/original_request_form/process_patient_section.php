@@ -27,8 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $city = $_POST["city"];
     $zip_code = $_POST["zip_code"];
     $phone = $_POST["phone"];
+    $provider_state = $_POST["provider_state"];
 
-    $patient_sql = "INSERT INTO patient_information (prefix, firstName, middle_name, lastName, suffix, birthday, gender, member_id, street, street2, city, zip_code, phone) VALUES ('$prefix', '$firstName', '$middle_name', '$lastName', '$suffix', '$birthday', '$gender', '$member_id', '$street', '$street2', '$city', '$zip_code', '$phone')";
+    $patient_sql = "INSERT INTO patient_information (prefix, firstName, middle_name, lastName, suffix, birthday, gender, member_id, street, street2, city, zip_code, phone, provider_state) VALUES ('$prefix', '$firstName', '$middle_name', '$lastName', '$suffix', '$birthday', '$gender', '$member_id', '$street', '$street2', '$city', '$zip_code', '$phone', '$patient_insurance_state')";
 
     if ($conn->query($patient_sql) === TRUE) {
         echo "Patient information inserted successfully";
