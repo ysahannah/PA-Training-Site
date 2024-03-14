@@ -35,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
       echo "Login Success!";
       header("Location: ./request/index.html");
     } else {
-      echo "Invalid username or password";
       $_SESSION['login_attempts']++; 
+      echo "<script>alert('Invalid username or password');</script>";
     }
   }
 }
