@@ -54,6 +54,8 @@ if($count_user == 0 && $count_email == 0){
     if($count_email>0){
       echo 'This email already exists!';
     }
+    else
+     echo 'User must be filled';
   }
 
 
