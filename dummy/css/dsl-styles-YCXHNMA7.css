@@ -36,7 +36,7 @@ input[type="search"]::-ms-clear {
 *,
 *:after,
 *:before {
-  box-sizing: inherit;
+  box-sizing: fixed;
 }
 *:focus {
   outline: #01426a auto 5px;
