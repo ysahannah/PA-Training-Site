@@ -39,7 +39,7 @@ if($count_user == 0 && $count_email == 0){
     $result = mysqli_query($conn, $sql);
     if($result){
       // Redirect to login page after successful sign-up
-      header("Location: ../login.html");
+      header("Location: ./login.html");
       exit();
     }
   }
