@@ -7986,71 +7986,53 @@
     };
 
     $(document).ready(function() {
-    // Counter to track successful form submissions
-    var successfulSubmissions = 0;
-
     // Handle click event of the submit button
-    $("#submit-btn").click(function() {
+    $("#submit-btn").click(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
         // Log form data before submission
         console.log($(".form1").serialize());
         console.log($(".form2").serialize());
         console.log($(".form3").serialize());
 
-        // Submit form 1
-        $(".form1").submit(function(event) {
-            event.preventDefault(); // Prevent default form submission
-            $.post($(this).attr("action"), $(this).serialize(), function(response) {
-                // Check if form submission was successful (you need to define the condition based on your backend response)
-                if (response.success) {
-                    successfulSubmissions++; // Increment successful submission counter
-                    checkAllSubmissions(); // Check if all submissions are successful
-                } else {
-                    // Handle error, if any
-                }
-            });
-        });
-
-        // Submit form 2
-        $(".form2").submit(function(event) {
-            event.preventDefault(); // Prevent default form submission
-            $.post($(this).attr("action"), $(this).serialize(), function(response) {
-                // Check if form submission was successful (you need to define the condition based on your backend response)
-                if (response.success) {
-                    successfulSubmissions++; // Increment successful submission counter
-                    checkAllSubmissions(); // Check if all submissions are successful
-                } else {
-                    // Handle error, if any
-                }
-            });
-        });
-
-        // Submit form 3
-        $(".form3").submit(function(event) {
-            event.preventDefault(); // Prevent default form submission
-            $.post($(this).attr("action"), $(this).serialize(), function(response) {
-                // Check if form submission was successful (you need to define the condition based on your backend response)
-                if (response.success) {
-                    successfulSubmissions++; // Increment successful submission counter
-                    checkAllSubmissions(); // Check if all submissions are successful
-                } else {
-                    // Handle error, if any
-                }
-            });
+        // Submit each form asynchronously
+        $.when(
+            $.ajax({
+                type: "POST",
+                url: $(".form1").attr("action"),
+                data: $(".form1").serialize()
+            }),
+            $.ajax({
+                type: "POST",
+                url: $(".form2").attr("action"),
+                data: $(".form2").serialize()
+            }),
+            $.ajax({
+                type: "POST",
+                url: $(".form3").attr("action"),
+                data: $(".form3").serialize()
+            })
+        ).done(function(response1, response2, response3) {
+            // Check if all form submissions were successful
+            if (response1[1] === "success" && response2[1] === "success" && response3[1] === "success") {
+                // Redirect to the next page
+                window.location.href = "../pa_forms/20240308200511815/index.html";
+            } else {
+                // Handle error: One or more form submissions failed
+                alert("One or more form submissions failed. Please try again.");
+            }
+        }).fail(function() {
+            // Handle error: AJAX request failed
+            alert("Failed to submit form data. Please try again.");
         });
     });
-
-    // Function to check if all form submissions are successful
-    function checkAllSubmissions() {
-        // Assuming you have 3 forms, change the number accordingly if you have more forms
-        if (successfulSubmissions === 3) {
-            // Redirect to the next page if all submissions are successful
-            window.location.href = "../pa_forms/20240308200511815/index.html";
-        }
-    }
 });
-</script>
+   
+    </script>
 
     <script src="../original_request_form/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </body>
 </html>
+
+

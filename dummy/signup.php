@@ -38,7 +38,9 @@ if($count_user == 0 && $count_email == 0){
     $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$hash' , '$email')";
     $result = mysqli_query($conn, $sql);
     if($result){
-      echo 'SIGN UP SUCCESSFUL!';
+      // Redirect to login page after successful sign-up
+      header("Location: ../login.html");
+      exit();
     }
   }
   else{
