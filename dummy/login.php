@@ -13,22 +13,33 @@ if ($conn->connect_error){
   die("Connection has failed." . $conn->connect_error);
 }
 
-//Check if form is submitted
+// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
-$username = $_POST['username'];
-$password = $_POST['password'];
+  $username = $_POST['username'];
+  $password = $_POST['password'];
 
+  // Check if the login attempt counter exists in the session
+  if (!isset($_SESSION['login_attempts'])) {
+    $_SESSION['login_attempts'] = 0;
+  }
 
-$sql = "SELECT * FROM  users WHERE 'username=$username' AND 'password=$password'";
-$result = $conn->query($sql);
+  // Check if the user has reached the maximum login attempts
+  if ($_SESSION['login_attempts'] >= 5) {
+    echo "You have reached the maximum number of login attempts. Please try again later.";
+  } else {
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $result = $conn->query($sql);
 
-//check if match
-if ($result->num_rows >=0 ){
-  echo "Login Success!";
-  header("Location: ./request/index.html");
+    // Check if match
+    if ($result->num_rows > 0) {
+      echo "Login Success!";
+      header("Location: ./request/index.html");
+    } else {
+      echo "Invalid username or password";
+      $_SESSION['login_attempts']++; 
+    }
+  }
 }
-else{
-  echo "Invalid username or password";
- }
-}
-$conn->close()  ;
+
+$conn->close();
+?>
