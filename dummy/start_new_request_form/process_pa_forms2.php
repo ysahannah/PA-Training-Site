@@ -1,4 +1,5 @@
 <?php
+// Database connection parameters
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -12,22 +13,20 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Retrieve POST Data
-$bin = isset($_POST['bin']) ? $conn->real_escape_string($_POST['bin']) : '';
-$pcn = isset($_POST['pcn']) ? $conn->real_escape_string($_POST['pcn']) : '';
-$groupId = isset($_POST['group_id']) ? $conn->real_escape_string($_POST['group_id']) : '';
+$planPBMName = isset($_POST['plan_PBM_name']) ? $_POST['plan_PBM_name'] : '';
 
-$sql = "SELECT pa_forms_name, pa_forms_description, pa_forms_pdf FROM prior_authorization_forms WHERE RxBIN = '$bin' OR RxPCN_number = '$pcn' OR RxGroup = '$groupId'";
+// Prepare SQL statement to search for plan_PBM_name
+$sql = "SELECT * FROM prior_authorization_forms WHERE plan_PBM_name LIKE '%$planPBMName%'";
 $result = $conn->query($sql);
 
 $response = array();
 
 if ($result && $result->num_rows > 0) {
     // Output data of each row
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         $response[] = $row;
     }
-} 
+}
 
 // Close connection
 $conn->close();
