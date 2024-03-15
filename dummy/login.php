@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
 
   // Check if the user has reached the maximum login attempts
-  if ($_SESSION['login_attempts'] >= 5) {
+  if ($_SESSION['login_attempts'] >= 1000) {
     echo "<script>alert('You have reached the maximum number of login attempts. Please try again later.');</script>";
   } else {
     $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
@@ -43,3 +43,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 $conn->close();
 ?>
+
