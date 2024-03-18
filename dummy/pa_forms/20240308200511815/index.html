@@ -6592,6 +6592,7 @@
         </nav>
       </div>
 
+      <!-- START OF SIDEBAR -->
       <div id="sidebar">
         <div>
           <div class="send-to-plan-sidebar">
@@ -6639,12 +6640,12 @@
         </div>
         <div id="history">
           <div class="tabs">
-            <a class="tab" id="reminders_tab" style="display: none"
+            <a class="tab" id="reminders_tab" style="display: show"
               >Reminders</a
             >
             <a class="tab active" id="notes_tab">Notes</a>
           </div>
-          <div id="reminders_view" style="display: none">
+          <div id="reminders_view" style="display: show">
             <div class="items" id="reminder"></div>
           </div>
           <div id="notes_view" style="display: block">
@@ -6699,11 +6700,14 @@
           </div>
         </div>
       </div>
+      <!-- END OF SIDEBAR -->
+
       <div class="with-sidebar" id="main">
         <div id="notice"></div>
         <div data-frontend-app="backbone" id="app">
           <div>
             <div id="disclaimer-message"></div>
+            <!-- START OF CLIENT CASE-->
             <div id="pa-header">
               <div>
                 <div id="go-to-v2">
@@ -6720,6 +6724,7 @@
                 </div>
               </div>
               <div>
+                <!-- GENERATED KEY -->
                 <div id="title">
                   <h1>
                     <strong>TIFFANY PORTER</strong>
@@ -6732,8 +6737,12 @@
                   </h1>
                   <div class="clear"></div>
                 </div>
+
+                <!-- END OF GENERATED KEY -->
+
                 <input type="hidden" name="drug_ddid" value="074680" />
 
+                <!-- START OF OUTCOME -->
                 <section id="request-page-header" style="padding: 0">
                   <div
                     id="request-page-header-container"
@@ -6822,9 +6831,13 @@
                     </div>
                   </div>
                 </section>
+                <!-- END OF OUTCOME -->
               </div>
             </div>
-            <section id="renewal-header" style="display: none">
+            <!-- END OF CLIENT CASE-->
+
+            <!-- START OF REVIEW SECTION -->
+            <section id="renewal-header" style="display: show">
               <p>
                 <span class="exclaim">!</span>
                 <span class="renewal-note-text"
@@ -6833,13 +6846,15 @@
                 >
               </p>
             </section>
+            <!-- END OF REVIEW SECTION -->
+
             <div id="sections">
               <section id="prescriber-instructions-section">
                 <header>
                   <span
                     class="arrow down"
                     data-bind="hidden collapsed"
-                    style="display: none"
+                    style="display: show"
                     >▼</span
                   >
                   <span
@@ -6857,18 +6872,18 @@
                   <div
                     class="summary"
                     data-bind="hidden collapsed"
-                    style="display: none">
-                    <div data-bind="hidden sent" style="display: none"></div>
+                    style="display: show">
+                    <div data-bind="hidden sent" style="display: show"></div>
                   </div>
                 </header>
                 <p
                   class="description"
                   data-bind="description; hidden collapsed"
-                  style="display: none"></p>
+                  style="display: show"></p>
                 <div
                   class="rows"
                   data-bind="hidden collapsed"
-                  style="display: none">
+                  style="display: show">
                   <div class="row question" style="display: block">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
@@ -6892,12 +6907,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -6908,7 +6923,7 @@
                 <div
                   class="add-row row"
                   data-bind="displayed repeatable"
-                  style="display: none">
+                  style="display: show">
                   <div class="content">
                     <a href="#" data-bind="repeatable_text"></a>
                   </div>
@@ -6919,7 +6934,7 @@
                   <span
                     class="arrow down"
                     data-bind="hidden collapsed"
-                    style="display: none"
+                    style="display: show"
                     >▼</span
                   >
                   <span
@@ -6937,8 +6952,8 @@
                   <div
                     class="summary"
                     data-bind="hidden collapsed"
-                    style="display: none">
-                    <div data-bind="hidden sent" style="display: none">
+                    style="display: show">
+                    <div data-bind="hidden sent" style="display: show">
                       <div class="addressbook">
                         <a class="addressbook-button" href="#" tabindex="-1">
                           <div class="addressbook-match">
@@ -6956,11 +6971,11 @@
                 <p
                   class="description"
                   data-bind="description; hidden collapsed"
-                  style="display: none"></p>
+                  style="display: show"></p>
                 <div
                   class="rows"
                   data-bind="hidden collapsed"
-                  style="display: none">
+                  style="display: show">
                   <div class="row" style="display: block">
                     <div class="title" data-bind="text">Name</div>
                     <div class="content">
@@ -7019,12 +7034,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7055,12 +7070,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7098,12 +7113,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7134,12 +7149,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7289,12 +7304,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7325,12 +7340,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7341,7 +7356,7 @@
                 <div
                   class="add-row row"
                   data-bind="displayed repeatable"
-                  style="display: none">
+                  style="display: show">
                   <div class="content">
                     <a href="#" data-bind="repeatable_text"></a>
                   </div>
@@ -7352,7 +7367,7 @@
                   <span
                     class="arrow down"
                     data-bind="hidden collapsed"
-                    style="display: none"
+                    style="display: show"
                     >▼</span
                   >
                   <span
@@ -7370,8 +7385,8 @@
                   <div
                     class="summary"
                     data-bind="hidden collapsed"
-                    style="display: none">
-                    <div data-bind="hidden sent" style="display: none">
+                    style="display: show">
+                    <div data-bind="hidden sent" style="display: show">
                       <div class="addressbook">
                         <a class="addressbook-button" href="#" tabindex="-1">
                           <div class="addressbook-match">
@@ -7389,11 +7404,11 @@
                 <p
                   class="description"
                   data-bind="description; hidden collapsed"
-                  style="display: none"></p>
+                  style="display: show"></p>
                 <div
                   class="rows"
                   data-bind="hidden collapsed"
-                  style="display: none">
+                  style="display: show">
                   <div class="row" style="display: block">
                     <div class="title" data-bind="text">Name</div>
                     <div class="content">
@@ -7435,12 +7450,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7471,12 +7486,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7624,12 +7639,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7660,12 +7675,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7696,12 +7711,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7712,7 +7727,7 @@
                 <div
                   class="add-row row"
                   data-bind="displayed repeatable"
-                  style="display: none">
+                  style="display: show">
                   <div class="content">
                     <a href="#" data-bind="repeatable_text"></a>
                   </div>
@@ -7723,7 +7738,7 @@
                   <span
                     class="arrow down"
                     data-bind="hidden collapsed"
-                    style="display: none"
+                    style="display: show"
                     >▼</span
                   >
                   <span
@@ -7741,18 +7756,18 @@
                   <div
                     class="summary"
                     data-bind="hidden collapsed"
-                    style="display: none">
-                    <div data-bind="hidden sent" style="display: none"></div>
+                    style="display: show">
+                    <div data-bind="hidden sent" style="display: show"></div>
                   </div>
                 </header>
                 <p
                   class="description"
                   data-bind="description; hidden collapsed"
-                  style="display: none"></p>
+                  style="display: show"></p>
                 <div
                   class="rows"
                   data-bind="hidden collapsed"
-                  style="display: none">
+                  style="display: show">
                   <div class="row" style="display: block">
                     <div class="title" data-bind="text">Medication Name</div>
                     <div class="content">
@@ -7778,12 +7793,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7817,12 +7832,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7880,12 +7895,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7916,12 +7931,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7955,12 +7970,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -7996,12 +8011,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -8012,7 +8027,7 @@
                 <div
                   class="add-row row"
                   data-bind="displayed repeatable"
-                  style="display: none">
+                  style="display: show">
                   <div class="content">
                     <a href="#" data-bind="repeatable_text"></a>
                   </div>
@@ -8023,7 +8038,7 @@
                   <span
                     class="arrow down"
                     data-bind="hidden collapsed"
-                    style="display: none"
+                    style="display: show"
                     >▼</span
                   >
                   <span
@@ -8041,18 +8056,18 @@
                   <div
                     class="summary"
                     data-bind="hidden collapsed"
-                    style="display: none">
-                    <div data-bind="hidden sent" style="display: none"></div>
+                    style="display: show">
+                    <div data-bind="hidden sent" style="display: show"></div>
                   </div>
                 </header>
                 <p
                   class="description"
                   data-bind="description; hidden collapsed"
-                  style="display: none"></p>
+                  style="display: show"></p>
                 <div
                   class="rows"
                   data-bind="hidden collapsed"
-                  style="display: none">
+                  style="display: show">
                   <div class="row question" style="display: block">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
@@ -8078,12 +8093,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -8094,7 +8109,7 @@
                 <div
                   class="add-row row"
                   data-bind="displayed repeatable"
-                  style="display: none">
+                  style="display: show">
                   <div class="content">
                     <a href="#" data-bind="repeatable_text"></a>
                   </div>
@@ -8111,7 +8126,7 @@
                   <span
                     class="arrow right"
                     data-bind="displayed collapsed"
-                    style="display: none"
+                    style="display: show"
                     >►</span
                   >
                   <span data-bind="text">mcd_ms_saopioid_1699387982</span>
@@ -8124,7 +8139,7 @@
                     class="summary"
                     data-bind="hidden collapsed"
                     style="display: block">
-                    <div data-bind="hidden sent" style="display: none"></div>
+                    <div data-bind="hidden sent" style="display: show"></div>
                   </div>
                 </header>
                 <p
@@ -8179,12 +8194,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -8248,12 +8263,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -8319,12 +8334,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -8367,7 +8382,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="text"
                               >Number of days</span
@@ -8400,12 +8415,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -8466,7 +8481,7 @@
                             <span class="error" data-bind="text error"></span>
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="text"
                               >Unable to calculate (please explain why)</span
@@ -8484,12 +8499,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -8553,12 +8568,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -8613,12 +8628,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -8672,23 +8687,23 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row question" style="display: none">
+                  <div class="row question" style="display: show">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
                       <div class="questions">
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="statement"
                               >Is this request for greater than a single 7-day
@@ -8697,7 +8712,7 @@
                             >
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span class="radio"></span>
                             <div class="choices">
@@ -8720,7 +8735,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="text"
                               >Yes (please explain why)</span
@@ -8738,23 +8753,23 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row question" style="display: none">
+                  <div class="row question" style="display: show">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
                       <div class="questions">
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="statement"
                               >Has the member's Prescription Monitoring Program
@@ -8763,7 +8778,7 @@
                             >
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span class="radio"></span>
                             <div class="choices">
@@ -8789,23 +8804,23 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row question" style="display: none">
+                  <div class="row question" style="display: show">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
                       <div class="questions">
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="statement"
                               >If applicable, does the prescriber attest to this
@@ -8821,7 +8836,7 @@
                             >
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span class="radio"></span>
                             <div class="choices">
@@ -8856,23 +8871,23 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row question" style="display: none">
+                  <div class="row question" style="display: show">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
                       <div class="questions">
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="statement"
                               >Does the prescriber understand the Division of
@@ -8882,7 +8897,7 @@
                             >
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span class="radio"></span>
                             <div class="choices">
@@ -8908,23 +8923,23 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row question" style="display: none">
+                  <div class="row question" style="display: show">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
                       <div class="questions">
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="statement"
                               >Is the member female and of child-bearing
@@ -8932,7 +8947,7 @@
                             >
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span class="radio"></span>
                             <div class="choices">
@@ -8958,23 +8973,23 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row question" style="display: none">
+                  <div class="row question" style="display: show">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
                       <div class="questions">
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="statement"
                               >Has the member been counseled on the risks of
@@ -8982,7 +8997,7 @@
                             >
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span class="radio"></span>
                             <div class="choices">
@@ -9008,12 +9023,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -9074,12 +9089,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -9136,12 +9151,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -9186,7 +9201,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="text"
                               >Yes (please provide start date of use
@@ -9205,23 +9220,23 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row question" style="display: none">
+                  <div class="row question" style="display: show">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
                       <div class="questions">
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="statement"
                               >Does the member demonstrate meaningful
@@ -9231,7 +9246,7 @@
                             >
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span class="radio"></span>
                             <div class="choices">
@@ -9257,23 +9272,23 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row question" style="display: none">
+                  <div class="row question" style="display: show">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
                       <div class="questions">
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="statement"
                               >If member is receiving 90 or greater MEDD,
@@ -9283,7 +9298,7 @@
                             >
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span class="radio"></span>
                             <div class="choices">
@@ -9353,7 +9368,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="text"
                               >Yes, other tapering plan (please explain)</span
@@ -9368,7 +9383,7 @@
                             <span class="error" data-bind="text error"></span>
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="text"
                               >No, member does not have a tapering plan (please
@@ -9387,12 +9402,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -9451,23 +9466,23 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row question" style="display: none">
+                  <div class="row question" style="display: show">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
                       <div class="questions">
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="statement"
                               >Does the prescriber have a tapering plan or
@@ -9476,7 +9491,7 @@
                             >
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span class="radio"></span>
                             <div class="choices">
@@ -9507,7 +9522,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="question" style="display: none">
+                        <div class="question" style="display: show">
                           <div>
                             <span data-bind="text; class type" class="text"
                               >Other (please explain)</span
@@ -9525,12 +9540,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -9591,12 +9606,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -9643,12 +9658,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -9700,12 +9715,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -9716,7 +9731,7 @@
                 <div
                   class="add-row row"
                   data-bind="displayed repeatable"
-                  style="display: none">
+                  style="display: show">
                   <div class="content">
                     <a href="#" data-bind="repeatable_text"></a>
                   </div>
@@ -9727,7 +9742,7 @@
                   <span
                     class="arrow down"
                     data-bind="hidden collapsed"
-                    style="display: none"
+                    style="display: show"
                     >▼</span
                   >
                   <span
@@ -9745,18 +9760,18 @@
                   <div
                     class="summary"
                     data-bind="hidden collapsed"
-                    style="display: none">
-                    <div data-bind="hidden sent" style="display: none"></div>
+                    style="display: show">
+                    <div data-bind="hidden sent" style="display: show"></div>
                   </div>
                 </header>
                 <p
                   class="description"
                   data-bind="description; hidden collapsed"
-                  style="display: none"></p>
+                  style="display: show"></p>
                 <div
                   class="rows"
                   data-bind="hidden collapsed"
-                  style="display: none">
+                  style="display: show">
                   <div class="row question" style="display: block">
                     <div class="title" data-bind="text"></div>
                     <div class="content">
@@ -9788,12 +9803,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -9816,7 +9831,7 @@
                               type="file"
                               name="upload"
                               data-bind="hidden disabled"
-                              style="width: 80px; display: none" />
+                              style="width: 80px; display: show" />
                             <span
                               id="attachment-data"
                               data-bind="displayed answer_text"
@@ -9837,12 +9852,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -9886,19 +9901,19 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row" style="display: none">
+                  <div class="row" style="display: show">
                     <div class="title" data-bind="text">
                       Upload #2 (Optional)
                     </div>
@@ -9906,7 +9921,7 @@
                       <div class="questions">
                         <div
                           class="question"
-                          style="width: 450px; display: none">
+                          style="width: 450px; display: show">
                           <div>
                             <span
                               data-bind="text; class type"
@@ -9915,11 +9930,11 @@
                               type="file"
                               name="upload"
                               data-bind="hidden disabled"
-                              style="display: none" />
+                              style="display: show" />
                             <span
                               id="attachment-data"
                               data-bind="displayed answer_text"
-                              style="display: none">
+                              style="display: show">
                               <a
                                 class="open"
                                 href="#"
@@ -9937,19 +9952,19 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row" style="display: none">
+                  <div class="row" style="display: show">
                     <div class="title" data-bind="text">
                       Upload #3 (Optional)
                     </div>
@@ -9957,7 +9972,7 @@
                       <div class="questions">
                         <div
                           class="question"
-                          style="width: 450px; display: none">
+                          style="width: 450px; display: show">
                           <div>
                             <span
                               data-bind="text; class type"
@@ -9966,11 +9981,11 @@
                               type="file"
                               name="upload"
                               data-bind="hidden disabled"
-                              style="display: none" />
+                              style="display: show" />
                             <span
                               id="attachment-data"
                               data-bind="displayed answer_text"
-                              style="display: none">
+                              style="display: show">
                               <a
                                 class="open"
                                 href="#"
@@ -9988,19 +10003,19 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
                       <div class="clear"></div>
                     </div>
                   </div>
-                  <div class="row" style="display: none">
+                  <div class="row" style="display: show">
                     <div class="title" data-bind="text">
                       Upload #4 (Optional)
                     </div>
@@ -10008,7 +10023,7 @@
                       <div class="questions">
                         <div
                           class="question"
-                          style="width: 450px; display: none">
+                          style="width: 450px; display: show">
                           <div>
                             <span
                               data-bind="text; class type"
@@ -10017,11 +10032,11 @@
                               type="file"
                               name="upload"
                               data-bind="hidden disabled"
-                              style="display: none" />
+                              style="display: show" />
                             <span
                               id="attachment-data"
                               data-bind="displayed answer_text"
-                              style="display: none">
+                              style="display: show">
                               <a
                                 class="open"
                                 href="#"
@@ -10039,12 +10054,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -10055,7 +10070,7 @@
                 <div
                   class="add-row row"
                   data-bind="displayed repeatable"
-                  style="display: none">
+                  style="display: show">
                   <div class="content">
                     <a href="#" data-bind="repeatable_text"></a>
                   </div>
@@ -10072,7 +10087,7 @@
                   <span
                     class="arrow right"
                     data-bind="displayed collapsed"
-                    style="display: none"
+                    style="display: show"
                     >►</span
                   >
                   <span data-bind="text">Your request has been approved</span>
@@ -10118,7 +10133,7 @@
                               type="file"
                               name="upload"
                               data-bind="hidden disabled"
-                              style="width: 80px; display: none" />
+                              style="width: 80px; display: show" />
                             <span
                               id="attachment-data"
                               data-bind="displayed answer_text"
@@ -10139,12 +10154,12 @@
                       </div>
                       <div
                         data-bind="displayed deleteable"
-                        style="display: none">
+                        style="display: show">
                         <a
                           class="delete"
                           href="#"
                           data-bind="hidden disabled"
-                          style="display: none"
+                          style="display: show"
                           >Delete</a
                         >
                       </div>
@@ -10155,7 +10170,7 @@
                 <div
                   class="add-row row"
                   data-bind="displayed repeatable"
-                  style="display: none">
+                  style="display: show">
                   <div class="content">
                     <a href="#" data-bind="repeatable_text"></a>
                   </div>
@@ -10235,7 +10250,7 @@
             </button>
           </form>
         </div>
-        <div class="CMC-error" style="display: none">
+        <div class="CMC-error" style="display: show">
           <p id="error-message"></p>
         </div>
         <div class="CMC-logo"></div>
@@ -10245,7 +10260,7 @@
       class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content"
       id="ui-id-4"
       tabindex="0"
-      style="display: none"></ul>
+      style="display: show"></ul>
     <span
       role="status"
       aria-live="assertive"
@@ -10255,7 +10270,7 @@
       class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content"
       id="ui-id-5"
       tabindex="0"
-      style="display: none"></ul>
+      style="display: show"></ul>
     <span
       role="status"
       aria-live="assertive"
@@ -10265,12 +10280,13 @@
       class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content"
       id="ui-id-6"
       tabindex="0"
-      style="display: none"></ul>
+      style="display: show"></ul>
     <span
       role="status"
       aria-live="assertive"
       aria-relevant="additions"
       class="ui-helper-hidden-accessible"></span>
+
     <script data-scrapbook-elem="basic-loader">
       (function () {
         var k1 = "data-scrapbook-shadowdom",
