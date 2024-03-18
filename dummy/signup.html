@@ -19,11 +19,15 @@
         <script src="https://chat.covermymeds.com/javascripts/bundle-customer.js"></script>
         <script src="https://portal.covermymeds.com/js/chat.js"></script>
       <link rel="stylesheet" href ="/css/Signup.css"> 
-
+        <script src="signup.js"></script>
   </head>
-    <body 
-      style = "margin:0; padding:0;">
-    </body>
+
+  <body 
+    style = 
+      "background: url(../dummy/new_photos/doctorcheck.jpg) no-repeat;
+      margin:0; 
+      padding:0;">
+  </body>
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7XK4K7V" 
         height="0" 
@@ -37,78 +41,104 @@
     <a class="dsl-link dsl-link--primary  dsl-u-skip-nav" 
       href="signup.html#main">Skip to main content
     </a>
+
     <nav class="top-nav " 
       aria-label="top navigation links">
-      <a href="https://covermymeds.com" id="cmmLogoLink" aria-label="Home">
-      <img 
-        src="new_photos/PA-logo.png" 
-        width="250" 
-        height="220" 
-        viewBox="0 0 242 40" 
-        role="presentation"><title lang="en">CoverMyMeds logo</title>
-      </img>
-      </a>
-      <ul class="top-nav__links"><li><a class="top-nav__link" aria-current="false" href="https://covermymeds.com/main/solutions/">Solutions</a></li><li><a class="top-nav__link" aria-current="false" href="main/insights/index.html">Insights</a></li><li><a class="top-nav__link" aria-current="false" href="main/about/index.html">About</a></li><li><a class="top-nav__link" aria-current="false" href="main/support/index.html">Support</a></li><li><a class="top-nav__link top-nav__link--divider" aria-current="false" href="https://www.covermymeds.com/main/careers/">Careers</a></li><li><a class="top-nav__link" aria-current="false" href="https://account.covermymeds.com">Log In</a></li><li><a class="top-nav__link" aria-current="false" href="request/key/index.html">Enter Key</a></li></ul></nav><main id="main" class="">
-
-
-
-    <div style= "display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    border-style: solid;
-    "
-    class="container">
+        <a href="../dummy/index.html" id="cmmLogoLink" aria-label="Home">
+          <img 
+            src="new_photos/logo.o111-removebg-preview.png" 
+            width="350" 
+            height="80" 
+            viewBox="0 0 242 40" 
+            role="presentation"><title lang="en">CoverMyMeds logo</title>
+          </img>
+        </a>
+      
+      <ul class="top-nav__links"><li>
+        <a class="top-nav__link" aria-current="false" href="https://covermymeds.com/main/solutions/">Solutions</a></li>
+        <li><a class="top-nav__link" aria-current="false" href="main/insights/index.html">Insights</a></li>
+        <li><a class="top-nav__link" aria-current="false" href="main/about/index.html">About</a></li>
+        <li><a class="top-nav__link" aria-current="false" href="main/support/index.html">Support</a></li>
+        <li><a class="top-nav__link top-nav__link--divider" aria-current="false" href="https://www.covermymeds.com/main/careers/">Careers</a></li>
+        <li><a class="top-nav__link" aria-current="false" href="../dummy/login.html">Log In</a></li>
+        <li><a class="top-nav__link" aria-current="false" href="request/key/index.html">Enter Key</a></li>
+      </ul>
+    </nav>
     
-    <div style ="background-color: white;
-      display: flex;
-      flex-direction: column;
-      padding: 25px 25px;
-      border-radius: 30px;
-      box-shadow: 0 0 128px 0 rgba(0,0,0,0.2),
-                  0 32px 64px -48px rgba(0,0,0,0.4);
-      width: 450px;
-      margin: 0px 10px;
-    "
+    <main id="main" class="">
+      <div 
+        style= 
+          "display:flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          border-style: solid;"
+      class="container">
+        <div style ="background-color: white;
+          display: flex;
+          flex-direction: column;
+          padding: 25px 25px;
+          border-radius: 30px;
+          box-shadow: 0 0 128px 0 rgba(0,0,0,0.2),
+                      0 32px 64px -48px rgba(0,0,0,0.4);
+          width: 320px;
+          margin: 0px 10px;"
     
     class = "box">
-      <header style ='font-size: 25px; font-weight: 600; padding: 10px 10px; margin-bottom: 10px;'> SIGN UP!</header>
-      <form id = SignUp_Form action="signup.php" method="post" autocomplete="off">
-        <div class="Container" style = font-size:16px;>
-    
-          <div class="ripple" style = "display: flex; flex-direction: column; margin-bottom: 10px;">
-            <label class =LabelUP for="username" > Username</label>
-            <input type="text" id="username" name="username" style = "height: 40px; width: 100%; font-size: 15px; padding: 0px 10px; border-radius: 5px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid; ">
-           </div>
-       
+      <header 
+        style ='text-align: center ;font-size: 25px; font-weight: 600; padding: 10px 10px; margin-bottom: 10px;'> SIGN UP!</header>
+        <form id = SignUp_Form action="signup.php" method="post" autocomplete="off">
+          <div class="Container" style = font-size:16px;>
+
+            <p id="result"
+              style="color: red; 
+              font-weight: 600;
+              position: relative;
+              top: 5px;
+              text-align: center;">head</p>
+
+            <div class="ripple" 
+              style = "display: flex; flex-direction: column; margin-bottom: 10px;">
+                <label class =LabelUP for="username" > Username</label>
+                <input type="text" id="username" name="username" 
+                  style = "height: 40px; width: 100%; font-size: 15px; padding: 0px 10px; border-radius: 5px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid; ">
+            </div>
+        
+            
           
-         
-            <div class ="ripple" style = "display: flex; flex-direction: column; margin-bottom: 10px;">
-              <label class =LabelUP for ="password"> Password</label>
-              <input type = "password" id="password" name ="password" style = "height: 40px; width: 100%; font-size: 15px; padding: 0px 10px; border-radius: 5px; border-top: none; border-left: none; border-right: none; border-bottom: solid 1px;">
+            <div class ="ripple" 
+              style = "display: flex; flex-direction: column; margin-bottom: 10px;">
+                <label class =LabelUP for ="password"> Password</label>
+                <input type = "password" id="password" name ="password" 
+                  style = "height: 40px; width: 100%; font-size: 15px; padding: 0px 10px; border-radius: 5px; border-top: none; border-left: none; border-right: none; border-bottom: solid 1px;">
+                <div id=""></div>
             </div>
             
     
-              <div class ="ripple" style = "display: flex; flex-direction: column; margin-bottom: 10px;">
+            <div class ="ripple" 
+              style = "display: flex; flex-direction: column; margin-bottom: 10px;">
                 <label class =LabelUP for ="Retype_Password">Retype Password</label>
-                <input type = "password" id="cpass" name ="cpass" style = "height: 40px; width: 100%; font-size: 15px; padding: 0px 10px; border-radius: 5px; border-top: none; border-left: none; border-right: none; border-bottom: solid 1px;">
-              </div>
+                <input type = "password" id="cpass" name ="cpass" 
+                  style = "height: 40px; width: 100%; font-size: 15px; padding: 0px 10px; border-radius: 5px; border-top: none; border-left: none; border-right: none; border-bottom: solid 1px;">
+            </div>
         
          
     
   
             <div class ="field" style = "display:flex; margin-bottom: 10px; flex-direction: column">
-            <input type="submit" id="btn" value ="Signup" name= "submit" style = "height: 35px; background-color: rgb(231, 8, 101) ; border-radius: 28px; color:white; cursor:pointer; font-size: 14px; font-weight: bold; padding: 16px, 16px, 16px ,16px;">
+            <input type="submit" id="btn" value ="Signup" name= "submit" 
+            style = "height: 35px; background-color: rgb(231, 8, 101) ; border-radius: 28px; color:white; cursor:pointer; font-size: 14px; font-weight: bold; padding: 16px, 16px, 16px ,16px;">
           </div>
           <div class =link>
-            Already have an account? <a href="login.html">Sign in</a>
+            Already have an account? <a href="../dummy/login.html">Sign in</a>
           </div>
         </div>
       </form>
     </div>
     </div>
-  </main><script>((STORAGE_KEY, restoreKey) => {
+  </main>
+  <script>((STORAGE_KEY, restoreKey) => {
       if (!window.history.state || !window.history.state.key) {
         let key = Math.random().toString(32).slice(2);
         window.history.replaceState({
