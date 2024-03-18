@@ -223,9 +223,25 @@ function startRequest() {
   // Serialize the form data
   var formData = $("#patientForm").serialize();
 
+  // Generate a random request key
+  var requestKey = generatedRandomString(8);
+
   // Store the form data in sessionStorage
   sessionStorage.setItem("patientFormData", formData);
+  sessionStorage.setItem("requestKey", requestKey);
 
   // Submit the form
   $("#patientForm").submit();
+}
+
+// Function to generate a random alphanumeric string of a specified length
+function generateRandomString(length) {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }     
+  return result;
 }
