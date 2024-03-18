@@ -5891,7 +5891,7 @@
                 <div id="title">
                   <h1>
                     <strong>Untitled Request</strong>
-                    <em> Key: BE2FP4VX </em>
+                    <em> Key: </em>
                     <span class="more-detail">
                       <strong>Need help?</strong>
                       Call us at (866) 452-5017
@@ -8031,6 +8031,17 @@
         });
     });
 });
+
+$(document).ready(function(){
+  // Retrieve the request key from sessionStorage
+  var requestKey = sessionStorage.getItem("requestKey");
+
+  // Check if requestKey exists and is not empty
+  if (requestKey) {
+    // Update the text content of the <em> tag to include the request key
+      $("#title em").text(" Key: " + requestKey);
+  }
+})
    
     </script>
 

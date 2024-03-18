@@ -17,6 +17,7 @@ $bin = isset($_POST['bin']) ? $conn->real_escape_string($_POST['bin']) : '';
 $pcn = isset($_POST['pcn']) ? $conn->real_escape_string($_POST['pcn']) : '';
 $groupId = isset($_POST['group_id']) ? $conn->real_escape_string($_POST['group_id']) : '';
 
+// Prepare SQL statement to prevent SQL injection
 $sql = "SELECT pa_forms_name, pa_forms_description, pa_forms_pdf FROM prior_authorization_forms WHERE RxBIN = '$bin' OR RxPCN_number = '$pcn' OR RxGroup = '$groupId'";
 $result = $conn->query($sql);
 

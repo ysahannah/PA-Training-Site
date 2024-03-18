@@ -146,53 +146,23 @@ $(document).ready(function () {
       $("#bin, #pcn, #group_id").prop("disabled", false);
       $("#q").prop("disabled", true);
     } else if (selectedOption === "Option 2") {
-      $("#q").prop("disabled", true);
+      $("#bin, #pcn, #group_id").prop("disabled", true);
       $("#q").prop("disabled", false);
     }
-  });
 
-  // Change event handler for Option 1 select
-  $("#insurance-state").on("change", function () {
-    var selectedState = $(this).val();
-    var bin = $("#bin").val();
-    var pcn = $("#pcn").val();
-    var groupId = $("#group_id").val();
+    // If Option 1 is selected, trigger live search
+    if (selectedOption === "Option 1") {
+      $("#insurance-state").on("change", function () {
+        var selectedState = $(this).val();
+      });
+    }
 
-    // Make AJAX call to fetch data based on selected state and Option 1
-    $.ajax({
-      url: "./process_pa_forms.php",
-      type: "GET",
-      data: { state: selectedState, bin: bin, pcn: pcn, group_id: groupId },
-      success: function (response) {
-        // Handle the response from the server
-        console.log(response);
-      },
-      error: function (xhr, _status, _error) {
-        // Handle errors
-        console.error(xhr.responseText);
-      },
-    });
-  });
-
-  // Change event handler for Option 2 select
-  $("#insurance-state-option2").on("change", function () {
-    var selectedState = $(this).val();
-    var planPBMName = $("#q").val();
-
-    // Make AJAX call to fetch data based on selected state and Option 2
-    $.ajax({
-      url: "./process_pa_forms2.php",
-      type: "GET",
-      data: { state: selectedState, planPBMName: planPBMName },
-      success: function (response) {
-        // Handle the response from the server
-        console.log(response);
-      },
-      error: function (xhr, _status, _error) {
-        // Handle errors
-        console.error(xhr.responseText);
-      },
-    });
+    // If Option 2 is selected, trigger live search
+    if (selectedOption === "Option 2") {
+      $("#insurance-state-option2").on("change", function () {
+        var selectedState = $(this).val();
+      });
+    }
   });
 
   // Clear button functionality
@@ -239,62 +209,12 @@ $(document).ready(function () {
     var bin = $("#bin").val().trim();
     var pcn = $("#pcn").val().trim();
     var groupId = $("#group_id").val().trim();
-    var planPBMName = $("#q").vai().trim();
     var formData = {
       bin: bin,
       pcn: pcn,
       group_id: groupId,
-      planPBMname: planPBMName,
     };
     fetchFormData(formData);
-  });
-});
-
-// Script for handling PA forms
-$(document).ready(function () {
-  // Function to handle AJAX request
-  function fetchFormData2(formData2) {
-    $.ajax({
-      url: "../start_new_request_form/process_pa_forms2.php",
-      type: "POST",
-      data: formData2,
-      dataType: "json",
-      success: function (data) {
-        if (data.length > 0) {
-          // Update PA Forms section with fetched data
-          $("#pa_forms_name").text(data[0].pa_forms_name);
-          $("#pa_forms_description").text(data[0].pa_forms_description);
-          $("#eligibility-form").show();
-        } else {
-          // Handle case when no data is found
-          $("#proceed").click(function () {
-            $("#form-search-results").show();
-            $("#eligibility-form").hide();
-            $("#submit-pa-form").attr("action", data[0].pa_forms_pdf);
-            $("#form-search-results").hide();
-            console.log("No matching data found.");
-          });
-        }
-      },
-      error: function () {
-        console.log("Error fetching form data.");
-      },
-    });
-  }
-
-  // Event listener for input fields
-  $("#q").on("input", function () {
-    var bin = $("#bin").val().trim();
-    var pcn = $("#pcn").val().trim();
-    var groupId = $("#group_id").val().trim();
-    var planPBMName = $("#q").vai().trim();
-    var formData2 = {
-      bin: bin,
-      pcn: pcn,
-      group_id: groupId,
-      planPBMname: planPBMName,
-    };
-    fetchFormData2(formData2);
   });
 });
 
@@ -303,9 +223,25 @@ function startRequest() {
   // Serialize the form data
   var formData = $("#patientForm").serialize();
 
+  // Generate a random request key
+  var requestKey = generatedRandomString(8);
+
   // Store the form data in sessionStorage
   sessionStorage.setItem("patientFormData", formData);
+  sessionStorage.setItem("requestKey", requestKey);
 
   // Submit the form
   $("#patientForm").submit();
+}
+
+// Function to generate a random alphanumeric string of a specified length
+function generateRandomString(length) {
+  var result = "";
+  var characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }     
+  return result;
 }

@@ -1,57 +1,47 @@
 <?php
-//database connection 
-$host = "localhost";
-$dbusername = "root";
-$dbpass = "";
-$dbname = "covermymeds";
+// Connect to the database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbName = "covermymeds";
 
-$conn = mysqli_connect($host, $dbusername, $dbpass, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbName);
 
-//checking the connection 
-
-if ($conn->connect_error){
-  die("Connection has failed: " . $conn->connect_error);
-
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-//checking if form is submitted
-if (isset($_POST['submit'])){
-  //RETRIVE FORM
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $cpass = $_POST['cpass']; 
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $username = $conn->real_escape_string($_POST["username"]);
+     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-
-
-$sql="select * from users where username='$username'";
-$result = mysqli_query($conn, $sql);
-$count_user = mysqli_num_rows($result);
-
-
-
-//searching if there is identical names/emails, also hashing the password for security
-if($count_user == 0){  
-  if($password==$cpass){
-    //$hash = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-    $result = mysqli_query($conn, $sql);
-    if($result){
-      // Redirect to login page after successful sign-up
-      header("Location: ./login.html");
-      exit();
+    // Check if email already exists
+    $check_username_query = "SELECT * FROM users WHERE username='$username'";
+    $check_username_result = $conn->query($check_username_query);
+    if ($check_username_result) {
+        if ($check_username_result->num_rows > 0) {
+            echo "Error: Username already exists.";
+            exit();
+        }
+    } else {
+        echo "Error: " . $conn->error;
+        exit();
     }
-  }
-  else{
-    echo 'Passwords do not match' ;
-  }
+
+    // Insert new user into the database
+    $users_sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+    
+    if ($conn->query($users_sql) === TRUE) {
+        echo "Registered successfully!";
+        header("Location: ./login.html");
+        exit();
+    } else {
+        echo "Error: Unable to register. Please try again later.";
+        error_log("Error in user registration: " . $conn->error);
+    }
 }
-  else{
-    if($count_user>0){
-      echo 'This user already exists!';
-    }
-    }
-  }
 
-
-
+$conn->close();
 ?>
