@@ -7363,21 +7363,20 @@
                         <!-- START OF KEY CASE -->
                         <div>
                             <div id="title">
-                                <h1>
-                                    <strong>Untitled Request</strong>
-                                    <?php
-            if(isset($_POST['request_key'])) {
-                $requestKey = $_POST['request_key'];
-                echo '<em> Key: ' . $requestKey . '</em>';
-            } else {
-                echo "Request key not found.";
-            }
-            ?>
-                                    <span class="more-detail">
-                                        <strong>Need help?</strong>
-                                        Call us at (866) 452-5017
-                                    </span>
-                                </h1>
+                                <?php
+                                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                    // Retrieve the random key from the first page
+                                    $request_key = $_POST["request_key"];
+                                    echo '<h1>
+                                            <strong>Untitled Request</strong>
+                                            <em> Key: ' . $request_key . '</em>
+                                            <span class="more-detail">
+                                                <strong>Need help?</strong>
+                                                Call us at (866) 452-5017
+                                            </span>
+                                        </h1>';
+                                }
+                                ?>
                                 <div class="clear"></div>
                             </div>
                             <input type="hidden" name="drug_ddid" value="224230" />

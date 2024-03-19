@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     header("Location: ./admin_home.php");
                     exit();
                 case "user":
-                    header("Location: ./start_new_request_form/index.php");
+                    header("Location: ./request/index.html");
                     exit();
                 default:
                     echo "Invalid user type";
@@ -59,3 +59,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 $conn->close();
 ?>
+

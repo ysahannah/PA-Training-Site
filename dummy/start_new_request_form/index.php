@@ -23,9 +23,6 @@
     <meta http-equiv="origin-trial"
         content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <style type="text/css" scoped="scoped" style="white-space: pre-wrap"
         class="pendo-style-cvJE8gwFfaZhjGFpdS6Tc1YmSPg"></style>
     <style type="text/css">
@@ -6923,7 +6920,8 @@
                                                             class="dsl-btn dsl-btn--primary dsl-btn--">
                                                             Start Request
                                                         </button>
-                                                        <input type="hidden" name="request_key" id="request_key_input">
+                                                        <input type="hidden" name="request_key"
+                                                            value="<?php echo uniqid(); ?>">
                                                     </form>
                                                 </div>
                                             </div>
@@ -7042,7 +7040,7 @@
         <div class="CMC-container CMC-minimized">
             <div class="CMC-title-bar">
                 <span class="CMC-expand CMC-button">^</span><span class="CMC-minimize CMC-button">_</span><span
-                    class="CMC-greeting">Chat with CoverMyMeds Support</span>
+                    class="CMC-greeting">Chat with PA Training Support</span>
             </div>
             <div class="CMC-transcript">
                 <p class="CMC-contact-info">We're here to answer your questions.</p>
@@ -7070,6 +7068,8 @@
     });
     </script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../start_new_request_form/script.js"></script>
 </body>
 
