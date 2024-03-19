@@ -1,6 +1,6 @@
-.btn{
+.button{
     color: #fff;
-    background: blue;
+    background: rgb(231, 8, 101);
     width: 100%;
     height: 50px;
     border-radius: 5px;
@@ -8,5 +8,24 @@
     border: none;
     font-size: 17px;
     cursor: pointer;
+  box-shadow: 3px 0 10px rgba(0,0,0,.5);
+  
+}
+
+.button{
+    color: #fff;
+    background: rgb(231, 8, 101);
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 27px;
+    cursor: pointer;
     box-shadow: 3px 0 10px rgba(0,0,0,.5);
 }
+
+.button:hover {
+    background-color: gray;
