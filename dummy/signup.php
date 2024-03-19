@@ -13,6 +13,14 @@ if ($conn->connect_error) {
 }
 
 // Handle form submission
+if($_SERVER["REQUEST_METHOD"] === "POST"){
+    //CHECK IF USERNAME EMPTY
+    if(empty(trim($_POST["username"]))){
+        header("location: ./signup-failed.html");
+        exit();
+    }
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $conn->real_escape_string($_POST["username"]);
      $password = $_POST["password"];
@@ -35,7 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     if ($conn->query($users_sql) === TRUE) {
         echo "Registered successfully!";
+<<<<<<< HEAD
         header("Location: ./login.php");
+=======
+        header("Location: ./signup-success.html");
+>>>>>>> b286a538365914632d1804920894f277a674d762
         exit();
     } else {
         echo "Error: Unable to register. Please try again later.";
