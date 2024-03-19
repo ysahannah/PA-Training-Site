@@ -6913,15 +6913,14 @@
                                                         More Info
                                                     </button>
                                                     <form id="submit-pa-form"
-                                                        action="../original_request_form/index.php" method="POST">
+                                                        action="../start_new_request_form/generate_request_key.php"
+                                                        method="POST">
                                                         <button
                                                             aria-label="Start request for CVS Caremark Non-Medicare Formulary Exception / Prior Authorization Request Form"
                                                             type="button" onclick="startRequest()"
                                                             class="dsl-btn dsl-btn--primary dsl-btn--">
                                                             Start Request
                                                         </button>
-                                                        <input type="hidden" name="request_key"
-                                                            value="<?php echo uniqid(); ?>">
                                                     </form>
                                                 </div>
                                             </div>
