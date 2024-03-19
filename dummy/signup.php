@@ -13,6 +13,14 @@ if ($conn->connect_error) {
 }
 
 // Handle form submission
+if($_SERVER["REQUEST_METHOD"] === "POST"){
+    //CHECK IF USERNAME EMPTY
+    if(empty(trim($_POST["username"]))){
+        echo"Username cannot be empty";
+        exit();
+    }
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $conn->real_escape_string($_POST["username"]);
      $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
