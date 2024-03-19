@@ -14,14 +14,18 @@ if ($conn->connect_error) {
 
 // Handle form submission
 if($_SERVER["REQUEST_METHOD"] === "POST"){
-    //CHECK IF USERNAME EMPTY
+    $username = $conn->real_escape_string($_POST["username"]);
+    $password = $_POST["password"];
+
+    //CHECK IF USERNAME OR PASSWORD IS EMPTY
     if(empty(trim($_POST["username"]))){
-        header("location: ./signup-failed.html");
+        header("location: ./signup-failedemptyuser.html");
         exit();
+    } elseif(empty($password)){
+        header("location: ./signup-failedemptypassword.html");
     }
 }
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+if  ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $conn->real_escape_string($_POST["username"]);
      $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
