@@ -43,11 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     if ($conn->query($users_sql) === TRUE) {
         echo "Registered successfully!";
-<<<<<<< HEAD
-        header("Location: ./login.php");
-=======
         header("Location: ./signup-success.html");
->>>>>>> b286a538365914632d1804920894f277a674d762
         exit();
     } else {
         echo "Error: Unable to register. Please try again later.";
