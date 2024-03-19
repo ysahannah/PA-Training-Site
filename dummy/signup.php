@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 }
 if  ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $conn->real_escape_string($_POST["username"]);
-     $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+     $password = $_POST["password"];
 
     // Check if email already exists
     $check_username_query = "SELECT * FROM users WHERE username='$username'";
