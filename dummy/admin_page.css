@@ -71,3 +71,10 @@ input::placeholder{
 .group a:focus{
     text-decoration: underline;
 }
+#result{
+    color: red;
+    font-weight: 600;
+    position: relative;
+    top: 25px;
+    text-align: center;
+}
