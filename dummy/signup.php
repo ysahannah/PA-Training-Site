@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     //CHECK IF USERNAME EMPTY
     if(empty(trim($_POST["username"]))){
-        echo"Username cannot be empty";
+        header("location: ./signup-failed.html");
         exit();
     }
 }
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     if ($conn->query($users_sql) === TRUE) {
         echo "Registered successfully!";
-        header("Location: ./login.html");
+        header("Location: ./signup-success.html");
         exit();
     } else {
         echo "Error: Unable to register. Please try again later.";
