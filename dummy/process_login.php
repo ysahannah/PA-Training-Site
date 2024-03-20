@@ -52,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit(); // Make sure to exit after redirection
         } else {
             echo "Invalid password";
+            header("Location: ./LoginInvalidPass.html");
         }
     } else {
         echo "User not found";
