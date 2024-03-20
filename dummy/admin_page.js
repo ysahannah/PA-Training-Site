@@ -29,3 +29,6 @@ function validation(){
     }
 }
 var popup=document.getElementById('popup');
+function CloseSlide(){
+    popup.classList.remove("open-slide")
+}

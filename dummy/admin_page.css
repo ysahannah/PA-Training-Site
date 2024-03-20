@@ -1,3 +1,8 @@
+header{
+    padding: 5px;
+    height: 70px;
+    background: url(../dummy/new_photos/logo.o111-removebg-preview.png) no-repeat;
+}
 body{
     background: url(../dummy/new_photos/medecine.jpg) no-repeat;
     background-position: center;
@@ -80,12 +85,12 @@ input::placeholder{
 }
 .popup{
     width: 300px;
-    background-color: #fff;
+    background-color: white;
     border-radius: 8px;
-    position: ;
+    position: absolute;
     top: 0;
-    left: 50px;
-    transform: translate(-50%,-50%) scale(1);
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
     transition: transform .4s , top .4s;
     visibility: hidden;
     text-align: center;
@@ -99,26 +104,26 @@ input::placeholder{
     margin-top: 10px;
 }
 .popup button{
-    width: 100px;
+    width: 100%;
     background: #00ff00;
     padding: 10px 0;
     margin-top: 10px;
     border: none;
     outline: none;
     font-size: 18px;
-    color: #fff;
-    border-radius: 5px;
+    color: white;
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow:0 0 0 2px  rgba(0,0,0,.1);
+    box-shadow:0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 .popup a{
-    color: black;
+    color: white;
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 2px;
 }
 .open-slide{
-    top: 50px;
-    transform: translate(-50%, -50%) scale(1);
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
     visibility: visible;
 }
