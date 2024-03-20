@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Page</title>
     <link rel="stylesheet" href="../dummy/admin_page.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </head>
 
   <body>
@@ -15,7 +17,7 @@
 
           <h2> REGISTER </h2>
 
-          <p id="result">head</p>
+          <p id="result"></p>
 
           <div class="input-box">
             <input type="text" name="Username" placeholder="Username">
@@ -25,8 +27,12 @@
             <input type="password" name="Password" placeholder="Password">
           </div>
 
+          <div class="input-box">
+            <input type="password" name="CPassword" placeholder="Confirm Password">
+          </div>
+
           <div class="button">
-            <input type="submit" class="btn" value="Register">
+            <input type="submit" class="btn" onclick="validation()" value="Register">
           </div>
 
           <div class="group">
@@ -35,6 +41,14 @@
           </div>
 
         </form>
+      </div>
+
+      <!--pop up value-->
+      <div class="popup" id="popup">
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        <h2>Thank You!</h2>
+        <p>Your were Registered Succesful.</p>
+        <a href="#"><button>OK</button></a>
       </div>
     </div>
 

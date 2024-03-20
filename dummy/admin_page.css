@@ -78,3 +78,47 @@ input::placeholder{
     top: 25px;
     text-align: center;
 }
+.popup{
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    position: ;
+    top: 0;
+    left: 50px;
+    transform: translate(-50%,-50%) scale(1);
+    transition: transform .4s , top .4s;
+    visibility: hidden;
+    text-align: center;
+    padding: 0 30px 30px;
+    height: 200px;
+    color: black;
+}
+.popup ion-icon{
+    color: #00ff00;
+    font-size: 50px;
+    margin-top: 10px;
+}
+.popup button{
+    width: 100px;
+    background: #00ff00;
+    padding: 10px 0;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow:0 0 0 2px  rgba(0,0,0,.1);
+}
+.popup a{
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+.open-slide{
+    top: 50px;
+    transform: translate(-50%, -50%) scale(1);
+    visibility: visible;
+}
