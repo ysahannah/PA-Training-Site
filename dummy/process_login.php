@@ -26,10 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
-        // $hashed_password = $row["password"];
+        $stored_password = $row["password"];
 
-        // Verify the password
-        //if (password_verify($password, $hashed_password)) {
+
+         //Verify the password
+         if ($password === $stored_password) {
             // Start the session
             session_start();
 
@@ -52,12 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit(); // Make sure to exit after redirection
         } else {
             echo "Invalid password";
-            header("Location: ./LoginInvalidPass.html");
+          header("Location: ./LoginInvalidPass.html");
         }
     } else {
         echo "User not found";
+        header("Location: ./LoginUserNotFound.html");
     }
-
+}
 $conn->close();
 ?>
 

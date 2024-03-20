@@ -46,7 +46,7 @@
         <nav class="mdc-top-app-bar" aria-label="header">
             <div class="mdc-top-app-bar__row">
                 <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                    <a class="mdc-top-app-bar__title" href="https://www.covermymeds.com/main/"><img alt="OIDC"
+                    <a class="mdc-top-app-bar__title" href="index.html"><img alt="OIDC"
                             src="new_photos/PA-logo.png" /></a>
                 </div>
 
