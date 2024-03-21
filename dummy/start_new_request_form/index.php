@@ -6,15 +6,15 @@
 <head>
     <meta charset="UTF-8" />
     <title>Start a New Request - CoverMyMeds</title>
+    <link rel="icon" href="/dummy/new_photos/LG.png">
+
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="dsl-fonts-WT5DQAQL.css" />
     <link rel="stylesheet" href="dsl-styles-YCXHNMA7.css" />
     <link rel="stylesheet" href="TopNav-L337IQDX.css" />
     <link rel="stylesheet" href="main-YBGK6ACJ.css" />
     <link rel="stylesheet" href="UnsupportedBrowser-KAWX53IV.css" />
-    <link sizes="16x16" rel="icon" type="image/png" href="favicon-16x16.png" />
-    <link sizes="32x32" rel="icon" type="image/png" href="favicon-32x32.png" />
-    <link sizes="96x96" rel="icon" type="image/png" href="favicon-96x96.png" />
+   
     <link rel="stylesheet" href="Formpick-SD52YFNZ.css" />
     <meta http-equiv="origin-trial"
         content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9" />
