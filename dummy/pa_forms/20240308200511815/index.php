@@ -8727,7 +8727,7 @@
                                                     <span data-bind="text; class type" class="text">First</span>
                                                     <input id="answer_text" type="text" name="provider_firstName"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="COURTNEY" />
+                                                        value="<?php echo $provider_firstName ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8736,7 +8736,7 @@
                                                     <span data-bind="text; class type" class="text">Last</span>
                                                     <input id="answer_text" type="text" name="provider_lastName"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="HENRY" />
+                                                        value="<?php  echo $provider_lastName ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8776,9 +8776,9 @@
                                             <div class="question" style="display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">Street</span>
-                                                    <input id="answer_text" type="text" name="provider_address1"
+                                                    <input id="street" type="text" name="street"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="180B DEBUYS RD" />
+                                                        value="<?php echo $street ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8786,17 +8786,17 @@
                                                 <div>
                                                     <span data-bind="text; class type" class="text">Address Line 2
                                                         (optional)</span>
-                                                    <input id="answer_text" type="text" name="provider_address2"
-                                                        data-bind="disabled disabled" disabled="disabled" value="" />
+                                                    <input id="street2" type="text" name="street2"
+                                                        data-bind="disabled disabled" disabled="disabled" value="<?php echo $street2 ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
                                             <div class="question" style="width: 200px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">City</span>
-                                                    <input id="answer_text" type="text" name="provider_city"
+                                                    <input id="city" type="text" name="city"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="BILOXI" />
+                                                        value="<?php echo $city ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8804,7 +8804,7 @@
                                                 <div>
                                                     <span class="dropdown">State</span>
                                                     <select name="provider_state" disabled="disabled">
-                                                        <option value="<?php echo $provider_state ?>"></option>
+                                                        <option value="<?php echo $state ?>"></option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -8832,9 +8832,9 @@
                                             <div class="question" style="width: 150px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text"></span>
-                                                    <input id="answer_text" type="text" name="provider_phone"
+                                                    <input id="phone" type="text" name="phone"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="(228) 273-4096" />
+                                                        value="<?php echo $phone ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8853,9 +8853,9 @@
                                             <div class="question" style="width: 150px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text"></span>
-                                                    <input id="answer_text" type="text" name="provider_fax"
+                                                    <input id="fax" type="text" name="fax"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="(877) 796-0186" />
+                                                        value="<?php echo $fax ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8900,12 +8900,12 @@
                                             <div class="question" style="display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text"></span>
-                                                    <input id="answer_text" type="text" name="drug_description"
+                                                    <input id="medication" type="text" name="medication_id"
                                                         data-bind="disabled disabled"
                                                         placeholder="Begin typing the medication name and select from list."
                                                         class="ui-autocomplete-input" autocomplete="off"
                                                         disabled="disabled"
-                                                        value="oxyCODONE-Acetaminophen 10-325MG tablets" />
+                                                        value="<?php echo $medication_id ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8929,8 +8929,8 @@
                                                         and a preceding zero before the decimal when
                                                         applicable. For example, .5 must be entered as
                                                         0.5.)</span>
-                                                    <input id="answer_text" type="text" name="drug_quantity"
-                                                        data-bind="disabled disabled" disabled="disabled" value="84" />
+                                                    <input id="quantity" type="text" name="quantity"
+                                                        data-bind="disabled disabled" disabled="disabled" value="<?php echo $quantity ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8951,8 +8951,8 @@
                                             <div class="question" style="width: 150px; display: block">
                                                 <div>
                                                     <span class="dropdown"></span>
-                                                    <select name="drug_quantity_qualifier" disabled="disabled">
-                                                        <option value=""></option>
+                                                    <select name="dosage" disabled="disabled">
+                                                        <option value="<?php echo $dosage ?>"></option>
                                                         <option value="C62412">Applicator</option>
                                                         <option value="C54564">Blister</option>
                                                         <option value="C64696">Caplet</option>
@@ -9002,7 +9002,7 @@
                                                 <div>
                                                     <span data-bind="text; class type" class="text">(Up to 3
                                                         digits)</span>
-                                                    <input id="answer_text" type="text" name="drug_days_supply"
+                                                    <input id="supply" type="text" name="days_supply"
                                                         data-bind="disabled disabled" disabled="disabled" value="28" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
@@ -9524,7 +9524,7 @@
         style="display: show"></ul>
     <span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./script.js"></script>
 
 </body>

@@ -46,8 +46,9 @@
       </a>
       <ul class="top-nav__links"></ul>
     </nav>
-    <!-- Sidebar -->
+
     <div class="dsl-side-nav-wrapper slide-from-left-react-enter-done">
+      <!-- Start of Sidebar -->
       <nav
         aria-label="navigation panel"
         class="dsl-side-nav"
@@ -67,6 +68,41 @@
             </div>
           </li>
         </ul>
+
+        <ul class="dsl-side-nav__list">
+          <li>
+            <div>
+              <button
+                aria-expanded="false"
+                data-preview-links="ga-qa-dsl-side-nav-item-preview-account-preferences,ga-qa-dsl-side-nav-item-preview-account-profile,ga-qa-dsl-side-nav-item-preview-recent-activity,ga-qa-dsl-side-nav-item-preview-verify-prescribers,ga-qa-dsl-side-nav-item-preview-help,ga-qa-dsl-side-nav-item-preview-privacy-and-terms"
+                class="dsl-side-nav__item"
+                id="ga-qa-dsl-side-nav-item-account"
+                type="button"
+                aria-haspopup="true">
+                <img
+                  alt=""
+                  src="request/images/group.png" />
+                <div class="dsl-side-nav__item__title">User Management</div>
+              </button>
+            </div>
+          </li>
+          <li>
+            <div>
+              <a
+                aria-expanded="false"
+                data-preview-links=""
+                href="https://account.covermymeds.com/logout"
+                class="dsl-side-nav__item"
+                id="ga-qa-dsl-side-nav-item-logout"
+                ><img
+                  alt=""
+                  src="request/images/icons8-settings.svg" />
+                <div class="dsl-side-nav__item__title">Settings</div>
+              </a>
+            </div>
+          </li>
+        </ul>
+        
         <ul class="dsl-side-nav__list">
           <li>
             <div>
@@ -101,9 +137,9 @@
           </li>
         </ul>
       </nav>
+      <!-- End of Sidebar -->
     </div>
-    <!-- Sidebar -->
-    
+
     <main id="main" class="with-side-nav">
       <div class="request-list request-list--condensed">
         <div class="call-to-action">

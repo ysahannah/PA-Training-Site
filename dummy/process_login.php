@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             // Password is correct, set session variables or redirect to homepage
             switch ($row["usertype"]) {
                 case "admin":
-                    header("Location: ./admin_home.php");
+                    header("Location: ./request/admin.html");
                     exit();
                 case "user":
                     header("Location: ./request/index.html");
@@ -62,4 +62,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 $conn->close();
 ?>
+
 
