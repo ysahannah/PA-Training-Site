@@ -35,8 +35,11 @@
 
     <!-- Google Optimize -->
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BDE8K2HJ | PORTER | CoverMyMeds</title>
-    <link href="favicon.ico" rel="icon" type="images/vnd.microsoft.icon" />
+    <link rel="icon" href="/dummy/new_photos/LG.png">
+
+
     <meta content="noindex" name="robots" />
     <meta content="true" name="v2-app-enabled" />
     <meta content="2934329" name="current-user-id" />
