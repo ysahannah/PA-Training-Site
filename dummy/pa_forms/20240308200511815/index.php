@@ -8314,7 +8314,20 @@
                             <div id="title">
                                 <h1>
                                     <strong>TIFFANY PORTER</strong>
-                                    <em> Key: BDE8K2HJ </em>
+                                    <?php
+                                    session_start();
+
+                                    // Check if the key is passed in the URL
+                                    if(isset($_GET['key'])) {
+                                        // Retrieve the key from the URL
+                                        $request_key = $_GET['key'];
+
+                                        // Display the key within the <em> element
+                                        echo "<em> Key: $request_key</em>";
+                                    } else {
+                                        echo "Key not found in URL.";
+                                    }
+                                    ?>
                                     – PA Case ID: 24067849698
                                     <span class="more-detail">
                                         <strong>Need help?</strong>
@@ -8487,26 +8500,27 @@
                                             <div class="question" style="width: 250px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">First</span>
-                                                    <input id="answer_text" type="text" name="patient_first_name"
+                                                    <input id="firstName" type="text" name="firstName"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="TIFFANY" />
+                                                        value="<?php echo $firstName ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
                                             <div class="question" style="width: 190px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">Middle</span>
-                                                    <input id="answer_text" type="text" name="patient_middle_name"
-                                                        data-bind="disabled disabled" disabled="disabled" value="A" />
+                                                    <input id="answer_text" type="text" name="middle_name"
+                                                        data-bind="disabled disabled" disabled="disabled"
+                                                        value="<?php echo $middle_name ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
                                             <div class="question" style="width: 451px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">Last</span>
-                                                    <input id="answer_text" type="text" name="patient_last_name"
+                                                    <input id="answer_text" type="text" name="lastName"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="PORTER" />
+                                                        value="<?php echo $lastName ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8525,9 +8539,9 @@
                                             <div class="question" style="width: 100px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text"></span>
-                                                    <input id="answer_text" type="text" name="patient_date_of_birth"
+                                                    <input id="answer_text" type="text" name="birthday"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="11/20/1985" />
+                                                        value="<?php echo $birthday ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8548,13 +8562,14 @@
                                                     <span class="radio"></span>
                                                     <div class="choices">
                                                         <label>
-                                                            <input type="radio" name="S1-patient_gender" value="M"
-                                                                disabled="disabled" />
+                                                            <input type="radio" name="gender"
+                                                                value="<?php echo $gender ?>>" disabled="disabled" />
                                                             Male
                                                         </label>
                                                         <label>
-                                                            <input type="radio" name="S1-patient_gender" value="F"
-                                                                checked="checked" disabled="disabled" />
+                                                            <input type="radio" name="gender"
+                                                                value="<?php echo $gender ?>" checked="checked"
+                                                                disabled="disabled" />
                                                             Female
                                                         </label>
                                                     </div>
@@ -8575,9 +8590,8 @@
                                             <div class="question" style="width: 200px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text"></span>
-                                                    <input id="answer_text" type="text" name="patient_id_number"
-                                                        data-bind="disabled disabled" disabled="disabled"
-                                                        value="00106168401001" />
+                                                    <input id="answer_text" type="text" name="member_id"
+                                                        data-bind="disabled disabled" disabled="disabled" value="" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8596,9 +8610,9 @@
                                             <div class="question" style="width: 450px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">Street</span>
-                                                    <input id="answer_text" type="text" name="patient_address1"
+                                                    <input id="answer_text" type="text" name="street"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="4222 MARTHA COURT" />
+                                                        value="<?php echo $street ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8606,94 +8620,35 @@
                                                 <div>
                                                     <span data-bind="text; class type" class="text">Street 2
                                                         (optional)</span>
-                                                    <input id="answer_text" type="text" name="patient_address2"
-                                                        data-bind="disabled disabled" disabled="disabled" value="" />
+                                                    <input id="answer_text" type="text" name="street2"
+                                                        data-bind="disabled disabled" disabled="disabled"
+                                                        value="<?php echo $street2 ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
                                             <div class="question" style="width: 200px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">City</span>
-                                                    <input id="answer_text" type="text" name="patient_city"
+                                                    <input id="answer_text" type="text" name="city"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="PASCAGOULA" />
+                                                        value="<?php echo $city ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
                                             <div class="question" style="width: 125px; display: block">
                                                 <div>
                                                     <span class="dropdown">State</span>
-                                                    <select name="patient_state" disabled="disabled">
-                                                        <option value=""></option>
-                                                        <option value="AL">Alabama</option>
-                                                        <option value="AK">Alaska</option>
-                                                        <option value="AS">American Samoa</option>
-                                                        <option value="AZ">Arizona</option>
-                                                        <option value="AR">Arkansas</option>
-                                                        <option value="CA">California</option>
-                                                        <option value="CO">Colorado</option>
-                                                        <option value="CT">Connecticut</option>
-                                                        <option value="DE">Delaware</option>
-                                                        <option value="FL">Florida</option>
-                                                        <option value="GA">Georgia</option>
-                                                        <option value="GU">Guam</option>
-                                                        <option value="HI">Hawaii</option>
-                                                        <option value="ID">Idaho</option>
-                                                        <option value="IL">Illinois</option>
-                                                        <option value="IN">Indiana</option>
-                                                        <option value="IA">Iowa</option>
-                                                        <option value="KS">Kansas</option>
-                                                        <option value="KY">Kentucky</option>
-                                                        <option value="LA">Louisiana</option>
-                                                        <option value="ME">Maine</option>
-                                                        <option value="MD">Maryland</option>
-                                                        <option value="MA">Massachusetts</option>
-                                                        <option value="MI">Michigan</option>
-                                                        <option value="MN">Minnesota</option>
-                                                        <option value="MS" selected="selected">
-                                                            Mississippi
-                                                        </option>
-                                                        <option value="MO">Missouri</option>
-                                                        <option value="MT">Montana</option>
-                                                        <option value="NE">Nebraska</option>
-                                                        <option value="NV">Nevada</option>
-                                                        <option value="NH">New Hampshire</option>
-                                                        <option value="NJ">New Jersey</option>
-                                                        <option value="NM">New Mexico</option>
-                                                        <option value="NY">New York</option>
-                                                        <option value="NC">North Carolina</option>
-                                                        <option value="ND">North Dakota</option>
-                                                        <option value="OH">Ohio</option>
-                                                        <option value="OK">Oklahoma</option>
-                                                        <option value="OR">Oregon</option>
-                                                        <option value="PW">Palau</option>
-                                                        <option value="PA">Pennsylvania</option>
-                                                        <option value="PH">Philippines</option>
-                                                        <option value="PR">Puerto Rico</option>
-                                                        <option value="RI">Rhode Island</option>
-                                                        <option value="MP">Saipan</option>
-                                                        <option value="SC">South Carolina</option>
-                                                        <option value="SD">South Dakota</option>
-                                                        <option value="TN">Tennessee</option>
-                                                        <option value="TX">Texas</option>
-                                                        <option value="UT">Utah</option>
-                                                        <option value="VT">Vermont</option>
-                                                        <option value="VI">Virgin Islands</option>
-                                                        <option value="VA">Virginia</option>
-                                                        <option value="WA">Washington</option>
-                                                        <option value="DC">Washington D.C.</option>
-                                                        <option value="WV">West Virginia</option>
-                                                        <option value="WI">Wisconsin</option>
-                                                        <option value="WY">Wyoming</option>
+                                                    <select name="provider_state" disabled="disabled">
+                                                        <option value="<?php echo $provider_state ?>"></option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="question" style="width: 105px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">Zip</span>
-                                                    <input id="answer_text" type="text" name="patient_zip"
+                                                    <input id="answer_text" type="text" name="zip_code"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="39581" />
+                                                        value="<?php echo $zip_code ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8712,8 +8667,9 @@
                                             <div class="question" style="width: 150px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text"></span>
-                                                    <input id="answer_text" type="text" name="patient_phone"
-                                                        data-bind="disabled disabled" disabled="disabled" value="" />
+                                                    <input id="answer_text" type="text" name="phone"
+                                                        data-bind="disabled disabled" disabled="disabled"
+                                                        value="<?php echo $phone ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8769,7 +8725,7 @@
                                             <div class="question" style="width: 200px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">First</span>
-                                                    <input id="answer_text" type="text" name="provider_first_name"
+                                                    <input id="answer_text" type="text" name="provider_firstName"
                                                         data-bind="disabled disabled" disabled="disabled"
                                                         value="COURTNEY" />
                                                     <span class="error" data-bind="text error"></span>
@@ -8778,7 +8734,7 @@
                                             <div class="question" style="width: 200px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">Last</span>
-                                                    <input id="answer_text" type="text" name="provider_last_name"
+                                                    <input id="answer_text" type="text" name="provider_lastName"
                                                         data-bind="disabled disabled" disabled="disabled"
                                                         value="HENRY" />
                                                     <span class="error" data-bind="text error"></span>
@@ -8799,9 +8755,9 @@
                                             <div class="question" style="width: 175px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text"></span>
-                                                    <input id="answer_text" type="text" name="provider_npi"
+                                                    <input id="answer_text" type="text" name="npi"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="1356014880" />
+                                                        value="<?php echo $npi ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8848,76 +8804,16 @@
                                                 <div>
                                                     <span class="dropdown">State</span>
                                                     <select name="provider_state" disabled="disabled">
-                                                        <option value=""></option>
-                                                        <option value="AL">Alabama</option>
-                                                        <option value="AK">Alaska</option>
-                                                        <option value="AS">American Samoa</option>
-                                                        <option value="AZ">Arizona</option>
-                                                        <option value="AR">Arkansas</option>
-                                                        <option value="CA">California</option>
-                                                        <option value="CO">Colorado</option>
-                                                        <option value="CT">Connecticut</option>
-                                                        <option value="DE">Delaware</option>
-                                                        <option value="FL">Florida</option>
-                                                        <option value="GA">Georgia</option>
-                                                        <option value="GU">Guam</option>
-                                                        <option value="HI">Hawaii</option>
-                                                        <option value="ID">Idaho</option>
-                                                        <option value="IL">Illinois</option>
-                                                        <option value="IN">Indiana</option>
-                                                        <option value="IA">Iowa</option>
-                                                        <option value="KS">Kansas</option>
-                                                        <option value="KY">Kentucky</option>
-                                                        <option value="LA">Louisiana</option>
-                                                        <option value="ME">Maine</option>
-                                                        <option value="MD">Maryland</option>
-                                                        <option value="MA">Massachusetts</option>
-                                                        <option value="MI">Michigan</option>
-                                                        <option value="MN">Minnesota</option>
-                                                        <option value="MS" selected="selected">
-                                                            Mississippi
-                                                        </option>
-                                                        <option value="MO">Missouri</option>
-                                                        <option value="MT">Montana</option>
-                                                        <option value="NE">Nebraska</option>
-                                                        <option value="NV">Nevada</option>
-                                                        <option value="NH">New Hampshire</option>
-                                                        <option value="NJ">New Jersey</option>
-                                                        <option value="NM">New Mexico</option>
-                                                        <option value="NY">New York</option>
-                                                        <option value="NC">North Carolina</option>
-                                                        <option value="ND">North Dakota</option>
-                                                        <option value="OH">Ohio</option>
-                                                        <option value="OK">Oklahoma</option>
-                                                        <option value="OR">Oregon</option>
-                                                        <option value="PW">Palau</option>
-                                                        <option value="PA">Pennsylvania</option>
-                                                        <option value="PH">Philippines</option>
-                                                        <option value="PR">Puerto Rico</option>
-                                                        <option value="RI">Rhode Island</option>
-                                                        <option value="MP">Saipan</option>
-                                                        <option value="SC">South Carolina</option>
-                                                        <option value="SD">South Dakota</option>
-                                                        <option value="TN">Tennessee</option>
-                                                        <option value="TX">Texas</option>
-                                                        <option value="UT">Utah</option>
-                                                        <option value="VT">Vermont</option>
-                                                        <option value="VI">Virgin Islands</option>
-                                                        <option value="VA">Virginia</option>
-                                                        <option value="WA">Washington</option>
-                                                        <option value="DC">Washington D.C.</option>
-                                                        <option value="WV">West Virginia</option>
-                                                        <option value="WI">Wisconsin</option>
-                                                        <option value="WY">Wyoming</option>
+                                                        <option value="<?php echo $provider_state ?>"></option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="question" style="width: 105px; display: block">
                                                 <div>
                                                     <span data-bind="text; class type" class="text">Zip</span>
-                                                    <input id="answer_text" type="text" name="provider_zip"
+                                                    <input id="answer_text" type="text" name="zip_code"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="39531" />
+                                                        value="<?php echo $zip_code ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
