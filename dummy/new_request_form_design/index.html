@@ -6079,1061 +6079,101 @@
               </div>
             </div>
           </div>
-          <div
-            id="patient-section"
-            class="dsl-card section dsl-u-mb2 dsl-u-pt2 dsl-u-pb2">
-            <div class="accordion-base">
-              <button
-                id=""
-                style="color: black"
-                class="dsl-btn dsl-btn--text dsl-btn--sm accordion-button">
-                <div class="dsl-u-flex dsl-u-md">Patient</div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  role="presentation"
-                  class="dsl-icon accordion-icon expanded">
-                  <title lang="en">icon</title>
-                  <path
-                    style="transform: translateY(4px)"
-                    d="M 2.820312 1.179688 L 12 10.339844 L 21.179688 1.179688 L 24 4 L 12 16 L 0 4 Z M 2.820312 1.179688 "></path>
-                </svg>
-              </button>
-              <div
-                style="transition: height 0.2s ease-out"
-                class="accordion-content visible">
+
+          <!-- Start of Patient Section -->
+          <form
+            action="../new_request_form_design/process_patient_information.php"
+            method="POST">
+            <div
+              id="patient-section"
+              class="dsl-card section dsl-u-mb2 dsl-u-pt2 dsl-u-pb2">
+              <div class="accordion-base">
+                <button
+                  id=""
+                  style="color: black"
+                  class="dsl-btn dsl-btn--text dsl-btn--sm accordion-button">
+                  <div class="dsl-u-flex dsl-u-md">Patient</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    role="presentation"
+                    class="dsl-icon accordion-icon expanded">
+                    <title lang="en">icon</title>
+                    <path
+                      style="transform: translateY(4px)"
+                      d="M 2.820312 1.179688 L 12 10.339844 L 21.179688 1.179688 L 24 4 L 12 16 L 0 4 Z M 2.820312 1.179688 "></path>
+                  </svg>
+                </button>
                 <div
-                  class="MuiGrid-root MuiGrid-container dsl-u-mt2 css-v3z1wi">
+                  style="transition: height 0.2s ease-out"
+                  class="accordion-content visible">
                   <div
-                    class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-13ps8n2">
-                    <span class="dsl-u-700 dsl-u-md"
-                      >Fields with an
-                      <span class="dsl-u-text-error">*</span> are required</span
-                    >
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-9 css-1ei9qk5"
-                    id="patient-address-book-container">
+                    class="MuiGrid-root MuiGrid-container dsl-u-mt2 css-v3z1wi">
                     <div
-                      class="dsl-choice-select"
-                      data-testid="dsl-choice-select">
+                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-13ps8n2">
+                      <span class="dsl-u-700 dsl-u-md"
+                        >Fields with an
+                        <span class="dsl-u-text-error">*</span> are
+                        required</span
+                      >
+                    </div>
+                    <div
+                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-9 css-1ei9qk5"
+                      id="patient-address-book-container">
+                      <div
+                        class="dsl-choice-select"
+                        data-testid="dsl-choice-select">
+                        <button
+                          id="patient-address-book"
+                          type="button"
+                          class="dsl-btn dsl-choice-select__btn dsl-choice-select__btn--outline"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          aria-label="Use space bar to open the dropdown">
+                          <span>PATIENT ADDRESS BOOK</span
+                          ><i
+                            class="dsl-choice-select__icon dsl-choice-select__icon--default"
+                            aria-hidden="true"></i>
+                        </button>
+                      </div>
                       <button
-                        id="patient-address-book"
-                        type="button"
-                        class="dsl-btn dsl-choice-select__btn dsl-choice-select__btn--outline"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        aria-label="Use space bar to open the dropdown">
-                        <span>PATIENT ADDRESS BOOK</span
-                        ><i
-                          class="dsl-choice-select__icon dsl-choice-select__icon--default"
-                          aria-hidden="true"></i>
-                      </button>
-                    </div>
-                    <button
-                      id="patient-clear-address-book"
-                      class="dsl-btn dsl-btn--text dsl-btn-- clear-address-button">
-                      Clear
-                    </button>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Name
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-2 css-r7calx">
-                        <div class="dsl-text-input">
-                          <label
-                            for="patient_prefix"
-                            class="dsl-text-input__label"
-                            >Prefix</label
-                          ><input
-                            maxlength="2000"
-                            aria-invalid="false"
-                            aria-describedby="patient_prefix-helper-text "
-                            id="patient_prefix"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_prefix-helper-text"
-                            class="dsl-text-input__helper-text"></span>
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
-                        <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="patient_first_name"
-                            class="dsl-text-input__label"
-                            >First</label
-                          ><input
-                            required=""
-                            maxlength="2000"
-                            aria-invalid="true"
-                            aria-describedby="patient_first_name-helper-text "
-                            id="patient_first_name"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_first_name-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-2 css-r7calx">
-                        <div class="dsl-text-input">
-                          <label
-                            for="patient_middle_name"
-                            class="dsl-text-input__label"
-                            >Middle</label
-                          ><input
-                            maxlength="2000"
-                            aria-invalid="false"
-                            aria-describedby="patient_middle_name-helper-text "
-                            id="patient_middle_name"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_middle_name-helper-text"
-                            class="dsl-text-input__helper-text"></span>
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
-                        <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="patient_last_name"
-                            class="dsl-text-input__label"
-                            >Last</label
-                          ><input
-                            required=""
-                            maxlength="2000"
-                            aria-invalid="true"
-                            aria-describedby="patient_last_name-helper-text "
-                            id="patient_last_name"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_last_name-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-2 css-r7calx">
-                        <div class="dsl-text-input">
-                          <label
-                            for="patient_suffix"
-                            class="dsl-text-input__label"
-                            >Suffix</label
-                          ><input
-                            maxlength="2000"
-                            aria-invalid="false"
-                            aria-describedby="patient_suffix-helper-text "
-                            id="patient_suffix"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_suffix-helper-text"
-                            class="dsl-text-input__helper-text"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Date of Birth
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
-                        <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="patient_date_of_birth"
-                            class="dsl-text-input__label"
-                            >XX/XX/XXXX</label
-                          ><input
-                            required=""
-                            maxlength="255"
-                            aria-invalid="true"
-                            aria-describedby="patient_date_of_birth-helper-text "
-                            id="patient_date_of_birth"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_date_of_birth-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 css-15j76c0">
-                        <div id="S1-patient_gender">
-                          <fieldset class="dsl-choice-list dsl-u-mb5">
-                            <div class="dsl-choice-list__title">
-                              <legend class="dsl-choice-list__legend">
-                                Gender<span class="dsl-choice-list__required"
-                                  >*</span
-                                >
-                              </legend>
-                            </div>
-                            <ul
-                              class="dsl-choice-list__list dsl-choice-list--horizontal">
-                              <li>
-                                <div
-                                  class="dsl-radio-button dsl-radio-button--has-error">
-                                  <input
-                                    required=""
-                                    id="S1-patient_genderM"
-                                    name="S1-patient_gender"
-                                    type="radio"
-                                    class="dsl-radio-button__input"
-                                    value="M" /><label
-                                    class="dsl-radio-button__label"
-                                    for="S1-patient_genderM"
-                                    >Male</label
-                                  >
-                                </div>
-                              </li>
-                              <li>
-                                <div
-                                  class="dsl-radio-button dsl-radio-button--has-error">
-                                  <input
-                                    required=""
-                                    id="S1-patient_genderF"
-                                    name="S1-patient_gender"
-                                    type="radio"
-                                    class="dsl-radio-button__input"
-                                    value="F" /><label
-                                    class="dsl-radio-button__label"
-                                    for="S1-patient_genderF"
-                                    >Female</label
-                                  >
-                                </div>
-                              </li>
-                            </ul>
-                            <div class="dsl-choice-list__error">
-                              <svg
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                role="presentation"
-                                class="dsl-icon dsl-choice-list__error-icon">
-                                <title lang="en">error icon</title>
-                                <path
-                                  d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm1.2 18h-2.4v-2.4h2.4V18zm0-4.8h-2.4V6h2.4v7.2z"></path></svg
-                              ><span class="dsl-choice-list__error-text"
-                                >Required Field</span
-                              >
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Member ID
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-1r482s6">
-                        <div class="dsl-text-input">
-                          <label
-                            for="patient_id_number"
-                            class="dsl-text-input__label"></label
-                          ><input
-                            maxlength="2000"
-                            aria-invalid="false"
-                            aria-describedby="patient_id_number-helper-text "
-                            id="patient_id_number"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_id_number-helper-text"
-                            class="dsl-text-input__helper-text"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Address
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
-                        <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="patient_address1"
-                            class="dsl-text-input__label"
-                            >Street</label
-                          ><input
-                            required=""
-                            maxlength="2000"
-                            aria-invalid="true"
-                            aria-describedby="patient_address1-helper-text "
-                            id="patient_address1"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_address1-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
-                        <div class="dsl-text-input">
-                          <label
-                            for="patient_address2"
-                            class="dsl-text-input__label"
-                            >Street 2</label
-                          ><input
-                            maxlength="2000"
-                            aria-invalid="false"
-                            aria-describedby="patient_address2-helper-text "
-                            id="patient_address2"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_address2-helper-text"
-                            class="dsl-text-input__helper-text"></span>
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-1r482s6">
-                        <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="patient_city"
-                            class="dsl-text-input__label"
-                            >City</label
-                          ><input
-                            required=""
-                            maxlength="2000"
-                            aria-invalid="true"
-                            aria-describedby="patient_city-helper-text "
-                            id="patient_city"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_city-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
-                        <div
-                          class="dsl-select dsl-select--has-error dsl-select--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-select__icon dsl-select__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label for="patient_state" class="dsl-select__label"
-                            >State</label
-                          ><select
-                            required=""
-                            id="patient_state"
-                            class="dsl-select__select">
-                            <option value="" selected="selected"></option>
-                            <option value="Alabama">Alabama</option>
-                            <option value="Alaska">Alaska</option>
-                            <option value="American Samoa">
-                              American Samoa
-                            </option>
-                            <option value="Arizona">Arizona</option>
-                            <option value="Arkansas">Arkansas</option>
-                            <option value="California">California</option>
-                            <option value="Colorado">Colorado</option>
-                            <option value="Connecticut">Connecticut</option>
-                            <option value="Delaware">Delaware</option>
-                            <option value="Florida">Florida</option>
-                            <option value="Georgia">Georgia</option>
-                            <option value="Guam">Guam</option>
-                            <option value="Hawaii">Hawaii</option>
-                            <option value="Idaho">Idaho</option>
-                            <option value="Illinois">Illinois</option>
-                            <option value="Indiana">Indiana</option>
-                            <option value="Iowa">Iowa</option>
-                            <option value="Kansas">Kansas</option>
-                            <option value="Kentucky">Kentucky</option>
-                            <option value="Louisiana">Louisiana</option>
-                            <option value="Maine">Maine</option>
-                            <option value="Maryland">Maryland</option>
-                            <option value="Massachusetts">Massachusetts</option>
-                            <option value="Michigan">Michigan</option>
-                            <option value="Minnesota">Minnesota</option>
-                            <option value="Mississippi">Mississippi</option>
-                            <option value="Missouri">Missouri</option>
-                            <option value="Montana">Montana</option>
-                            <option value="Nebraska">Nebraska</option>
-                            <option value="Nevada">Nevada</option>
-                            <option value="New Hampshire">New Hampshire</option>
-                            <option value="New Jersey">New Jersey</option>
-                            <option value="New Mexico">New Mexico</option>
-                            <option value="New York">New York</option>
-                            <option value="North Carolina">
-                              North Carolina
-                            </option>
-                            <option value="North Dakota">North Dakota</option>
-                            <option value="Ohio">Ohio</option>
-                            <option value="Oklahoma">Oklahoma</option>
-                            <option value="Oregon">Oregon</option>
-                            <option value="Palau">Palau</option>
-                            <option value="Pennsylvania">Pennsylvania</option>
-                            <option value="Philippines">Philippines</option>
-                            <option value="Puerto Rico">Puerto Rico</option>
-                            <option value="Rhode Island">Rhode Island</option>
-                            <option value="Saipan">Saipan</option>
-                            <option value="South Carolina">
-                              South Carolina
-                            </option>
-                            <option value="South Dakota">South Dakota</option>
-                            <option value="Tennessee">Tennessee</option>
-                            <option value="Texas">Texas</option>
-                            <option value="Utah">Utah</option>
-                            <option value="Vermont">Vermont</option>
-                            <option value="Virgin Islands">
-                              Virgin Islands
-                            </option>
-                            <option value="Virginia">Virginia</option>
-                            <option value="Washington">Washington</option>
-                            <option value="Washington D.C.">
-                              Washington D.C.
-                            </option>
-                            <option value="West Virginia">West Virginia</option>
-                            <option value="Wisconsin">Wisconsin</option>
-                            <option value="Wyoming">Wyoming</option></select
-                          ><span class="dsl-select__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
-                        <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="patient_zip"
-                            class="dsl-text-input__label"
-                            >Zip</label
-                          ><input
-                            required=""
-                            maxlength="255"
-                            aria-invalid="true"
-                            aria-describedby="patient_zip-helper-text "
-                            id="patient_zip"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="patient_zip-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Phone
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4 css-19egsyp">
-                        <div class="dsl-text-input">
-                          <label
-                            for="patient_phone"
-                            class="dsl-text-input__label"
-                            >XXX-XXX-XXXX</label
-                          ><input
-                            maxlength="255"
-                            aria-invalid="false"
-                            aria-describedby="patient_phone-helper-text "
-                            id="patient_phone"
-                            class="dsl-text-input__input"
-                            type="tel"
-                            value="" /><span
-                            id="patient_phone-helper-text"
-                            class="dsl-text-input__helper-text"></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="dsl-u-m4">
-                  <h3>Free Eligibility Check Required</h3>
-                  <p>
-                    Click the <strong>Check Eligibility</strong> button for free
-                    verification of patient coverage with this plan.
-                  </p>
-                  <p class="dsl-u-text-error">
-                    <strong
-                      >Checking Eligibility is required to send to plan.</strong
-                    >
-                  </p>
-                  <div class="dsl-u-flex dsl-u-justify-between">
-                    <div class="dsl-u-flex">
-                      <button
-                        id="check-eligibility-button"
-                        title="Check Eligibility"
-                        disabled=""
-                        class="dsl-btn dsl-btn--primary dsl-btn-- dsl-u-mr3">
-                        Check Eligibility
+                        id="patient-clear-address-book"
+                        class="dsl-btn dsl-btn--text dsl-btn-- clear-address-button">
+                        Clear
                       </button>
                     </div>
                   </div>
-                  <div class="dsl-u-mt6"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            id="drug-section"
-            class="dsl-card section dsl-u-mb2 dsl-u-pt2 dsl-u-pb2">
-            <div class="accordion-base">
-              <button
-                id=""
-                style="color: black"
-                class="dsl-btn dsl-btn--text dsl-btn--sm accordion-button">
-                <div class="dsl-u-flex dsl-u-md">Drug</div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  role="presentation"
-                  class="dsl-icon accordion-icon expanded">
-                  <title lang="en">icon</title>
-                  <path
-                    style="transform: translateY(4px)"
-                    d="M 2.820312 1.179688 L 12 10.339844 L 21.179688 1.179688 L 24 4 L 12 16 L 0 4 Z M 2.820312 1.179688 "></path>
-                </svg>
-              </button>
-              <div
-                style="transition: height 0.2s ease-out"
-                class="accordion-content visible">
-                <div
-                  class="MuiGrid-root MuiGrid-container dsl-u-mt2 css-v3z1wi">
-                  <div
-                    class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-13ps8n2">
-                    <span class="dsl-u-700 dsl-u-md"
-                      >Fields with an
-                      <span class="dsl-u-text-error">*</span> are required</span
-                    >
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Medication Name
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
                       <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Name
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
                         <div
-                          class="dsl-typeahead__container"
-                          role="presentation">
-                          <div
-                            role="combobox"
-                            aria-owns="drug_description-menu"
-                            aria-expanded="false"
-                            aria-haspopup="listbox">
-                            <div
-                              class="dsl-text-input dsl-text-input--label-top dsl-text-input--disabled">
-                              <label
-                                for="drug_description"
-                                class="dsl-text-input__label"></label
-                              ><input
-                                autocomplete="off"
-                                disabled=""
-                                aria-autocomplete="list"
-                                aria-describedby="drug_description-helper-text drug_description-focus-msg drug_description-loading-msg drug_description-no-results-msg drug_description-results-msg"
-                                aria-invalid="false"
-                                id="drug_description"
-                                class="dsl-text-input__input"
-                                type="text"
-                                value="Buphenyl 500MG tablets" /><span
-                                id="drug_description-helper-text"
-                                class="dsl-text-input__helper-text"
-                                >IMPORTANT! The medication selected determines
-                                the Criteria returned. Please make sure you are
-                                submitting the correct Brand or Generic
-                                medication, to enhance your ePA
-                                experience.</span
-                              >
-                            </div>
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-2 css-r7calx">
+                          <div class="dsl-text-input">
+                            <label for="prefix" class="dsl-text-input__label"
+                              >Prefix</label
+                            ><input
+                              maxlength="2000"
+                              aria-invalid="false"
+                              aria-describedby="patient_prefix-helper-text "
+                              id="prefix"
+                              name="prefix"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="patient_prefix-helper-text"
+                              class="dsl-text-input__helper-text"></span>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Quantity
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
                         <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="drug_quantity"
-                            class="dsl-text-input__label"></label
-                          ><input
-                            required=""
-                            maxlength="2000"
-                            aria-invalid="true"
-                            aria-describedby="drug_quantity-helper-text "
-                            id="drug_quantity"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="drug_quantity-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Please ensure quantity entered matches the
-                            prescription directions.&nbsp; Please enter no more
-                            than a 30 day supply.&nbsp; For example, 90
-                            tablets/90 days should be entered as a quantity of
-                            30 tablets.&nbsp; Enter numeric value with up to 2
-                            decimal places and a preceding zero before the
-                            decimal when applicable.&nbsp; For example, .5 must
-                            be entered as 0.5.&nbsp;</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4 css-19egsyp">
-                        <div
-                          class="dsl-select dsl-select--has-error dsl-select--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-select__icon dsl-select__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="drug_quantity_qualifier"
-                            class="dsl-select__label"
-                            >Confirm dosage form</label
-                          ><select
-                            required=""
-                            id="drug_quantity_qualifier"
-                            class="dsl-select__select">
-                            <option value="" selected="selected"></option>
-                            <option value="Applicator">Applicator</option>
-                            <option value="Blister">Blister</option>
-                            <option value="Caplet">Caplet</option>
-                            <option value="Capsule">Capsule</option>
-                            <option value="Each">Each</option>
-                            <option value="Film">Film</option>
-                            <option value="Gram">Gram</option>
-                            <option value="Gum">Gum</option>
-                            <option value="Implant">Implant</option>
-                            <option value="Insert">Insert</option>
-                            <option value="Kit">Kit</option>
-                            <option value="Lancet">Lancet</option>
-                            <option value="Lozenge">Lozenge</option>
-                            <option value="Milliliter">Milliliter</option>
-                            <option value="Packet">Packet</option>
-                            <option value="Pad">Pad</option>
-                            <option value="Patch">Patch</option>
-                            <option value="Pen Needle">Pen Needle</option>
-                            <option value="Ring">Ring</option>
-                            <option value="Sponge">Sponge</option>
-                            <option value="Stick">Stick</option>
-                            <option value="Strip">Strip</option>
-                            <option value="Suppository">Suppository</option>
-                            <option value="Swab">Swab</option>
-                            <option value="Tablet">Tablet</option>
-                            <option value="Troche">Troche</option>
-                            <option value="Unspecified">Unspecified</option>
-                            <option value="Wafer">Wafer</option></select
-                          ><span class="dsl-select__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Days Supply
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
-                        <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="drug_days_supply"
-                            class="dsl-text-input__label"
-                            >Not to exceed a 30-day supply</label
-                          ><input
-                            required=""
-                            maxlength="255"
-                            aria-invalid="true"
-                            aria-describedby="drug_days_supply-helper-text "
-                            id="drug_days_supply"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="drug_days_supply-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Primary Diagnosis
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
-                        <div
-                          class="dsl-typeahead__container"
-                          role="presentation">
-                          <div
-                            role="combobox"
-                            aria-owns="icd10-menu"
-                            aria-expanded="false"
-                            aria-haspopup="listbox">
-                            <div
-                              class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                              <svg
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                role="presentation"
-                                class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                                <title lang="en">IconAlertO icon</title>
-                                <path
-                                  d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                              ><label for="icd10" class="dsl-text-input__label"
-                                >ICD-10</label
-                              ><input
-                                required=""
-                                autocomplete="off"
-                                aria-autocomplete="list"
-                                aria-describedby="icd10-helper-text icd10-focus-msg icd10-loading-msg icd10-no-results-msg icd10-results-msg"
-                                aria-invalid="true"
-                                id="icd10"
-                                class="dsl-text-input__input"
-                                type="text"
-                                value="" /><span
-                                id="icd10-helper-text"
-                                class="dsl-text-input__helper-text"
-                                >Required Field</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Secondary Diagnosis
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
-                        <div
-                          class="dsl-typeahead__container"
-                          role="presentation">
-                          <div
-                            role="combobox"
-                            aria-owns="secondary_icd10-menu"
-                            aria-expanded="false"
-                            aria-haspopup="listbox">
-                            <div class="dsl-text-input">
-                              <svg
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                role="presentation"
-                                class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                                <title lang="en">IconSearch icon</title>
-                                <path
-                                  d="M17.153 15.094h-1.084l-.385-.37a8.88 8.88 0 002.155-5.805A8.92 8.92 0 008.919 0 8.92 8.92 0 000 8.92a8.92 8.92 0 008.92 8.919c2.209 0 4.24-.81 5.804-2.155l.37.385v1.084L21.955 24 24 21.955l-6.847-6.86zm-8.234 0A6.167 6.167 0 012.744 8.92 6.167 6.167 0 018.92 2.744a6.167 6.167 0 016.175 6.175 6.167 6.167 0 01-6.175 6.175z"></path></svg
-                              ><label
-                                for="secondary_icd10"
-                                class="dsl-text-input__label"
-                                >ICD-10</label
-                              ><input
-                                autocomplete="off"
-                                aria-autocomplete="list"
-                                aria-describedby="secondary_icd10-helper-text secondary_icd10-focus-msg secondary_icd10-loading-msg secondary_icd10-no-results-msg secondary_icd10-results-msg"
-                                aria-invalid="false"
-                                id="secondary_icd10"
-                                class="dsl-text-input__input"
-                                type="text"
-                                value="" /><span
-                                id="secondary_icd10-helper-text"
-                                class="dsl-text-input__helper-text"
-                                >Begin typing diagnosis code or description and
-                                select from list</span
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            id="provider-section"
-            class="dsl-card section dsl-u-mb2 dsl-u-pt2 dsl-u-pb2">
-            <div class="accordion-base">
-              <button
-                id=""
-                style="color: black"
-                class="dsl-btn dsl-btn--text dsl-btn--sm accordion-button">
-                <div class="dsl-u-flex dsl-u-md">Provider</div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  role="presentation"
-                  class="dsl-icon accordion-icon expanded">
-                  <title lang="en">icon</title>
-                  <path
-                    style="transform: translateY(4px)"
-                    d="M 2.820312 1.179688 L 12 10.339844 L 21.179688 1.179688 L 24 4 L 12 16 L 0 4 Z M 2.820312 1.179688 "></path>
-                </svg>
-              </button>
-              <div
-                style="transition: height 0.2s ease-out"
-                class="accordion-content visible">
-                <div
-                  class="MuiGrid-root MuiGrid-container dsl-u-mt2 css-v3z1wi">
-                  <div
-                    class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-13ps8n2">
-                    <span class="dsl-u-700 dsl-u-md"
-                      >Fields with an
-                      <span class="dsl-u-text-error">*</span> are required</span
-                    >
-                  </div>
-                  <div
-                    class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-9 css-1ei9qk5"
-                    id="provider-address-book-container">
-                    <div
-                      class="dsl-choice-select"
-                      data-testid="dsl-choice-select">
-                      <button
-                        id="provider-address-book"
-                        type="button"
-                        class="dsl-btn dsl-choice-select__btn dsl-choice-select__btn--outline"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        aria-label="Use space bar to open the dropdown">
-                        <span>PROVIDER ADDRESS BOOK</span
-                        ><i
-                          class="dsl-choice-select__icon dsl-choice-select__icon--default"
-                          aria-hidden="true"></i>
-                      </button>
-                    </div>
-                    <button
-                      id="provider-clear-address-book"
-                      class="dsl-btn dsl-btn--text dsl-btn-- clear-address-button">
-                      Clear
-                    </button>
-                  </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        NPI
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4 css-19egsyp">
-                        <div class="npi-field">
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
                           <div
                             class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
                             <svg
@@ -7148,18 +6188,138 @@
                               <path
                                 d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
                             ><label
-                              for="provider_npi"
-                              class="dsl-text-input__label"></label
+                              for="patient_first_name"
+                              class="dsl-text-input__label"
+                              >First</label
                             ><input
                               required=""
-                              maxlength="10"
+                              maxlength="2000"
                               aria-invalid="true"
-                              aria-describedby="provider_npi-helper-text "
-                              id="provider_npi"
+                              aria-describedby="patient_first_name-helper-text "
+                              id="firstName"
+                              name="firstName"
                               class="dsl-text-input__input"
                               type="text"
                               value="" /><span
-                              id="provider_npi-helper-text"
+                              id="patient_first_name-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-2 css-r7calx">
+                          <div class="dsl-text-input">
+                            <label
+                              for="patient_middle_name"
+                              class="dsl-text-input__label"
+                              >Middle</label
+                            ><input
+                              maxlength="2000"
+                              aria-invalid="false"
+                              aria-describedby="patient_middle_name-helper-text "
+                              id="middle_name"
+                              name="middle_name"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="patient_middle_name-helper-text"
+                              class="dsl-text-input__helper-text"></span>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="patient_last_name"
+                              class="dsl-text-input__label"
+                              >Last</label
+                            ><input required="" maxlength="2000"
+                            aria-invalid="true"
+                            aria-describedby="patient_last_name-helper-text "
+                            id="lastName" name="lastName
+                            class="dsl-text-input__input" type="text" value=""
+                            /><span
+                              id="patient_last_name-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-2 css-r7calx">
+                          <div class="dsl-text-input">
+                            <label
+                              for="patient_suffix"
+                              class="dsl-text-input__label"
+                              >Suffix</label
+                            ><input
+                              maxlength="2000"
+                              aria-invalid="false"
+                              aria-describedby="patient_suffix-helper-text "
+                              id="suffix"
+                              name="suffix"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="patient_suffix-helper-text"
+                              class="dsl-text-input__helper-text"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Date of Birth
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="patient_date_of_birth"
+                              class="dsl-text-input__label"
+                              >XX/XX/XXXX</label
+                            ><input
+                              required=""
+                              maxlength="255"
+                              aria-invalid="true"
+                              aria-describedby="patient_date_of_birth-helper-text "
+                              id="birthday"
+                              name="birthday"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="patient_date_of_birth-helper-text"
                               class="dsl-text-input__helper-text"
                               >Required Field</span
                             >
@@ -7168,404 +6328,764 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Name
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-1r482s6">
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
                         <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="provider_first_name"
-                            class="dsl-text-input__label"
-                            >First</label
-                          ><input
-                            required=""
-                            maxlength="2000"
-                            aria-invalid="true"
-                            aria-describedby="provider_first_name-helper-text "
-                            id="provider_first_name"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="provider_first_name-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-1r482s6">
-                        <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="provider_last_name"
-                            class="dsl-text-input__label"
-                            >Last</label
-                          ><input
-                            required=""
-                            maxlength="2000"
-                            aria-invalid="true"
-                            aria-describedby="provider_last_name-helper-text "
-                            id="provider_last_name"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="provider_last_name-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 css-15j76c0">
+                          <div id="S1-patient_gender">
+                            <fieldset class="dsl-choice-list dsl-u-mb5">
+                              <div class="dsl-choice-list__title">
+                                <legend class="dsl-choice-list__legend">
+                                  Gender<span class="dsl-choice-list__required"
+                                    >*</span
+                                  >
+                                </legend>
+                              </div>
+                              <ul
+                                class="dsl-choice-list__list dsl-choice-list--horizontal">
+                                <li>
+                                  <div
+                                    class="dsl-radio-button dsl-radio-button--has-error">
+                                    <input
+                                      required=""
+                                      id="gender"
+                                      name="gender"
+                                      type="radio"
+                                      class="dsl-radio-button__input"
+                                      value="M" /><label
+                                      class="dsl-radio-button__label"
+                                      for="S1-patient_genderM"
+                                      >Male</label
+                                    >
+                                  </div>
+                                </li>
+                                <li>
+                                  <div
+                                    class="dsl-radio-button dsl-radio-button--has-error">
+                                    <input
+                                      required=""
+                                      id="gender"
+                                      name="gender"
+                                      type="radio"
+                                      class="dsl-radio-button__input"
+                                      value="F" /><label
+                                      class="dsl-radio-button__label"
+                                      for="S1-patient_genderF"
+                                      >Female</label
+                                    >
+                                  </div>
+                                </li>
+                              </ul>
+                              <div class="dsl-choice-list__error">
+                                <svg
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  role="presentation"
+                                  class="dsl-icon dsl-choice-list__error-icon">
+                                  <title lang="en">error icon</title>
+                                  <path
+                                    d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm1.2 18h-2.4v-2.4h2.4V18zm0-4.8h-2.4V6h2.4v7.2z"></path></svg
+                                ><span class="dsl-choice-list__error-text"
+                                  >Required Field</span
+                                >
+                              </div>
+                            </fieldset>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Address
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
                       <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
-                        <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="provider_address1"
-                            class="dsl-text-input__label"
-                            >Street</label
-                          ><input
-                            required=""
-                            maxlength="2000"
-                            aria-invalid="true"
-                            aria-describedby="provider_address1-helper-text "
-                            id="provider_address1"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="provider_address1-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Member ID
                         </div>
                       </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
-                        <div class="dsl-text-input">
-                          <label
-                            for="provider_address2"
-                            class="dsl-text-input__label"
-                            >Address Line 2 (optional)</label
-                          ><input
-                            maxlength="2000"
-                            aria-invalid="false"
-                            aria-describedby="provider_address2-helper-text "
-                            id="provider_address2"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="provider_address2-helper-text"
-                            class="dsl-text-input__helper-text"></span>
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-1r482s6">
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
                         <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="provider_city"
-                            class="dsl-text-input__label"
-                            >City</label
-                          ><input
-                            required=""
-                            maxlength="2000"
-                            aria-invalid="true"
-                            aria-describedby="provider_city-helper-text "
-                            id="provider_city"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="provider_city-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
-                        <div
-                          class="dsl-select dsl-select--has-error dsl-select--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-select__icon dsl-select__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label for="provider_state" class="dsl-select__label"
-                            >State</label
-                          ><select
-                            required=""
-                            id="provider_state"
-                            class="dsl-select__select">
-                            <option value="" selected="selected"></option>
-                            <option value="Alabama">Alabama</option>
-                            <option value="Alaska">Alaska</option>
-                            <option value="American Samoa">
-                              American Samoa
-                            </option>
-                            <option value="Arizona">Arizona</option>
-                            <option value="Arkansas">Arkansas</option>
-                            <option value="California">California</option>
-                            <option value="Colorado">Colorado</option>
-                            <option value="Connecticut">Connecticut</option>
-                            <option value="Delaware">Delaware</option>
-                            <option value="Florida">Florida</option>
-                            <option value="Georgia">Georgia</option>
-                            <option value="Guam">Guam</option>
-                            <option value="Hawaii">Hawaii</option>
-                            <option value="Idaho">Idaho</option>
-                            <option value="Illinois">Illinois</option>
-                            <option value="Indiana">Indiana</option>
-                            <option value="Iowa">Iowa</option>
-                            <option value="Kansas">Kansas</option>
-                            <option value="Kentucky">Kentucky</option>
-                            <option value="Louisiana">Louisiana</option>
-                            <option value="Maine">Maine</option>
-                            <option value="Maryland">Maryland</option>
-                            <option value="Massachusetts">Massachusetts</option>
-                            <option value="Michigan">Michigan</option>
-                            <option value="Minnesota">Minnesota</option>
-                            <option value="Mississippi">Mississippi</option>
-                            <option value="Missouri">Missouri</option>
-                            <option value="Montana">Montana</option>
-                            <option value="Nebraska">Nebraska</option>
-                            <option value="Nevada">Nevada</option>
-                            <option value="New Hampshire">New Hampshire</option>
-                            <option value="New Jersey">New Jersey</option>
-                            <option value="New Mexico">New Mexico</option>
-                            <option value="New York">New York</option>
-                            <option value="North Carolina">
-                              North Carolina
-                            </option>
-                            <option value="North Dakota">North Dakota</option>
-                            <option value="Ohio">Ohio</option>
-                            <option value="Oklahoma">Oklahoma</option>
-                            <option value="Oregon">Oregon</option>
-                            <option value="Palau">Palau</option>
-                            <option value="Pennsylvania">Pennsylvania</option>
-                            <option value="Philippines">Philippines</option>
-                            <option value="Puerto Rico">Puerto Rico</option>
-                            <option value="Rhode Island">Rhode Island</option>
-                            <option value="Saipan">Saipan</option>
-                            <option value="South Carolina">
-                              South Carolina
-                            </option>
-                            <option value="South Dakota">South Dakota</option>
-                            <option value="Tennessee">Tennessee</option>
-                            <option value="Texas">Texas</option>
-                            <option value="Utah">Utah</option>
-                            <option value="Vermont">Vermont</option>
-                            <option value="Virgin Islands">
-                              Virgin Islands
-                            </option>
-                            <option value="Virginia">Virginia</option>
-                            <option value="Washington">Washington</option>
-                            <option value="Washington D.C.">
-                              Washington D.C.
-                            </option>
-                            <option value="West Virginia">West Virginia</option>
-                            <option value="Wisconsin">Wisconsin</option>
-                            <option value="Wyoming">Wyoming</option></select
-                          ><span class="dsl-select__helper-text"
-                            >Required Field</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
-                        <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="provider_zip"
-                            class="dsl-text-input__label"
-                            >Zip</label
-                          ><input
-                            required=""
-                            maxlength="255"
-                            aria-invalid="true"
-                            aria-describedby="provider_zip-helper-text "
-                            id="provider_zip"
-                            class="dsl-text-input__input"
-                            type="text"
-                            value="" /><span
-                            id="provider_zip-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Required Field</span
-                          >
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-1r482s6">
+                          <div class="dsl-text-input">
+                            <label
+                              for="patient_id_number"
+                              class="dsl-text-input__label"></label
+                            ><input
+                              maxlength="2000"
+                              aria-invalid="false"
+                              aria-describedby="patient_id_number-helper-text "
+                              id="patient_id_number"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="patient_id_number-helper-text"
+                              class="dsl-text-input__helper-text"></span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Phone
-                      </div>
-                    </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
                       <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4 css-19egsyp">
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Address
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
                         <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="provider_phone"
-                            class="dsl-text-input__label"
-                            >XXX-XXX-XXXX</label
-                          ><input
-                            required=""
-                            maxlength="255"
-                            aria-invalid="true"
-                            aria-describedby="provider_phone-helper-text "
-                            id="provider_phone"
-                            class="dsl-text-input__input"
-                            type="tel"
-                            value="" /><span
-                            id="provider_phone-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Invalid Phone Number. Please use the XXX-XXX-XXXX
-                            format.</span
-                          >
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="patient_address1"
+                              class="dsl-text-input__label"
+                              >Street</label
+                            ><input
+                              required=""
+                              maxlength="2000"
+                              aria-invalid="true"
+                              aria-describedby="patient_address1-helper-text "
+                              id="patient_address1"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="patient_address1-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
+                          <div class="dsl-text-input">
+                            <label
+                              for="patient_address2"
+                              class="dsl-text-input__label"
+                              >Street 2</label
+                            ><input
+                              maxlength="2000"
+                              aria-invalid="false"
+                              aria-describedby="patient_address2-helper-text "
+                              id="patient_address2"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="patient_address2-helper-text"
+                              class="dsl-text-input__helper-text"></span>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-1r482s6">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="patient_city"
+                              class="dsl-text-input__label"
+                              >City</label
+                            ><input
+                              required=""
+                              maxlength="2000"
+                              aria-invalid="true"
+                              aria-describedby="patient_city-helper-text "
+                              id="patient_city"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="patient_city-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
+                          <div
+                            class="dsl-select dsl-select--has-error dsl-select--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-select__icon dsl-select__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="patient_state"
+                              class="dsl-select__label"
+                              >State</label
+                            ><select
+                              required=""
+                              id="patient_state"
+                              class="dsl-select__select">
+                              <option value="" selected="selected"></option>
+                              <option value="Alabama">Alabama</option>
+                              <option value="Alaska">Alaska</option>
+                              <option value="American Samoa">
+                                American Samoa
+                              </option>
+                              <option value="Arizona">Arizona</option>
+                              <option value="Arkansas">Arkansas</option>
+                              <option value="California">California</option>
+                              <option value="Colorado">Colorado</option>
+                              <option value="Connecticut">Connecticut</option>
+                              <option value="Delaware">Delaware</option>
+                              <option value="Florida">Florida</option>
+                              <option value="Georgia">Georgia</option>
+                              <option value="Guam">Guam</option>
+                              <option value="Hawaii">Hawaii</option>
+                              <option value="Idaho">Idaho</option>
+                              <option value="Illinois">Illinois</option>
+                              <option value="Indiana">Indiana</option>
+                              <option value="Iowa">Iowa</option>
+                              <option value="Kansas">Kansas</option>
+                              <option value="Kentucky">Kentucky</option>
+                              <option value="Louisiana">Louisiana</option>
+                              <option value="Maine">Maine</option>
+                              <option value="Maryland">Maryland</option>
+                              <option value="Massachusetts">
+                                Massachusetts
+                              </option>
+                              <option value="Michigan">Michigan</option>
+                              <option value="Minnesota">Minnesota</option>
+                              <option value="Mississippi">Mississippi</option>
+                              <option value="Missouri">Missouri</option>
+                              <option value="Montana">Montana</option>
+                              <option value="Nebraska">Nebraska</option>
+                              <option value="Nevada">Nevada</option>
+                              <option value="New Hampshire">
+                                New Hampshire
+                              </option>
+                              <option value="New Jersey">New Jersey</option>
+                              <option value="New Mexico">New Mexico</option>
+                              <option value="New York">New York</option>
+                              <option value="North Carolina">
+                                North Carolina
+                              </option>
+                              <option value="North Dakota">North Dakota</option>
+                              <option value="Ohio">Ohio</option>
+                              <option value="Oklahoma">Oklahoma</option>
+                              <option value="Oregon">Oregon</option>
+                              <option value="Palau">Palau</option>
+                              <option value="Pennsylvania">Pennsylvania</option>
+                              <option value="Philippines">Philippines</option>
+                              <option value="Puerto Rico">Puerto Rico</option>
+                              <option value="Rhode Island">Rhode Island</option>
+                              <option value="Saipan">Saipan</option>
+                              <option value="South Carolina">
+                                South Carolina
+                              </option>
+                              <option value="South Dakota">South Dakota</option>
+                              <option value="Tennessee">Tennessee</option>
+                              <option value="Texas">Texas</option>
+                              <option value="Utah">Utah</option>
+                              <option value="Vermont">Vermont</option>
+                              <option value="Virgin Islands">
+                                Virgin Islands
+                              </option>
+                              <option value="Virginia">Virginia</option>
+                              <option value="Washington">Washington</option>
+                              <option value="Washington D.C.">
+                                Washington D.C.
+                              </option>
+                              <option value="West Virginia">
+                                West Virginia
+                              </option>
+                              <option value="Wisconsin">Wisconsin</option>
+                              <option value="Wyoming">Wyoming</option></select
+                            ><span class="dsl-select__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="patient_zip"
+                              class="dsl-text-input__label"
+                              >Zip</label
+                            ><input
+                              required=""
+                              maxlength="255"
+                              aria-invalid="true"
+                              aria-describedby="patient_zip-helper-text "
+                              id="patient_zip"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="patient_zip-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="section-row">
-                  <div class="MuiGrid-root MuiGrid-container css-dyceuz">
-                    <div
-                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-                      <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
-                        Fax
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Phone
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4 css-19egsyp">
+                          <div class="dsl-text-input">
+                            <label
+                              for="patient_phone"
+                              class="dsl-text-input__label"
+                              >XXX-XXX-XXXX</label
+                            ><input
+                              maxlength="255"
+                              aria-invalid="false"
+                              aria-describedby="patient_phone-helper-text "
+                              id="patient_phone"
+                              class="dsl-text-input__input"
+                              type="tel"
+                              value="" /><span
+                              id="patient_phone-helper-text"
+                              class="dsl-text-input__helper-text"></span>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                  </div>
+                  <div class="dsl-u-m4">
+                    <h3>Free Eligibility Check Required</h3>
+                    <p>
+                      Click the <strong>Check Eligibility</strong> button for
+                      free verification of patient coverage with this plan.
+                    </p>
+                    <p class="dsl-u-text-error">
+                      <strong
+                        >Checking Eligibility is required to send to
+                        plan.</strong
+                      >
+                    </p>
+                    <div class="dsl-u-flex dsl-u-justify-between">
+                      <div class="dsl-u-flex">
+                        <button
+                          id="check-eligibility-button"
+                          title="Check Eligibility"
+                          disabled=""
+                          class="dsl-btn dsl-btn--primary dsl-btn-- dsl-u-mr3">
+                          Check Eligibility
+                        </button>
+                      </div>
+                    </div>
+                    <div class="dsl-u-mt6"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- End of Patient Section -->
+
+          <!-- Start of Drug Section -->
+          <form
+            action="../new_request_form_design/process_drug_section.php"
+            method="POST">
+            <div
+              id="drug-section"
+              class="dsl-card section dsl-u-mb2 dsl-u-pt2 dsl-u-pb2">
+              <div class="accordion-base">
+                <button
+                  id=""
+                  style="color: black"
+                  class="dsl-btn dsl-btn--text dsl-btn--sm accordion-button">
+                  <div class="dsl-u-flex dsl-u-md">Drug</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    role="presentation"
+                    class="dsl-icon accordion-icon expanded">
+                    <title lang="en">icon</title>
+                    <path
+                      style="transform: translateY(4px)"
+                      d="M 2.820312 1.179688 L 12 10.339844 L 21.179688 1.179688 L 24 4 L 12 16 L 0 4 Z M 2.820312 1.179688 "></path>
+                  </svg>
+                </button>
+                <div
+                  style="transition: height 0.2s ease-out"
+                  class="accordion-content visible">
+                  <div
+                    class="MuiGrid-root MuiGrid-container dsl-u-mt2 css-v3z1wi">
+                    <div
+                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-13ps8n2">
+                      <span class="dsl-u-700 dsl-u-md"
+                        >Fields with an
+                        <span class="dsl-u-text-error">*</span> are
+                        required</span
+                      >
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
                       <div
-                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4 css-19egsyp">
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Medication Name
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
                         <div
-                          class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
-                          <svg
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            role="presentation"
-                            class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
-                            <title lang="en">IconAlertO icon</title>
-                            <path
-                              d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
-                          ><label
-                            for="provider_fax"
-                            class="dsl-text-input__label"
-                            >XXX-XXX-XXXX</label
-                          ><input
-                            required=""
-                            maxlength="255"
-                            aria-invalid="true"
-                            aria-describedby="provider_fax-helper-text "
-                            id="provider_fax"
-                            class="dsl-text-input__input"
-                            type="tel"
-                            value="" /><span
-                            id="provider_fax-helper-text"
-                            class="dsl-text-input__helper-text"
-                            >Invalid Phone Number. Please use the XXX-XXX-XXXX
-                            format.</span
-                          >
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
+                          <div
+                            class="dsl-typeahead__container"
+                            role="presentation">
+                            <div
+                              role="combobox"
+                              aria-owns="drug_description-menu"
+                              aria-expanded="false"
+                              aria-haspopup="listbox">
+                              <div
+                                class="dsl-text-input dsl-text-input--label-top dsl-text-input--disabled">
+                                <label
+                                  for="drug_description"
+                                  class="dsl-text-input__label"></label
+                                ><input
+                                  name="medication_id"
+                                  autocomplete="off"
+                                  disabled=""
+                                  aria-autocomplete="list"
+                                  aria-describedby="drug_description-helper-textdrug_description-focus-msg drug_description-loading-msg drug_description-no-results-msg drug_description-results-msg"
+                                  aria-invalid="false"
+                                  id="drug_description"
+                                  class="dsl-text-input__input"
+                                  type="text"
+                                  value="Buphenyl 500MG tablets" /><span
+                                  id="drug_description-helper-text"
+                                  class="dsl-text-input__helper-text"
+                                  >IMPORTANT! The medication selected determines
+                                  the Criteria returned. Please make sure you
+                                  are submitting the correct Brand or Generic
+                                  medication, to enhance your ePA
+                                  experience.</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Quantity
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="drug_quantity"
+                              class="dsl-text-input__label"></label
+                            ><input
+                              required=""
+                              maxlength="2000"
+                              aria-invalid="true"
+                              aria-describedby="drug_quantity-helper-text "
+                              id="quantity"
+                              name="quantity"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="drug_quantity-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Please ensure quantity entered matches the
+                              prescription directions.&nbsp; Please enter no
+                              more than a 30 day supply.&nbsp; For example, 90
+                              tablets/90 days should be entered as a quantity of
+                              30 tablets.&nbsp; Enter numeric value with up to 2
+                              decimal places and a preceding zero before the
+                              decimal when applicable.&nbsp; For example, .5
+                              must be entered as 0.5.&nbsp;</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4 css-19egsyp">
+                          <div
+                            class="dsl-select dsl-select--has-error dsl-select--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-select__icon dsl-select__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="drug_quantity_qualifier"
+                              class="dsl-select__label"
+                              >Confirm dosage form</label
+                            ><select
+                              required=""
+                              id="dosage"
+                              name="dosage"
+                              class="dsl-select__select">
+                              <option value="" selected="selected"></option>
+                              <option value="Applicator">Applicator</option>
+                              <option value="Blister">Blister</option>
+                              <option value="Caplet">Caplet</option>
+                              <option value="Capsule">Capsule</option>
+                              <option value="Each">Each</option>
+                              <option value="Film">Film</option>
+                              <option value="Gram">Gram</option>
+                              <option value="Gum">Gum</option>
+                              <option value="Implant">Implant</option>
+                              <option value="Insert">Insert</option>
+                              <option value="Kit">Kit</option>
+                              <option value="Lancet">Lancet</option>
+                              <option value="Lozenge">Lozenge</option>
+                              <option value="Milliliter">Milliliter</option>
+                              <option value="Packet">Packet</option>
+                              <option value="Pad">Pad</option>
+                              <option value="Patch">Patch</option>
+                              <option value="Pen Needle">Pen Needle</option>
+                              <option value="Ring">Ring</option>
+                              <option value="Sponge">Sponge</option>
+                              <option value="Stick">Stick</option>
+                              <option value="Strip">Strip</option>
+                              <option value="Suppository">Suppository</option>
+                              <option value="Swab">Swab</option>
+                              <option value="Tablet">Tablet</option>
+                              <option value="Troche">Troche</option>
+                              <option value="Unspecified">Unspecified</option>
+                              <option value="Wafer">Wafer</option></select
+                            ><span class="dsl-select__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Days Supply
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="drug_days_supply"
+                              class="dsl-text-input__label"
+                              >Not to exceed a 30-day supply</label
+                            ><input
+                              name="days_supply"
+                              required=""
+                              maxlength="255"
+                              aria-invalid="true"
+                              aria-describedby="drug_days_supply-helper-text "
+                              id="days_supply"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="drug_days_supply-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Primary Diagnosis
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
+                          <div
+                            class="dsl-typeahead__container"
+                            role="presentation">
+                            <div
+                              role="combobox"
+                              aria-owns="icd10-menu"
+                              aria-expanded="false"
+                              aria-haspopup="listbox">
+                              <div
+                                class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                                <svg
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  role="presentation"
+                                  class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                                  <title lang="en">IconAlertO icon</title>
+                                  <path
+                                    d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                                ><label
+                                  for="icd10"
+                                  class="dsl-text-input__label"
+                                  >ICD-10</label
+                                ><input
+                                  required=""
+                                  autocomplete="off"
+                                  aria-autocomplete="list"
+                                  aria-describedby="icd10-helper-text icd10-focus-msg icd10-loading-msg icd10-no-results-msg icd10-results-msg"
+                                  aria-invalid="true"
+                                  id="icd10"
+                                  class="dsl-text-input__input"
+                                  type="text"
+                                  value="" /><span
+                                  id="primary_diagnosis"
+                                  name="primary_diagnosis"
+                                  class="dsl-text-input__helper-text"
+                                  >Required Field</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Secondary Diagnosis
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
+                          <div
+                            class="dsl-typeahead__container"
+                            role="presentation">
+                            <div
+                              role="combobox"
+                              aria-owns="secondary_icd10-menu"
+                              aria-expanded="false"
+                              aria-haspopup="listbox">
+                              <div class="dsl-text-input">
+                                <svg
+                                  aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  role="presentation"
+                                  class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                                  <title lang="en">IconSearch icon</title>
+                                  <path
+                                    d="M17.153 15.094h-1.084l-.385-.37a8.88 8.88 0 002.155-5.805A8.92 8.92 0 008.919 0 8.92 8.92 0 000 8.92a8.92 8.92 0 008.92 8.919c2.209 0 4.24-.81 5.804-2.155l.37.385v1.084L21.955 24 24 21.955l-6.847-6.86zm-8.234 0A6.167 6.167 0 012.744 8.92 6.167 6.167 0 018.92 2.744a6.167 6.167 0 016.175 6.175 6.167 6.167 0 01-6.175 6.175z"></path></svg
+                                ><label
+                                  for="secondary_icd10"
+                                  class="dsl-text-input__label"
+                                  >ICD-10</label
+                                ><input
+                                  autocomplete="off"
+                                  aria-autocomplete="list"
+                                  aria-describedby="secondary_icd10-helper-text secondary_icd10-focus-msg secondary_icd10-loading-msg secondary_icd10-no-results-msg secondary_icd10-results-msg"
+                                  aria-invalid="false"
+                                  id="secondary_diagnosis"
+                                  name="secondary_diagnosis"
+                                  class="dsl-text-input__input"
+                                  type="text"
+                                  value="" /><span
+                                  id="secondary_icd10-helper-text"
+                                  class="dsl-text-input__helper-text"
+                                  >Begin typing diagnosis code or description
+                                  and select from list</span
+                                >
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -7573,7 +7093,547 @@
                 </div>
               </div>
             </div>
-          </div>
+          </form>
+          <!-- End of Drug Section -->
+
+          <!-- Start of Provider Section -->
+          <form
+            action="../new_request_form_design/process_provider_section.php"
+            method="POST">
+            <div
+              id="provider-section"
+              class="dsl-card section dsl-u-mb2 dsl-u-pt2 dsl-u-pb2">
+              <div class="accordion-base">
+                <button
+                  id=""
+                  style="color: black"
+                  class="dsl-btn dsl-btn--text dsl-btn--sm accordion-button">
+                  <div class="dsl-u-flex dsl-u-md">Provider</div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    role="presentation"
+                    class="dsl-icon accordion-icon expanded">
+                    <title lang="en">icon</title>
+                    <path
+                      style="transform: translateY(4px)"
+                      d="M 2.820312 1.179688 L 12 10.339844 L 21.179688 1.179688 L 24 4 L 12 16 L 0 4 Z M 2.820312 1.179688 "></path>
+                  </svg>
+                </button>
+                <div
+                  style="transition: height 0.2s ease-out"
+                  class="accordion-content visible">
+                  <div
+                    class="MuiGrid-root MuiGrid-container dsl-u-mt2 css-v3z1wi">
+                    <div
+                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-13ps8n2">
+                      <span class="dsl-u-700 dsl-u-md"
+                        >Fields with an
+                        <span class="dsl-u-text-error">*</span> are
+                        required</span
+                      >
+                    </div>
+                    <div
+                      class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-9 css-1ei9qk5"
+                      id="provider-address-book-container">
+                      <div
+                        class="dsl-choice-select"
+                        data-testid="dsl-choice-select">
+                        <button
+                          id="provider-address-book"
+                          type="button"
+                          class="dsl-btn dsl-choice-select__btn dsl-choice-select__btn--outline"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          aria-label="Use space bar to open the dropdown">
+                          <span>PROVIDER ADDRESS BOOK</span
+                          ><i
+                            class="dsl-choice-select__icon dsl-choice-select__icon--default"
+                            aria-hidden="true"></i>
+                        </button>
+                      </div>
+                      <button
+                        id="provider-clear-address-book"
+                        class="dsl-btn dsl-btn--text dsl-btn-- clear-address-button">
+                        Clear
+                      </button>
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          NPI
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4 css-19egsyp">
+                          <div class="npi-field">
+                            <div
+                              class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                              <svg
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                role="presentation"
+                                class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                                <title lang="en">IconAlertO icon</title>
+                                <path
+                                  d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                              ><label
+                                for="provider_npi"
+                                class="dsl-text-input__label"></label
+                              ><input
+                                required=""
+                                maxlength="10"
+                                aria-invalid="true"
+                                aria-describedby="provider_npi-helper-text "
+                                id="npi"
+                                name="npi"
+                                class="dsl-text-input__input"
+                                type="text"
+                                value="" /><span
+                                id="provider_npi-helper-text"
+                                class="dsl-text-input__helper-text"
+                                >Required Field</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Name
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-1r482s6">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="provider_first_name"
+                              class="dsl-text-input__label"
+                              >First</label
+                            ><input
+                              required=""
+                              maxlength="2000"
+                              aria-invalid="true"
+                              aria-describedby="provider_first_name-helper-text "
+                              id="provider_firstName"
+                              name="provider_firstName"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="provider_first_name-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-1r482s6">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="provider_last_name"
+                              class="dsl-text-input__label"
+                              >Last</label
+                            ><input
+                              required=""
+                              maxlength="2000"
+                              aria-invalid="true"
+                              aria-describedby="provider_last_name-helper-text "
+                              id="provider_lastName"
+                              name="provider_lastName"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="provider_last_name-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Address
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="provider_address1"
+                              class="dsl-text-input__label"
+                              >Street</label
+                            ><input
+                              required=""
+                              maxlength="2000"
+                              aria-invalid="true"
+                              aria-describedby="provider_address1-helper-text "
+                              id="street"
+                              name="street"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="provider_address1-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 css-iol86l">
+                          <div class="dsl-text-input">
+                            <label
+                              for="provider_address2"
+                              class="dsl-text-input__label"
+                              >Address Line 2 (optional)</label
+                            ><input
+                              maxlength="2000"
+                              aria-invalid="false"
+                              aria-describedby="provider_address2-helper-text "
+                              id="street2"
+                              name="street2"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="provider_address2-helper-text"
+                              class="dsl-text-input__helper-text"></span>
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-5 css-1r482s6">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="provider_city"
+                              class="dsl-text-input__label"
+                              >City</label
+                            ><input
+                              required=""
+                              maxlength="2000"
+                              aria-invalid="true"
+                              aria-describedby="provider_city-helper-text "
+                              id="city"
+                              name="city"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="provider_city-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
+                          <div
+                            class="dsl-select dsl-select--has-error dsl-select--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-select__icon dsl-select__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="provider_state"
+                              class="dsl-select__label"
+                              >State</label
+                            ><select
+                              required=""
+                              id="state"
+                              name="state"
+                              class="dsl-select__select">
+                              <option value="" selected="selected"></option>
+                              <option value="Alabama">Alabama</option>
+                              <option value="Alaska">Alaska</option>
+                              <option value="American Samoa">
+                                American Samoa
+                              </option>
+                              <option value="Arizona">Arizona</option>
+                              <option value="Arkansas">Arkansas</option>
+                              <option value="California">California</option>
+                              <option value="Colorado">Colorado</option>
+                              <option value="Connecticut">Connecticut</option>
+                              <option value="Delaware">Delaware</option>
+                              <option value="Florida">Florida</option>
+                              <option value="Georgia">Georgia</option>
+                              <option value="Guam">Guam</option>
+                              <option value="Hawaii">Hawaii</option>
+                              <option value="Idaho">Idaho</option>
+                              <option value="Illinois">Illinois</option>
+                              <option value="Indiana">Indiana</option>
+                              <option value="Iowa">Iowa</option>
+                              <option value="Kansas">Kansas</option>
+                              <option value="Kentucky">Kentucky</option>
+                              <option value="Louisiana">Louisiana</option>
+                              <option value="Maine">Maine</option>
+                              <option value="Maryland">Maryland</option>
+                              <option value="Massachusetts">
+                                Massachusetts
+                              </option>
+                              <option value="Michigan">Michigan</option>
+                              <option value="Minnesota">Minnesota</option>
+                              <option value="Mississippi">Mississippi</option>
+                              <option value="Missouri">Missouri</option>
+                              <option value="Montana">Montana</option>
+                              <option value="Nebraska">Nebraska</option>
+                              <option value="Nevada">Nevada</option>
+                              <option value="New Hampshire">
+                                New Hampshire
+                              </option>
+                              <option value="New Jersey">New Jersey</option>
+                              <option value="New Mexico">New Mexico</option>
+                              <option value="New York">New York</option>
+                              <option value="North Carolina">
+                                North Carolina
+                              </option>
+                              <option value="North Dakota">North Dakota</option>
+                              <option value="Ohio">Ohio</option>
+                              <option value="Oklahoma">Oklahoma</option>
+                              <option value="Oregon">Oregon</option>
+                              <option value="Palau">Palau</option>
+                              <option value="Pennsylvania">Pennsylvania</option>
+                              <option value="Philippines">Philippines</option>
+                              <option value="Puerto Rico">Puerto Rico</option>
+                              <option value="Rhode Island">Rhode Island</option>
+                              <option value="Saipan">Saipan</option>
+                              <option value="South Carolina">
+                                South Carolina
+                              </option>
+                              <option value="South Dakota">South Dakota</option>
+                              <option value="Tennessee">Tennessee</option>
+                              <option value="Texas">Texas</option>
+                              <option value="Utah">Utah</option>
+                              <option value="Vermont">Vermont</option>
+                              <option value="Virgin Islands">
+                                Virgin Islands
+                              </option>
+                              <option value="Virginia">Virginia</option>
+                              <option value="Washington">Washington</option>
+                              <option value="Washington D.C.">
+                                Washington D.C.
+                              </option>
+                              <option value="West Virginia">
+                                West Virginia
+                              </option>
+                              <option value="Wisconsin">Wisconsin</option>
+                              <option value="Wyoming">Wyoming</option></select
+                            ><span class="dsl-select__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-3 css-1ha4th6">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="provider_zip"
+                              class="dsl-text-input__label"
+                              >Zip</label
+                            ><input
+                              required=""
+                              maxlength="255"
+                              aria-invalid="true"
+                              aria-describedby="provider_zip-helper-text "
+                              id="provider_zip"
+                              class="dsl-text-input__input"
+                              type="text"
+                              value="" /><span
+                              id="provider_zip-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Required Field</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Phone
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4 css-19egsyp">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="provider_phone"
+                              class="dsl-text-input__label"
+                              >XXX-XXX-XXXX</label
+                            ><input
+                              required=""
+                              maxlength="255"
+                              aria-invalid="true"
+                              aria-describedby="provider_phone-helper-text "
+                              id="provider_phone"
+                              class="dsl-text-input__input"
+                              type="tel"
+                              value="" /><span
+                              id="phone"
+                              name="phone"
+                              class="dsl-text-input__helper-text"
+                              >Invalid Phone Number. Please use the XXX-XXX-XXXX
+                              format.</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-row">
+                    <div class="MuiGrid-root MuiGrid-container css-dyceuz">
+                      <div
+                        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+                        <div class="dsl-u-700 dsl-u-md dsl-u-mb1 dsl-u-mt2">
+                          Fax
+                        </div>
+                      </div>
+                      <div class="MuiGrid-root MuiGrid-container css-ci1ms7">
+                        <div
+                          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-4 css-19egsyp">
+                          <div
+                            class="dsl-text-input dsl-text-input--has-error dsl-text-input--required">
+                            <svg
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              role="presentation"
+                              class="dsl-icon dsl-text-input__icon dsl-text-input__icon--right">
+                              <title lang="en">IconAlertO icon</title>
+                              <path
+                                d="M 10.800781 15.601562 L 13.199219 15.601562 L 13.199219 18 L 10.800781 18 Z M 10.800781 6 L 13.199219 6 L 13.199219 13.199219 L 10.800781 13.199219 Z M 11.988281 0 C 5.363281 0 0 5.375 0 12 C 0 18.625 5.363281 24 11.988281 24 C 18.625 24 24 18.625 24 12 C 24 5.375 18.625 0 11.988281 0 Z M 12 21.601562 C 6.695312 21.601562 2.398438 17.304688 2.398438 12 C 2.398438 6.695312 6.695312 2.398438 12 2.398438 C 17.304688 2.398438 21.601562 6.695312 21.601562 12 C 21.601562 17.304688 17.304688 21.601562 12 21.601562 Z M 12 21.601562 "></path></svg
+                            ><label
+                              for="provider_fax"
+                              class="dsl-text-input__label"
+                              >XXX-XXX-XXXX</label
+                            ><input
+                              required=""
+                              maxlength="255"
+                              aria-invalid="true"
+                              aria-describedby="provider_fax-helper-text "
+                              id="fax"
+                              name="fax"
+                              class="dsl-text-input__input"
+                              type="tel"
+                              value="" /><span
+                              id="provider_fax-helper-text"
+                              class="dsl-text-input__helper-text"
+                              >Invalid Phone Number. Please use the XXX-XXX-XXXX
+                              format.</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- End of Provider Section -->
+
+          <!-- Start of Review Section -->
           <div
             id="type-of-review-section"
             class="dsl-card section dsl-u-mb2 dsl-u-pt2 dsl-u-pb2">
@@ -7646,8 +7706,8 @@
                                   class="dsl-radio-button dsl-radio-button--has-error">
                                   <input
                                     required=""
-                                    id="S4-request_priorityX"
-                                    name="S4-request_priority"
+                                    id="review"
+                                    name="review"
                                     type="radio"
                                     class="dsl-radio-button__input"
                                     value="X" /><label
@@ -7662,7 +7722,8 @@
                                   class="dsl-radio-button dsl-radio-button--has-error">
                                   <input
                                     required=""
-                                    id="S4-request_priorityS"
+                                    id="review"
+                                    name="review"
                                     name="S4-request_priority"
                                     type="radio"
                                     class="dsl-radio-button__input"
@@ -7699,6 +7760,9 @@
               </div>
             </div>
           </div>
+          <!-- End of Review Section -->
+
+          <!-- Start of Prescriber Section -->
           <div
             id="prescriber-next-steps-section"
             class="dsl-card section dsl-u-mb2 dsl-u-pt2 dsl-u-pb2">
@@ -7749,6 +7813,8 @@
               </div>
             </div>
           </div>
+          <!-- End of Prescriber Section -->
+
           <div>
             <div>
               <div

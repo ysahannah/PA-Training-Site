@@ -11,7 +11,7 @@
 
 <body class="bg-dark">
     <!--Logo-->
-   <!-- <header></header>-->
+    <header></header>
 
     <div class="container my-5">
        <h2>LIST OF USERS</h2>
@@ -67,7 +67,7 @@
                
             </tbody>
        </table>
-    </div>
-    
+    </div>   
 </body>
+
 </html>
