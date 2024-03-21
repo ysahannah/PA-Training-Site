@@ -33,11 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit();
     }
 
-    // Default user type
-    $user_type = "user";
-
     // Insert new user into database with default user type
-    $sql = "INSERT INTO users (username, password, user_type) VALUES ('$username', '$password', '$user_type')";
+    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     if ($conn->query($sql) === TRUE) {
         // Redirect to user_management page after successful insertion
         header("Location: ../request/user_management.html");
