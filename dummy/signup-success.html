@@ -88,23 +88,22 @@
     
     class = "box">
       <header 
-        style ='text-align: center ;font-size: 25px; font-weight: 600; padding: 10px 10px; margin-bottom: 10px;'> SUCCESSFUL </header>
+        style ='text-align: center ;font-size: 25px; font-weight: 600; padding: 10px 10px; margin-bottom: 10px;'> SIGN UP <BR> SUCCESSFUL!</header>
         <form id = SignUp_Form action="signup.php" method="post" autocomplete="off">
           <div class="Container" style = "font-size:16px;">
-                        
-            <a class="button" href="./login.php"> Continue </a>
-            
-            <br>
-            <br>
-          <div class =link>
-            Already have an account? <a href="./login.php">Sign in</a>
-          </div>
+
         </div>
       </form>
     </div>
     </div>
   </main>
-  <script>((STORAGE_KEY, restoreKey) => {
+  <script>
+  
+  setTimeout(function(){
+    window.location.href ="login.html";
+  }, 2000); //2 seconds.
+  
+  ((STORAGE_KEY, restoreKey) => {
       if (!window.history.state || !window.history.state.key) {
         let key = Math.random().toString(32).slice(2);
         window.history.replaceState({
@@ -129,7 +128,10 @@
   import * as route1 from "/build/routes/signup-H77WHGR7.js";
   window.__remixRouteModules = {"root":route0,"routes/signup":route1};
   
-  import("/build/entry.client-KQVMYHZ3.js");</script> 
+  import("/build/entry.client-KQVMYHZ3.js");
+  
+ 
+  </script> 
  
   
   
