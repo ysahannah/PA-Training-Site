@@ -19,7 +19,7 @@
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <![endif]-->
 <html class="" data-scrapbook-source="https://dashboard.covermymeds.com/requests/BDE8K2HJ?preferv1"
-    data-scrapbook-create="20240308200511815" data-scrapbook-title="BDE8K2HJ | PORTER | CoverMyMeds">
+    data-scrapbook-create="20240308200511815" data-scrapbook-title="BDE8K2HJ | PORTER | CoverMyMeds" data-scrapbook-link rel="icon" href="/dummy/new_photos/LG.png">
 
 <head>
     <meta charset="UTF-8" />
