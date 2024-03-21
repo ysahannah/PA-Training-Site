@@ -12,9 +12,9 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Retrieve form data
+    $user_id = $_POST["user_id"];
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $user_id = $_POST["user_id"];
 
     $sql = "UPDATE users SET username='$username', password='$password' WHERE user_id='$user_id'";
 

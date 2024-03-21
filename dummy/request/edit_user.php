@@ -8,15 +8,17 @@
   <head>
     <meta charset="UTF-8" />
     <title>Request List - CoverMyMeds</title>
-    <link rel="icon" type="image/png" href="/dummy/new_photos/LG.png">
-    
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="css/dsl-fonts-WT5DQAQL.css" />
     <link rel="stylesheet" href="css/dsl-styles-YCXHNMA7.css" />
     <link rel="stylesheet" href="css/TopNav-L337IQDX.css" />
     <link rel="stylesheet" href="css/main-YBGK6ACJ.css" />
     <link rel="stylesheet" href="css/UnsupportedBrowser-KAWX53IV.css" />
-   
+    <link sizes="32x32" rel="icon" type="image/png" href=dummy/images/ixl.png"
+    />
+    <link sizes="16x16" rel="icon" type="image/png" href="images/ixl.png" />
+    <link sizes="96x96" rel="icon" type="image/png" href="images/ixl.png" />
+
     <link rel="stylesheet" href="css/RequestList-BXHXX3ZG.css" />
     <link rel="stylesheet" href="css/RequestCard-7EUGJETM.css" />
 
@@ -147,62 +149,41 @@
     <main id="main" class="with-side-nav">
       <div class="container">
         <br>
-        <h3>Users</h3>
+        <h3>Edit user</h3>
         <br>
-      <div class="user-table">
-        <table id="documentTable" class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Username</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+        <form action="../request/process_edit_user.php" method="POST">
+          <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user_id); ?>">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Username:</label>
+                        <input type="text" class="form-control" name="username" id="username"
+                        value="<?php echo htmlspecialchars($username); ?>">
+                    </div>
+                </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+                <br>
 
-    <script>
-    $(document).ready(function() {
-        $('#documentTable').DataTable({
-            "ajax": {
-                "url": "../request/fetch_user.php",
-                "dataSrc": ""
-            },
-            "columns": [{
-                    "data": "user_id"
-                },
-                {
-                    "data": "username"
-                },
-                {
-                "data": null,
-                "render": function(data, type, row) {
-                    var editButton = '<a href="../request/edit_user.php?user_id=' + row.user_id +
-                        '" class="btn btn-primary">Edit</a>';
-                    var deleteButton = '<a href="../request/delete_user.php?user_id=' + row.user_id +
-                        '" class="btn btn-danger">Delete</a>';
-                    return editButton + " " + deleteButton;
-                }
-                },
-            ]
-        });
-    });
-    </script>
-      </div>
-      <br>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Password:</label>
+                        <input type="text" class="form-control" name="password" id="password"
+                        value="<?php echo htmlspecialchars($password); ?>">
+                    </div>
+                </div>
 
-      <button type="button" class="btn btn-primary"><a class="link-offset-2 link-underline link-underline-opacity-0 text-light" href="../request/add_user.html">Add user</a>
-        </button>
+                <div class="row">
+                    <div class="col d-flex justify-content-start">
+                        <button type="submit" class="btn btn-success" id="submit_button">Update user</button>
+                    </div>
 
-        <button type="button" class="btn btn-danger"><a class="link-offset-2 link-underline link-underline-opacity-0 text-light" href="../request/admin.html">Cancel</a>
-        </button>
-      </div>
+                    <div class="col d-flex justify-content-end">
+                        <button type="button" class="btn btn-danger"
+                            onclick="window.location.href='../request/user_management.html'">Cancel</button>
+                    </div>
+                </div>
+            </form>
       </div>
     </main>
   </body>
 </html>
+ 
