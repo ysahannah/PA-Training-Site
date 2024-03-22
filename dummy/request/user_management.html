@@ -65,8 +65,9 @@
   </head>
 
   <body class="h-full">
-    <!-- Bootstrap Toast -->
+      
     <div aria-live="polite" aria-atomic="true" class="toast-container position-absolute p-3" style="z-index: 9999; top: 0; right: 0;">
+      <!-- Bootstrap Toast for Add User -->
         <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <strong class="me-auto">Success</strong>
@@ -76,8 +77,21 @@
                 User added successfully...
             </div>
         </div>
+         <!-- End Bootstrap Toast for Add User -->
+
+        <!-- Bootstrap Toast for Delete User Success -->
+    <div id="deleteSuccessToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Success</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            User deleted successfully...
+        </div>
     </div>
-    <!-- End Bootstrap Toast -->
+    <!-- End Bootstrap Toast for Delete User Success -->
+    </div>
+   
 
     <!-- Delete User Modal -->
     <div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
@@ -98,6 +112,7 @@
         </div>
     </div>
     <!-- End Delete User Modal -->
+
     <noscript
       ><iframe
         src="index_1.html"
@@ -238,6 +253,12 @@
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 
     <script>
+      // Success Toast for Delete User
+      function showDeleteSuccessToast() {
+        var deleteSuccessToast = new bootstrap.Toast(document.getElementById("deleteSuccessToast"));
+        deleteSuccessToast.show();
+    }
+
       $(document).on('click', '.deleteUserBtn', function(){
         var userIdToDelete = $(this).data('user-id');
         $('#confirmDeleteBtn').data('user-id', userIdToDelete);
@@ -258,9 +279,10 @@
                 {
                 "data": null,
                 "render": function(data, type, row) {
-                    var editButton = '<a href="../request/edit_user.php?user_id=' + row.user_id +
-                        '" class="btn btn-primary">Edit</a>';
-                    var deleteButton = '<button type="button" class="btn btn-danger deleteUserBtn" data-user-id="' + row.user_id + '" data-bs-toggle="modal" data-bs-target="#deleteUserModal">Delete</button>';
+                    var editButton = '<a href="../request/edit_user.php?user_id=' + row.user_id + '" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg></a>';
+
+                    var deleteButton = '<button type="button" class="btn btn-danger deleteUserBtn" data-user-id="' + row.user_id + '" data-bs-toggle="modal" data-bs-target="#deleteUserModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/></svg></button>';
+
                     return editButton + " " + deleteButton;
                 }
                 },
@@ -277,6 +299,8 @@
             data: { user_id: userIdToDelete },
             success: function(response) {
               console.log(response);
+              // Show the delete success toast
+              showDeleteSuccessToast();
               // Reload the DataTable after successful deletion
               $('#documentTable').DataTable().ajax.reload();
 
@@ -296,10 +320,14 @@
       </div>
       <br>
 
-      <button type="button" class="btn btn-primary"><a class="link-offset-2 link-underline link-underline-opacity-0 text-light" href="../request/add_user.html">Add user</a>
+      <button type="button" class="btn btn-primary"><a class="link-offset-2 link-underline link-underline-opacity-0 text-light" href="../request/add_user.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+  <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/></svg>&nbsp;Add user</a>
         </button>
 
-        <button type="button" class="btn btn-danger"><a class="link-offset-2 link-underline link-underline-opacity-0 text-light" href="../request/admin.html">Cancel</a>
+        <button type="button" class="btn btn-danger"><a class="link-offset-2 link-underline link-underline-opacity-0 text-light" href="../request/admin.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+</svg>&nbsp;Cancel</a>
         </button>
       </div>
       </div>
