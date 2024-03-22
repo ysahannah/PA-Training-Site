@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // Redirect user back to the user management page
-        header("Location: ../request/user_management.html");
+        header("Location: ./user_management.php");
         exit();
     } else {
         echo "Error updating user: " . $conn->error;

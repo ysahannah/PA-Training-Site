@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["user_id"])){
+  header("Location: ../login.html");
+}
+?>
+
+
 <!DOCTYPE html>
 <html
   lang="en"
@@ -75,7 +84,7 @@
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="../request/user_management.html"
+                href="./user_management.php"
                 class="dsl-side-nav__item"
                 id="ga-qa-dsl-side-nav-item-logout"
                 ><img
@@ -126,9 +135,9 @@
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="/dummy/login.html"
+                href="../signout.php"
                 class="dsl-side-nav__item"
-                id="ga-qa-dsl-side-nav-item-logout"
+                id="signOutBtn"
                 ><img
                   alt=""
                   src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzEiIGhlaWdodD0iMzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGgKICAgICAgICAgICAgc3Ryb2tlPSIjMDE0MjZBIgogICAgICAgICAgICBkPSJNMTguNSA3VjEuNWgtMTd2MjhoMTdWMjQiCiAgICAgICAgLz4KICAgICAgICA8ZyBzdHJva2U9IiNFMDAwNEQiPgogICAgICAgICAgICA8cGF0aCBkPSJNMjAuNzAyIDlsNy45MzMgNi40OS03LjkzMyA2LjQ5TTExIDE1LjQ5aDE2LjE5MiIgLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=" />
@@ -620,5 +629,15 @@
         </div>
       </div>
     </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("signOutBtn").addEventListener("click", function(event) {
+            event.preventDefault();
+            // Redirect the user to the sign-out page (PHP)
+            window.location.href = "../signout.php";
+        });
+    });
+    </script>
   </body>
 </html>

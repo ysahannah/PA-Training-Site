@@ -235,12 +235,38 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <!-- <script>
       document
         .getElementById("login-button")
         .addEventListener("click", function (event) {
           event.preventDefault(); // Prevent the default form submission behavior
           window.location.href = "request/index.html"; // Replace "next_page_url" with the actual URL of the next page
+=======
+    <!-- Add Bootstrap JS and your custom JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to display the toast for invalid credentials
+        function showToastInvalidCredentials() {
+            var toastInvalidCredentials = new bootstrap.Toast(document.getElementById('toast-invalid-credentials'));
+            toastInvalidCredentials.show();
+        }
+
+        // Add an event listener to the login form for form submission
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            // For demonstration purposes, assume login fails
+            var loginSuccess = true;
+
+            if (!loginSuccess) {
+                // Prevent the default form submission behavior
+                event.preventDefault();
+                // Display the toast for invalid credentials
+                showToastInvalidCredentials();
+            }
+>>>>>>> 91d14c7 (added signout.php)
         });
     </script> -->
 </body>

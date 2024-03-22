@@ -70,6 +70,31 @@
                 User added successfully...
             </div>
         </div>
+<<<<<<< HEAD:dummy/request/user_management.html
+=======
+
+        <!-- Second Toast for User already exists -->
+    <div id="userExistsToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Warning</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            User already exists...
+        </div>
+    </div>
+         <!-- End Bootstrap Toast for User already exists -->
+
+        <!-- Bootstrap Toast for Delete User Success -->
+    <div id="deleteSuccessToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Success</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            User deleted successfully...
+        </div>
+>>>>>>> 91d14c7 (added signout.php):dummy/request/user_management.php
     </div>
     <!-- End Bootstrap Toast -->
     <noscript
@@ -227,15 +252,56 @@
                 {
                 "data": null,
                 "render": function(data, type, row) {
+<<<<<<< HEAD:dummy/request/user_management.html
                     var editButton = '<a href="../request/edit_user.php?user_id=' + row.user_id +
                         '" class="btn btn-primary">Edit</a>';
                     var deleteButton = '<a href="../request/delete_user.php?user_id=' + row.user_id +
                         '" class="btn btn-danger">Delete</a>';
+=======
+                    var editButton = '<a href="./edit_user.php?user_id=' + row.user_id + '" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg></a>';
+
+                    var deleteButton = '<button type="button" class="btn btn-danger deleteUserBtn" data-user-id="' + row.user_id + '" data-bs-toggle="modal" data-bs-target="#deleteUserModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/></svg></button>';
+
+>>>>>>> 91d14c7 (added signout.php):dummy/request/user_management.php
                     return editButton + " " + deleteButton;
                 }
                 },
             ]
         });
+<<<<<<< HEAD:dummy/request/user_management.html
+=======
+
+        // Delete confirmation
+        $('#confirmDeleteBtn').click(function() {
+          var userIdToDelete = $(this).data('user-id');
+
+          $.ajax({
+            url: '../request/delete_user.php',
+            type: 'GET',
+            data: { user_id: userIdToDelete },
+            success: function(response) {
+              console.log(response);
+              // Show the delete success toast
+              showDeleteSuccessToast();
+              // Reload the DataTable after successful deletion
+              $('#documentTable').DataTable().ajax.reload();
+
+              // Re-enable click on the rest of the screen
+              $('body').removeClass('modal-open');
+              $('.modal-backdrop').remove();
+            },
+            error: function(xhr, status, error) {
+              console.error(xhr.responseText);
+            }
+          });
+          // Close the modal
+          $('#deleteUserModal').modal('hide');
+        })
+
+        $('#userExistsToast').click(function() {
+          var userExistsToast
+        })
+>>>>>>> 91d14c7 (added signout.php):dummy/request/user_management.php
     });
     </script>
       </div>

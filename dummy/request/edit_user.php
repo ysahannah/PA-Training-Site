@@ -152,12 +152,12 @@
         <h3>Edit user</h3>
         <br>
         <form action="../request/process_edit_user.php" method="POST">
-          <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user_id); ?>">
+          <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                 <div class="col">
                     <div class="mb-3">
                         <label for="title" class="form-label">Username:</label>
                         <input type="text" class="form-control" name="username" id="username"
-                        value="<?php echo htmlspecialchars($username); ?>">
+                        value="<?php echo $username; ?>">
                     </div>
                 </div>
 
@@ -167,7 +167,7 @@
                     <div class="mb-3">
                         <label for="title" class="form-label">Password:</label>
                         <input type="text" class="form-control" name="password" id="password"
-                        value="<?php echo htmlspecialchars($password); ?>">
+                        value="<?php echo $password; ?>">
                     </div>
                 </div>
 
