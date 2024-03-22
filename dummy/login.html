@@ -25,6 +25,8 @@
         content="ZcyOdWDeAvi_j5akpR8X6690q51-AVcZeLB2Y85lD_J9VcpvVNtjg6SFNIVZq4x9imojveH-D9M83WtqHXIOwg" />
 
     <link rel="stylesheet" href="styles_r2/login.css" />
+    <link rel="stylesheet" href="request/notification.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <script src="/assets/application-a62b82e7eb2e0335f817d1143c9e61d0fd3b96c48905729bda894179dadb739e.js" defer="defer">
     </script>
@@ -42,6 +44,7 @@
 
     //]]>
     </script>
+    <script src="/dummy/request/notification.js"></script>
 </head>
 
 <body>
@@ -88,19 +91,23 @@
             </div>
         </nav>
 
+        
         <div class="mdc-top-app-bar--fixed-adjust">
             <script src="/assets/sessions/index-b3ca42dd62a7099b6cb4e2711e2d7a3b0b28a23a9937552b3e9ff3965153d0a1.js"
                 defer="defer"></script>
-
+            
             <div class="hero__quarter hero__quarter--orange flipped"></div>
-
+                
             <div class="mdc-layout-grid">
+
                 <main class="mdc-layout-grid__inner spacer__top--medium">
                     <div
                         class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-phone spacer__bottom--medium">
+                        
                         <div class="mdc-card mdc-card--invisible">
                             <div class="mdc-layout-grid">
                                 <h1>Welcome back!</h1>
+
                                 <p class="p--large style--dark-grey">
                                     Log into your CoverMyMeds account to create new, manage
                                     existing and access pharmacy-initiated prior authorization
@@ -121,7 +128,21 @@
                                 <h1>Log in</h1>
 
                                 <!-- Notification 
-                                <div id="notification-area"></div>-->
+                                <div id="notification-area"></div>
+                                <div class="notification">
+                                    <div class="toast success">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        <div class="content">
+                                            <div class="title">Success</div>
+                                            <span>This is a success</span>
+                                        </div>
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </div>
+
+                                    <div class="buttons">
+                                        <button id="XED">XED</button>
+                                    </div>
+                                </div>-->
 
                                 <form id="login-form" class="login-form" action="./process_login.php"
                                     accept-charset="UTF-8" method="post">
@@ -191,7 +212,10 @@
 
                                     <!--log in button-->
                                     <div class="spacer__top--medium">
-                                        <input type="submit" name="commit" value="Log in" id="login-button"
+                                        <input type="submit" 
+                                        name="commit" 
+                                        value="Log in" 
+                                        id="login-button"
                                             class="mdc-button mdc-button--raised style--width-100 spacer__bottom--small"
                                             data-disable-with="Log in" />
 

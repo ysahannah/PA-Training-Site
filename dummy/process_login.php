@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           header("Location: ./LoginInvalidPass.html");
         }
     } else {
-        echo "User not found";
+       echo "User not found";
         header("Location: ./LoginUserNotFound.html");
     }
 }
