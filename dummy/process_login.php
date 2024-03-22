@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -17,6 +19,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $conn->real_escape_string($_POST["username"]);
     $password = $_POST["password"];
 
+    // Check if the user has already attempted to log in before
+    if (!isset($_SESSION['login_attempts'])) {
+        $_SESSION['login_attempts'] = 0;
+    }
+
+    // Increment the login attempts
+    $_SESSION['login_attempts']++;
+
+    // Check if the user has exceeded the maximum login attempts
+    if ($_SESSION['login_attempts'] > 5) {
+        exit();
+    }
+
     // Prepare and execute the SQL statement using prepared statements
     $sql = "SELECT * FROM users WHERE username=?";
     $stmt = $conn->prepare($sql);
@@ -28,17 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $row = $result->fetch_assoc();
         $stored_password = $row["password"];
 
-
-         //Verify the password
-         if ($password === $stored_password) {
-            // Start the session
-            session_start();
-
+        // Verify the password
+        if ($password === $stored_password) {
             // Set session variables
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['username'];
-            
-            // Password is correct, set session variables or redirect to homepage
+
+            // Password is correct, redirect to appropriate page
             switch ($row["usertype"]) {
                 case "admin":
                     header("Location: ./request/admin.html");
@@ -50,17 +61,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     echo "Invalid user type";
                     break;
             }
-            exit(); // Make sure to exit after redirection
         } else {
-            echo "Invalid password";
-          header("Location: ./LoginInvalidPass.html");
+            // Invalid password, set error session variable
+            $_SESSION['login_error'] = "Invalid password";
+            header("Location: ./LoginInvalidPass.html");
         }
     } else {
-        echo "User not found";
+        // User not found, set error session variable
+        $_SESSION['login_error'] = "User not found";
         header("Location: ./LoginUserNotFound.html");
     }
 }
+
 $conn->close();
 ?>
-
-
