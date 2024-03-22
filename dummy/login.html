@@ -25,6 +25,7 @@
         content="ZcyOdWDeAvi_j5akpR8X6690q51-AVcZeLB2Y85lD_J9VcpvVNtjg6SFNIVZq4x9imojveH-D9M83WtqHXIOwg" />
 
     <link rel="stylesheet" href="styles_r2/login.css" />
+    
     <script src="/assets/application-a62b82e7eb2e0335f817d1143c9e61d0fd3b96c48905729bda894179dadb739e.js" defer="defer">
     </script>
     <script src="https://chat.covermymeds.com/javascripts/bundle-customer.js"></script>
@@ -119,44 +120,60 @@
                             <div class="mdc-layout-grid">
                                 <h1>Log in</h1>
 
+                                <!-- Notification 
+                                <div id="notification-area"></div>-->
+
                                 <form id="login-form" class="login-form" action="./process_login.php"
                                     accept-charset="UTF-8" method="post">
                                     <input type="hidden" name="authenticity_token"
                                         value="b1bzb_9fV5Itzve57v2vJRRQIlhnE1l1zwb0k91VeCN3z7d1y1o26TbEVZgSSTSzMU6qePjsAb-La-maDkJ5Ew"
                                         autocomplete="off" />
 
+                                    <!--username input-->
                                     <div class="mdc-text-field mdc-text-field--filled mdc-text-field--full-width"
                                         data-mdc-auto-init="MDCTextField">
+
+                                        <!--label-->
                                         <div class="mdc-line-ripple"></div>
                                         <label class="mdc-floating-label" for="username" style="padding-bottom:25px;">Username</label>
                                         
-
+                                        <!--input-->
                                         <input type="text"
                                             class="mdc-text-field__input mdc-text-field--with-trailing-icon"
-                                            required="required" aria-describedby="username-helper-text" name="username"
+                                            required="required" 
+                                            aria-describedby="username-helper-text" 
+                                            name="username"
                                             id="username" />
 
+                                        <!--error icon-->
                                         <!--<div
                         id="email error">Please fill up your username</div>-->
                                         <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing style--red"
                                             aria-hidden="true">error</i>
                                     </div>
+                                    
+                                    <!--username helper text-->
                                     <div class="mdc-text-field-helper-line">
-                                        <div id="username" name="username"
-                                            class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
-                                            aria-hidden="true">
-                                            Username is required
+                                        <div id="username" 
+                                        name="username"
+                                        class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
+                                        aria-hidden="true">Username is required
                                         </div>
                                     </div>
-
+                                    
+                                    <!--password input-->
                                     <div class="mdc-text-field mdc-text-field--filled mdc-text-field--full-width"
                                         data-mdc-auto-init="MDCTextField">
                                         <div class="mdc-line-ripple"></div>
-                                        <label class="mdc-floating-label" for="password" style="padding-bottom:25px;">Password</label>
+                                        <label class="mdc-floating-label" 
+                                            for="password" 
+                                            style="padding-bottom:25px;">Password</label>
 
                                         <input type="password"
                                             class="mdc-text-field__input mdc-text-field--with-trailing-icon"
-                                            required="required" aria-describedby="password-helper-text" name="password"
+                                            required="required" 
+                                            aria-describedby="password-helper-text" 
+                                            name="password"
                                             id="password" />
 
                                         <!--<div 
@@ -172,10 +189,13 @@
                                         </div>
                                     </div>
 
+                                    <!--log in button-->
                                     <div class="spacer__top--medium">
                                         <input type="submit" name="commit" value="Log in" id="login-button"
                                             class="mdc-button mdc-button--raised style--width-100 spacer__bottom--small"
                                             data-disable-with="Log in" />
+
+                                        <!--forgot password link-->
                                         <p class="style--center style--uppercase">
                                             <a class="style--magenta"
                                                 href="https://account.covermymeds.com/forgot">Forgot your username or
