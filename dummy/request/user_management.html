@@ -8,7 +8,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Request List - CoverMyMeds</title>
-    <link rel="icon" type="image/png" href="../dummy/new_photos/LG.png">
+    <link rel="icon" type="image/png" href="/dummy/new_photos/LG.png">
     
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="css/dsl-fonts-WT5DQAQL.css" />
@@ -180,11 +180,14 @@
                     "data": "username"
                 },
                 {
-                    "data": null,
-                    "render": function(data, type, row) {
-                        return '<a href="../request/edit_user.html?user_id=' + row.user_id +
-                            '" class="btn btn-primary">Edit</a>';
-                    }
+                "data": null,
+                "render": function(data, type, row) {
+                    var editButton = '<a href="../request/edit_user.php?user_id=' + row.user_id +
+                        '" class="btn btn-primary">Edit</a>';
+                    var deleteButton = '<a href="../request/delete_user.php?user_id=' + row.user_id +
+                        '" class="btn btn-danger">Delete</a>';
+                    return editButton + " " + deleteButton;
+                }
                 },
             ]
         });

@@ -8,14 +8,16 @@
   <head>
     <meta charset="UTF-8" />
     <title>Request List - CoverMyMeds</title>
-    <link rel="icon" href="/dummy/new_photos/LG.png">
-
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="css/dsl-fonts-WT5DQAQL.css" />
     <link rel="stylesheet" href="css/dsl-styles-YCXHNMA7.css" />
     <link rel="stylesheet" href="css/TopNav-L337IQDX.css" />
     <link rel="stylesheet" href="css/main-YBGK6ACJ.css" />
     <link rel="stylesheet" href="css/UnsupportedBrowser-KAWX53IV.css" />
+    <link sizes="32x32" rel="icon" type="image/png" href=dummy/images/ixl.png"
+    />
+    <link sizes="16x16" rel="icon" type="image/png" href="images/ixl.png" />
+    <link sizes="96x96" rel="icon" type="image/png" href="images/ixl.png" />
 
     <link rel="stylesheet" href="css/RequestList-BXHXX3ZG.css" />
     <link rel="stylesheet" href="css/RequestCard-7EUGJETM.css" />
@@ -150,10 +152,12 @@
         <h3>Edit user</h3>
         <br>
         <form action="../request/process_edit_user.php" method="POST">
+          <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user_id); ?>">
                 <div class="col">
                     <div class="mb-3">
                         <label for="title" class="form-label">Username:</label>
-                        <input type="text" class="form-control" name="username" id="username">
+                        <input type="text" class="form-control" name="username" id="username"
+                        value="<?php echo htmlspecialchars($username); ?>">
                     </div>
                 </div>
 
@@ -162,7 +166,8 @@
                 <div class="col">
                     <div class="mb-3">
                         <label for="title" class="form-label">Password:</label>
-                        <input type="text" class="form-control" name="password" id="password">
+                        <input type="text" class="form-control" name="password" id="password"
+                        value="<?php echo htmlspecialchars($password); ?>">
                     </div>
                 </div>
 
