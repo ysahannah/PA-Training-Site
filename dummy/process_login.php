@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start the session at the beginning of your script
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -28,17 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $row = $result->fetch_assoc();
         $stored_password = $row["password"];
 
-
-         //Verify the password
-         if ($password === $stored_password) {
-            // Start the session
-            session_start();
-
+        // Verify the password using password_verify() function for security
+        if (password_verify($password, $stored_password)) {
             // Set session variables
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['username'];
             
-            // Password is correct, set session variables or redirect to homepage
+            // Redirect based on user type
             switch ($row["usertype"]) {
                 case "admin":
                     header("Location: ./request/admin.html");
@@ -50,17 +48,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     echo "Invalid user type";
                     break;
             }
-            exit(); // Make sure to exit after redirection
         } else {
-            echo "Invalid password";
-          header("Location: ./LoginInvalidPass.html");
+            header("Location: ./LoginInvalidPass.html");
+            exit();
         }
     } else {
-       echo "User not found";
         header("Location: ./LoginUserNotFound.html");
+        exit();
     }
 }
+
 $conn->close();
 ?>
-
-
