@@ -25,26 +25,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $check_result = $conn->query($check_username);
     if ($check_result) {
         if ($check_result->num_rows > 0) {
-            echo "Error: Username already exists.";
+            // Username already exists
+            echo json_encode(array("success" => false, "error" => "Username already exists."));
             exit();
         }
     } else {
-        echo "Error: " . $conn->error;
+        // Error occurred while checking username
+        echo json_encode(array("success" => false, "error" => "Error: " . $conn->error));
         exit();
     }
 
     // Insert new user into database with default user type
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     if ($conn->query($sql) === TRUE) {
-        // Redirect to user_management page after successful insertion
-        header("Location: ../request/user_management.html");
+        // User added successfully
+    header("Location: ../request/user_management.html?success=true");
         exit();
     } else {
-        echo "Error: Unable to add new user. Please try again.";
-        error_log("Error in adding new user: " . $conn->error);
+        // Error adding user
+    header("Location: ../request/user_management.html?success=false&error=Unable+to+add+new+user.+Please+try+again.");
+    exit();
     }
 }
 
 // Close connection
 $conn->close();
 ?>
+
