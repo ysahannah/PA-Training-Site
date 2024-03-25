@@ -233,65 +233,67 @@
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 
     <script>
-    $(document).ready(function() {
-        $('#documentTable').DataTable({
-            "ajax": {
-                "url": "../request/fetch_user.php",
-                "dataSrc": ""
-            },
-            "columns": [{
-                    "data": "user_id"
-                },
-                {
-                    "data": "username"
-                },
-                {
-                "data": null,
-                "render": function(data, type, row) {
-                    var editButton = '<a href="../request/edit_user.php?user_id=' + row.user_id +
-                        '" class="btn btn-primary">Edit</a>';
-                    var deleteButton = '<a href="../request/delete_user.php?user_id=' + row.user_id +
-                        '" class="btn btn-danger">Delete</a>';
-                    var editButton = '<a href="./edit_user.php?user_id=' + row.user_id + '" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg></a>';
+  // Function to show the delete success toast
+  function showDeleteSuccessToast() {
+    var deleteSuccessToast = new bootstrap.Toast(document.getElementById("deleteSuccessToast"));
+    deleteSuccessToast.show();
+  }
 
-                    var deleteButton = '<button type="button" class="btn btn-danger deleteUserBtn" data-user-id="' + row.user_id + '" data-bs-toggle="modal" data-bs-target="#deleteUserModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/></svg></button>';
-                    return editButton + " " + deleteButton;
-                }
-                },
-            ]
-        });
-        // Delete confirmation
-        $('#confirmDeleteBtn').click(function() {
-          var userIdToDelete = $(this).data('user-id');
+  $(document).ready(function() {
+    $('#documentTable').DataTable({
+      "ajax": {
+        "url": "../request/fetch_user.php",
+        "dataSrc": ""
+      },
+      "columns": [{
+          "data": "user_id"
+        },
+        {
+          "data": "username"
+        },
+        {
+          "data": null,
+          "render": function(data, type, row) {
+            var editButton = '<a href="../request/edit_user.php?user_id=' + row.user_id +
+              '" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg></a>';
 
-          $.ajax({
-            url: '../request/delete_user.php',
-            type: 'GET',
-            data: { user_id: userIdToDelete },
-            success: function(response) {
-              console.log(response);
-              // Show the delete success toast
-              showDeleteSuccessToast();
-              // Reload the DataTable after successful deletion
-              $('#documentTable').DataTable().ajax.reload();
-
-              // Re-enable click on the rest of the screen
-              $('body').removeClass('modal-open');
-              $('.modal-backdrop').remove();
-            },
-            error: function(xhr, status, error) {
-              console.error(xhr.responseText);
-            }
-          });
-          // Close the modal
-          $('#deleteUserModal').modal('hide');
-        })
-
-        $('#userExistsToast').click(function() {
-          var userExistsToast
-        })
+            var deleteButton = '<button type="button" class="btn btn-danger deleteUserBtn" data-user-id="' + row.user_id + '" data-bs-toggle="modal" data-bs-target="#deleteUserModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/></svg></button>';
+            return editButton + " " + deleteButton;
+          }
+        },
+      ]
     });
-    </script>
+
+    // Delete confirmation
+    $('#confirmDeleteBtn').click(function() {
+      var userIdToDelete = $(this).data('user-id');
+
+      $.ajax({
+        url: '../request/delete_user.php',
+        type: 'GET',
+        data: { user_id: userIdToDelete },
+        success: function(response) {
+          console.log(response);
+          // Show the delete success toast
+          showDeleteSuccessToast();
+          // Reload the DataTable after successful deletion
+          $('#documentTable').DataTable().ajax.reload();
+
+          // Re-enable click on the rest of the screen
+          $('body').removeClass('modal-open');
+          $('.modal-backdrop').remove();
+        },
+        error: function(xhr, status, error) {
+          console.error(xhr.responseText);
+        }
+      });
+      // Close the modal
+      $('#deleteUserModal').modal('hide');
+    });
+  });
+</script>
+
+
       </div>
       <br>
 
