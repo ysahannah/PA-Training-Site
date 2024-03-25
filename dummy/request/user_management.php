@@ -59,42 +59,6 @@
   </head>
 
   <body class="h-full">
-    <!-- Bootstrap Toast -->
-    <div aria-live="polite" aria-atomic="true" class="toast-container position-absolute p-3" style="z-index: 9999; top: 0; right: 0;">
-        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <strong class="me-auto">Success</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                User added successfully...
-            </div>
-        </div>
-
-        <!-- Second Toast for User already exists -->
-    <div id="userExistsToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <strong class="me-auto">Warning</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            User already exists...
-        </div>
-    </div>
-         <!-- End Bootstrap Toast for User already exists -->
-
-        <!-- Bootstrap Toast for Delete User Success -->
-    <div id="deleteSuccessToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <strong class="me-auto">Success</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            User deleted successfully...
-        </div>
-
-    </div>
-    <!-- End Bootstrap Toast -->
     <noscript
       ><iframe
         src="index_1.html"
@@ -117,6 +81,40 @@
       </a>
       <ul class="top-nav__links"></ul>
     </nav>
+    <!-- Bootstrap Toast -->
+    <div aria-live="polite" aria-atomic="true" class="toast-container position-absolute p-3" style="z-index: 9999; top: 0; right: 0;">
+        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Success</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                User added successfully...
+            </div>
+        </div>
+        <!-- Second Toast for User already exists -->
+    <div id="userExistsToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Warning</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            User already exists...
+        </div>
+    </div>
+         <!-- End Bootstrap Toast for User already exists -->
+
+        <!-- Bootstrap Toast for Delete User Success -->
+    <div id="deleteSuccessToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="me-auto">Success</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            User deleted successfully...
+        </div>
+    </div>
+    <!-- End Bootstrap Toast -->
 
     <div class="dsl-side-nav-wrapper slide-from-left-react-enter-done">
       <!-- Start of Sidebar -->
@@ -262,7 +260,6 @@
                 },
             ]
         });
-
         // Delete confirmation
         $('#confirmDeleteBtn').click(function() {
           var userIdToDelete = $(this).data('user-id');
@@ -308,4 +305,3 @@
     </main>
   </body>
 </html>
- 
