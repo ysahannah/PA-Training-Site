@@ -1,12 +1,4 @@
 <?php
-<<<<<<< HEAD
-session_start(); // Start the session at the beginning of your script
-=======
-error_reporting(E_ALL); 
-ini_set('display_errors', 1);
-
-session_start();
->>>>>>> 91d14c7 (added signout.php)
 
 $servername = "localhost";
 $username = "root";
@@ -37,53 +29,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $row = $result->fetch_assoc();  
         $stored_password = $row["password"];
 
-<<<<<<< HEAD
-        // Verify the password using password_verify() function for security
-        if (password_verify($password, $stored_password)) {
-=======
-
-         //Verify the password
-         if ($password === $stored_password) {
->>>>>>> 91d14c7 (added signout.php)
+        // Verify the password
+        if ($password === $stored_password) {
             // Set session variables
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['username'];
             
-<<<<<<< HEAD
-            // Redirect based on user type
-=======
-            // Password is correct, set session variables or redirect to homepage
->>>>>>> 91d14c7 (added signout.php)
             switch ($row["usertype"]) {
                 case "admin":
                     header("Location: ./request/admin.php");
-                    exit();
+                    break;
                 case "user":
                     header("Location: ./request/index.html");
-                    exit();
+                    break;
                 default:
                     echo "Invalid user type";
                     break;
             }
-            exit(); // Make sure to exit after redirection
         } else {
-<<<<<<< HEAD
+            // Incorrect password
             header("Location: ./LoginInvalidPass.html");
             exit();
         }
     } else {
-=======
-            echo "Invalid password";
-          header("Location: ./LoginInvalidPass.html");
-        }
-    } else {
-        echo "User not found";
->>>>>>> 91d14c7 (added signout.php)
+        // User not found
         header("Location: ./LoginUserNotFound.html");
         exit();
     }
 }
+
 $conn->close();
 ?>
-
-
