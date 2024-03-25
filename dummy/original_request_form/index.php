@@ -25,7 +25,7 @@ $request_key = $_SESSION['request_key'];
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <![endif]-->
 <html class="" data-scrapbook-source="https://dashboard.covermymeds.com/requests/BE2FP4VX?preferv1"
-    data-scrapbook-create="20240228193508331" data-scrapbook-title="BE2FP4VX | CoverMyMeds">
+    data-scrapbook-create="20240228193508331" data-scrapbook-title="BE2FP4VX | Prior Authorization Training Site">
 
 <head>
     <meta charset="UTF-8" />
@@ -40,9 +40,10 @@ $request_key = $_SESSION['request_key'];
 
     <!-- Google Optimize -->
 
-    <title>BE2FP4VX | CoverMyMeds</title>
+    <title>Prior Authorization Training Site</title>
+    <link rel="icon" type="image/png" href="/dummy/new_photos/LG.png">
 
-    <link rel="shortcut icon" href="../new_photos/favicon (1).ico" type="image/x-icon type">
+   
 
     <meta content="noindex" name="robots" />
     <meta content="true" name="v2-app-enabled" />

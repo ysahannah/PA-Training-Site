@@ -146,8 +146,8 @@
     </div>
 
     <!-- main -->
-    <main id="main" class="with-side-nav">
-      <div class="container">
+    <main>
+      <div class="container-fluid">
         <br>
         <h3>Edit user</h3>
         <br>

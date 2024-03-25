@@ -14,7 +14,7 @@
     <link href="https://www.covermymeds.com/styles_r2/fonts/nunito_sans.css" rel="stylesheet" />
 
     <title>
-        Log In | CoverMyMeds, The Leader In Electronic Prior Authorization
+        Log In | CoverMyMeds, Prior Authorization Training Site
     </title>
     <link rel="icon" href="../dummy/new_photos/LG.png">
 
