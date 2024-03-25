@@ -1,4 +1,9 @@
+
+
+
+
 <!DOCTYPE html>
+
 <!--[if IE 6]>
 <html id='ie6' xmlns='http://www.w3.org/1999/xhtml'>
 <!
@@ -8471,6 +8476,42 @@
                         <!-- Start of Patient Information Section -->
                         <section id="patient-information-section">
                             <header>
+                                <!-- Initialize variables --> 
+
+                                <?php 
+        // Establish your SQLi connection and query to fetch data
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "covermymeds";
+        
+        
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT firstName, middle_name, lastName, birthday, street, street2, city, zip_code, phone FROM patient_information";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $firstName = $row['firstName'];
+            $middle_name = $row['middle_name'];
+            $lastName = $row['lastName'];
+            $birthday = $row['birthday'];
+            $street = $row['street'];
+            $street2 = $row['street2'];
+            $city = $row['city'];
+            $zip_code = $row['zip_code'];
+            $phone = $row['phone'];
+        } else {
+            echo "0 results";
+        }
+        
+        // Close the connection
+        $conn->close();
+        ?>
                                 <span class="arrow down" data-bind="hidden collapsed" style="display: show">▼</span>
                                 <span class="arrow right" data-bind="displayed collapsed"
                                     style="display: inline">►</span>
@@ -8505,7 +8546,7 @@
                                                     <span data-bind="text; class type" class="text">First</span>
                                                     <input id="firstName" type="text" name="firstName"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="<?php echo $firstName ?>" />
+                                                        value="<?php echo htmlspecialchars($firstName); ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8514,7 +8555,7 @@
                                                     <span data-bind="text; class type" class="text">Middle</span>
                                                     <input id="answer_text" type="text" name="middle_name"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="<?php echo $middle_name ?>" />
+                                                        value="<?php echo htmlspecialchars($middle_name); ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8523,7 +8564,7 @@
                                                     <span data-bind="text; class type" class="text">Last</span>
                                                     <input id="answer_text" type="text" name="lastName"
                                                         data-bind="disabled disabled" disabled="disabled"
-                                                        value="<?php echo $lastName ?>" />
+                                                        value="<?php echo htmlspecialchars($lastName); ?>" />
                                                     <span class="error" data-bind="text error"></span>
                                                 </div>
                                             </div>
@@ -8694,6 +8735,50 @@
                         <!-- End of Patient Information Section -->
 
                         <!-- Start of Prescriber Section -->
+
+
+                        <!-- Intialize the variables -->
+                        <?php 
+        // Establish your SQLi connection and query to fetch data
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "covermymeds";
+        
+        
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT provider_id, npi, provider_firstName, provider_lastName, street, street2, city, state, zip_code, phone, fax, review FROM provider";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $provider_id = $row ['provider_id'];
+            $npi = $row['npi'];
+            $provider_firstName = $row['provider_firstName'];
+            $provider_lastName = $row['provider_lastName'];
+            $street = $row['street'];
+            $street2 =$row['street2'];
+            $city = $row['city'];
+            $state = $row['state'];
+            $zip_code = $row['zip_code'];
+            $phone = $row['phone'];
+            $fax = $row['fax'];
+            $review = $row['review'];
+
+
+        } else {
+            echo "0 results";
+        }
+        
+        // Close the connection
+        $conn->close();
+        ?>
+
+
                         <section id="prescriber-information-section">
                             <header>
                                 <span class="arrow down" data-bind="hidden collapsed" style="display: show">▼</span>
@@ -8880,6 +8965,49 @@
                         <!-- End of Prescriber Section -->
 
                         <!-- Start of Drug and Diagnosis Section -->
+
+                        <!-- Initialize Variables -->
+                        <?php 
+        // Establish your SQLi connection and query to fetch data
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "covermymeds";
+        
+        
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT  ";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $provider_id = $row ['provider_id'];
+            $npi = $row['npi'];
+            $provider_firstName = $row['provider_firstName'];
+            $provider_lastName = $row['provider_lastName'];
+            $street = $row['street'];
+            $street2 =$row['street2'];
+            $city = $row['city'];
+            $state = $row['state'];
+            $zip_code = $row['zip_code'];
+            $phone = $row['phone'];
+            $fax = $row['fax'];
+            $review = $row['review'];
+
+
+        } else {
+            echo "0 results";
+        }
+        
+        // Close the connection
+        $conn->close();
+        ?>
+
+                    
                         <section id="drug-and-diagnosis-information-section">
                             <header>
                                 <span class="arrow down" data-bind="hidden collapsed" style="display: show">▼</span>
@@ -9529,6 +9657,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./script.js"></script>
+    <script src="./script2.js"></script>
 
 </body>
 <quillbot-extension-portal style="
