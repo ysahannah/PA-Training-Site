@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html
   lang="en"
@@ -7,7 +8,7 @@
   data-scrapbook-title="Request List - CoverMyMeds">
   <head>
     <meta charset="UTF-8" />
-    <title>Request List - CoverMyMeds</title>
+    <title>Request List - Prior Authorization Training Site</title>
     <link rel="icon" type="image/png" href="/dummy/new_photos/LG.png">
     
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -60,7 +61,7 @@
 
   <body class="h-full">
     <!-- Bootstrap Toast -->
-    <div aria-live="polite" aria-atomic="true" class="toast-container position-absolute p-3" style="z-index: 9999; top: 0; right: 0;">
+    <div aria-live="polite" aria-atomic="true" class="toast-container row justify-content-center" style="z-index: 9999; top: 0; right: 0;">
         <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <strong class="me-auto">Success</strong>
