@@ -8980,25 +8980,18 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT  ";
+        $sql = "SELECT drug_id, patient_id, quantity, dosage, days_supply, primary_diagnosis, secondary_diagnosis FROM drug";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            $provider_id = $row ['provider_id'];
-            $npi = $row['npi'];
-            $provider_firstName = $row['provider_firstName'];
-            $provider_lastName = $row['provider_lastName'];
-            $street = $row['street'];
-            $street2 =$row['street2'];
-            $city = $row['city'];
-            $state = $row['state'];
-            $zip_code = $row['zip_code'];
-            $phone = $row['phone'];
-            $fax = $row['fax'];
-            $review = $row['review'];
-
-
+          $medication_id = $row['drug_id'];
+          $patient_id = $row['patient_id'];
+          $quantity =$row['quantity'];
+          $dosage =$row['dosage'];
+          $days_supply =$row['days_supply'];
+          $primary_dosage = $row['primary_diagnosis'];
+          $second_dosage = $row['secondary_diagnosis'];
         } else {
             echo "0 results";
         }
