@@ -91,7 +91,6 @@
             </div>
         </nav>
 
-        
         <div class="mdc-top-app-bar--fixed-adjust">
             <script src="/assets/sessions/index-b3ca42dd62a7099b6cb4e2711e2d7a3b0b28a23a9937552b3e9ff3965153d0a1.js"
                 defer="defer"></script>
@@ -126,23 +125,6 @@
                         <div class="mdc-card mdc-card--raised">
                             <div class="mdc-layout-grid">
                                 <h1>Log in</h1>
-
-                                <!-- Notification 
-                                <div id="notification-area"></div>
-                                <div class="notification">
-                                    <div class="toast success">
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <div class="content">
-                                            <div class="title">Success</div>
-                                            <span>This is a success</span>
-                                        </div>
-                                        <i class="fa-solid fa-xmark"></i>
-                                    </div>
-
-                                    <div class="buttons">
-                                        <button id="XED">XED</button>
-                                    </div>
-                                </div>-->
 
                                 <form id="login-form" class="login-form" action="./process_login.php"
                                     accept-charset="UTF-8" method="post">
@@ -234,15 +216,7 @@
             </div>
         </div>
     </div>
-
-<<<<<<< HEAD
-    <!-- <script>
-      document
-        .getElementById("login-button")
-        .addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent the default form submission behavior
-          window.location.href = "request/index.html"; // Replace "next_page_url" with the actual URL of the next page
-=======
+    
     <!-- Add Bootstrap JS and your custom JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
@@ -266,7 +240,6 @@
                 // Display the toast for invalid credentials
                 showToastInvalidCredentials();
             }
->>>>>>> 91d14c7 (added signout.php)
         });
     </script> -->
 </body>
