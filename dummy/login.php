@@ -13,6 +13,12 @@
         sizes="16x16" />
     <link href="https://www.covermymeds.com/styles_r2/fonts/nunito_sans.css" rel="stylesheet" />
 
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/png"
+        href="/assets/favicon-96x96-6ec4da6ac3cf152bd928ca4d89c1ec5dff27128377439eb8d53f0fb9ef03a480.png"
+        sizes="96x96" />
+
     <title>
         Log In | CoverMyMeds, Prior Authorization Training Site
     </title>
@@ -32,8 +38,6 @@
     </script>
     <script src="https://chat.covermymeds.com/javascripts/bundle-customer.js"></script>
     <script>
-    //<![CDATA[
-
     window.Chat = window.Chat || {};
     window.Chat.app = new window.Chat.CustomerApp({
         base: "https://chat.covermymeds.com",
@@ -41,14 +45,26 @@
         currentApp: "OIDC",
         sessionApi: "api_v2/customer/session/store",
     });
-
-    //]]>
     </script>
-    <script src="/dummy/request/notification.js"></script>
 </head>
 
 <body>
+    <!-- Hidden Bootstrap Toast for invalid login -->
+    <div class="toast" id="invalidLoginToast" role="alert" aria-live="assertive" aria-atomic="true"
+        data-delay="5000" style="position: absolute; top: 20px; right: 20px;">
+        <div class="toast-header">
+            <strong class="mr-auto">Error</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            Invalid username or password. Please try again.
+        </div>
+    </div>
+    
     <div class="main">
+
         <nav class="mdc-top-app-bar" aria-label="header">
             <div class="mdc-top-app-bar__row">
                 <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
@@ -217,31 +233,11 @@
         </div>
     </div>
     
-    <!-- Add Bootstrap JS and your custom JS -->
+    <!-- Include Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        // Function to display the toast for invalid credentials
-        function showToastInvalidCredentials() {
-            var toastInvalidCredentials = new bootstrap.Toast(document.getElementById('toast-invalid-credentials'));
-            toastInvalidCredentials.show();
-        }
-
-        // Add an event listener to the login form for form submission
-        document.getElementById('login-form').addEventListener('submit', function (event) {
-            // For demonstration purposes, assume login fails
-            var loginSuccess = true;
-
-            if (!loginSuccess) {
-                // Prevent the default form submission behavior
-                event.preventDefault();
-                // Display the toast for invalid credentials
-                showToastInvalidCredentials();
-            }
-        });
-    </script> -->
+    <!-- Your existing script tags -->
 </body>
 
 </html>

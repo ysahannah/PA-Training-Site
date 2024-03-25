@@ -33,7 +33,7 @@ if ($stmt = $conn->prepare($sql)) {
     // Attempt to execute the prepared statement
     if ($stmt->execute()) {
         // Redirect to user_management page after successful deletion
-        header("Location: ../request/user_management.html");
+        header("Location: ../request/user_management.php");
         exit();
     } else {
         echo "Error: Unable to delete user. Please try again.";

@@ -1,3 +1,5 @@
+<?php include'dummy/session_check.php'; ?>
+
 <!DOCTYPE html>
 <html
   lang="en"
@@ -26,6 +28,18 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/dist/qrcode.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script>
+        // JavaScript to save session variables in session storage
+        <?php
+        session_start(); // Start the session if not already started
+        if(isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
+            echo "sessionStorage.setItem('user_id', " . json_encode($_SESSION['user_id']) . ");\n";
+            echo "sessionStorage.setItem('username', " . json_encode($_SESSION['username']) . ");\n";
+            // You can add other session variables here
+        }
+        ?>
+    </script>
   </head>
 
   <body class="h-full">
@@ -146,42 +160,38 @@
     </div>
 
     <!-- main -->
-    <main>
-      <div class="container-fluid">
+    <main id="main" class="with-side-nav">
+      <div class="container">
         <br>
         <h3>Edit user</h3>
         <br>
         <form action="../request/process_edit_user.php" method="POST">
-          <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Username:</label>
-                        <input type="text" class="form-control" name="username" id="username"
-                        value="<?php echo $username; ?>">
-                    </div>
-                </div>
+    <div class="col">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" class="form-control" name="username" id="username" value="<?php echo htmlspecialchars($username); ?>">
+        </div>
+    </div>
+    <br>
+    <div class="col">
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="text" class="form-control" name="password" id="password" value="<?php echo htmlspecialchars($password); ?>">
+        </div>
+    </div>
 
-                <br>
+    <input type="hidden" id="id" name="id" value="<?php echo $_GET['id']; ?>">
+     
+    <div class="row">
+        <div class="col d-flex justify-content-start">
+            <button type="submit" class="btn btn-success">Update user</button>
+        </div>
 
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Password:</label>
-                        <input type="text" class="form-control" name="password" id="password"
-                        value="<?php echo $password; ?>">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col d-flex justify-content-start">
-                        <button type="submit" class="btn btn-success" id="submit_button">Update user</button>
-                    </div>
-
-                    <div class="col d-flex justify-content-end">
-                        <button type="button" class="btn btn-danger"
-                            onclick="window.location.href='../request/user_management.html'">Cancel</button>
-                    </div>
-                </div>
-            </form>
+        <div class="col d-flex justify-content-end">
+            <button type="button" class="btn btn-danger" onclick="window.location.href='./request/user_management.php'">Cancel</button>
+        </div>
+    </div>
+      </form>
       </div>
     </main>
   </body>

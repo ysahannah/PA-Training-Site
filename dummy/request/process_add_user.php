@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -39,11 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     if ($conn->query($sql) === TRUE) {
         // User added successfully
-    header("Location: ../request/user_management.html?success=true");
+    header("Location: ../request/user_management.php?success=true");
         exit();
     } else {
         // Error adding user
-    header("Location: ../request/user_management.html?success=false&error=Unable+to+add+new+user.+Please+try+again.");
+    header("Location: ../request/user_management.php?success=false&error=Unable+to+add+new+user.+Please+try+again.");
     exit();
     }
 }

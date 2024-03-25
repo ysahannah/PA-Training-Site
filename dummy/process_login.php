@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 exit();
         }
     } else {
-        echo "User not found";
+        echo "<script>$('#invalidLoginToast').toast('show');</script>";
     }
 }
 
