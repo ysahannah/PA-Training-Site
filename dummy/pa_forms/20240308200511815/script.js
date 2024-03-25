@@ -10,7 +10,7 @@ $(document).ready(function () {
         $(".statement:eq(" + index + ")").text(question.QuestionText);
       });
     },
-    error: function (xhr, status, error) {
+    error: function (xhr, _status, _error) {
       console.error(xhr.responseText);
     },
   });

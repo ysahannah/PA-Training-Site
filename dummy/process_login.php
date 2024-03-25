@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $servername = "localhost";
 $username = "root";
@@ -27,34 +28,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();  
-        $stored_password = $row["password"];
-
-        // Verify the password
-        if ($password === $stored_password) {
-            // Set session variables
-            $_SESSION['user_id'] = $row['user_id'];
-            $_SESSION['username'] = $row['username'];
-            
-            switch ($row["usertype"]) {
-                case "admin":
-                    header("Location: ./request/admin.php");
-                    break;
-                case "user":
-                    header("Location: ./request/index.html");
-                    break;
-                default:
-                    echo "Invalid user type";
-                    break;
-            }
-        } else {
-            // Incorrect password
-            header("Location: ./LoginInvalidPass.html");
-            exit();
+        
+        // Set session variables
+        $_SESSION['user_id'] = $row['user_id'];
+        $_SESSION['username'] = $row['username'];
+        
+        switch ($row["usertype"]) {
+            case "user":
+                header("Location: ./request/index.html");
+                exit();
+            case "admin":
+                header("Location: ./request/admin.php");
+                exit();
+            default:
+                echo "Invalid user type";
+                exit();
         }
     } else {
-        // User not found
-        header("Location: ./LoginUserNotFound.html");
-        exit();
+        echo "User not found";
     }
 }
 
