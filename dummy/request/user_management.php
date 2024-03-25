@@ -60,7 +60,18 @@
   </head>
 
   <body class="h-full">
-<<<<<<< HEAD
+  <nav
+      class="top-nav top-nav--with-side-nav"
+      aria-label="top navigation links">
+      <a href="index.html" id="cmmLogoLink" aria-label="Home">
+        <img
+          style="height: 250px; width: 200px; padding-top: 4%"
+          id="logo"
+          src="../new_photos/PA-logo.png"
+          alt="" />
+      </a>
+      <ul class="top-nav__links"></ul>
+    </nav>
     <!-- Bootstrap Toast -->
     <div aria-live="polite" aria-atomic="true" class="toast-container row justify-content-center" style="z-index: 9999; top: 0; right: 0;">
         <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -96,50 +107,7 @@
         </div>
 
     </div>
-    <!-- End Bootstrap Toast -->
-=======
->>>>>>> 52aa40a4130b3689056658ffaa0ec4a4d3b9333f
-    <noscript
-      ><iframe
-        src="index_1.html"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-        title="gtm-noscript"></iframe></noscript
-    ><a class="dsl-link dsl-link--primary dsl-u-skip-nav" href="#main"
-      >Skip to main content</a
-    >
-    <nav
-      class="top-nav top-nav--with-side-nav"
-      aria-label="top navigation links">
-      <a href="index.html" id="cmmLogoLink" aria-label="Home">
-        <img
-          style="height: 250px; width: 200px; padding-top: 4%"
-          id="logo"
-          src="../new_photos/PA-logo.png"
-          alt="" />
-      </a>
-      <ul class="top-nav__links"></ul>
-    </nav>
-    <!-- Bootstrap Toast -->
-    <div aria-live="polite" aria-atomic="true" class="toast-container position-absolute p-3" style="z-index: 9999; top: 0; right: 0;">
-        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <strong class="me-auto">Success</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                User added successfully...
-            </div>
-        </div>
-        <!-- Second Toast for User already exists -->
-    <div id="userExistsToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <strong class="me-auto">Warning</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-        <div class="toast-body">
-            User already exists...
+ 
         </div>
     </div>
          <!-- End Bootstrap Toast for User already exists -->
