@@ -36,7 +36,7 @@
     <!-- Google Optimize -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BDE8K2HJ | PORTER | CoverMyMeds</title>
+    <title>Prior Authorization Training Sites</title>
     <link rel="icon" href="/dummy/new_photos/LG.png">
 
 
