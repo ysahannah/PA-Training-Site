@@ -28,24 +28,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();  
-        
-        // Set session variables
-        $_SESSION['user_id'] = $row['user_id'];
-        $_SESSION['username'] = $row['username'];
-        
-        switch ($row["usertype"]) {
-            case "user":
-                header("Location: ./request/index.html");
-                exit();
-            case "admin":
-                header("Location: ./request/admin.php");
-                exit();
-            default:
-                echo "Invalid user type";
-                exit();
+
+        // Verify the password
+        if ($password === $row['password']) {
+            // Password is correct
+            // Set session variables
+            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['usertype'] = $row['usertype'];
+
+            // Redirect user based on usertype
+            switch ($row["usertype"]) {
+                case "user":
+                    header("Location: ./request/index.html");
+                    exit();
+                case "admin":
+                    header("Location: ./request/admin.php");
+                    exit();
+                default:
+                    echo "Invalid user type";
+                    exit();
+            }
+        } else {
+            // Password is incorrect
+            echo "<script>alert('Incorrect password');</script>";
         }
     } else {
-        echo "<script>$('#invalidLoginToast').toast('show');</script>";
+        // User not found
+        echo "<script>alert('User not found');</script>";
     }
 }
 

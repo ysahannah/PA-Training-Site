@@ -1,5 +1,8 @@
-<?php include'/session_check.php'; ?>
+<?php 
+session_start();
 
+
+?>
 <!DOCTYPE html>
 <html
   lang="en"
@@ -7,8 +10,22 @@
   data-scrapbook-source="https://portal.covermymeds.com/requests/current/1"
   data-scrapbook-create="20240221204931169"
   data-scrapbook-title="Request List - CoverMyMeds">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Request List - Prior Authorization Training Site</title>
+    <link rel="icon" type="image/png" href="/dummy/new_photos/LG.png">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="css/dsl-fonts-WT5DQAQL.css" />
+    <link rel="stylesheet" href="css/dsl-styles-YCXHNMA7.css" />
+    <link rel="stylesheet" href="css/TopNav-L337IQDX.css" />
+    <link rel="stylesheet" href="css/main-YBGK6ACJ.css" />
+    <link rel="stylesheet" href="css/UnsupportedBrowser-KAWX53IV.css" />
+   
+    <link rel="stylesheet" href="css/RequestList-BXHXX3ZG.css" />
+    <link rel="stylesheet" href="css/RequestCard-7EUGJETM.css" />
 
-  <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap JS (popper.js and bootstrap.bundle.js are required for toast functionality) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
@@ -44,39 +61,9 @@
             }
         });
     </script>
-
-    <script>
-        // JavaScript to save session variables in session storage
-        <?php
-        session_start(); // Start the session if not already started
-        if(isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
-            echo "sessionStorage.setItem('user_id', " . json_encode($_SESSION['user_id']) . ");\n";
-            echo "sessionStorage.setItem('username', " . json_encode($_SESSION['username']) . ");\n";
-            // You can add other session variables here
-        }
-        ?>
-    </script>
-    
-  <head>
-    <meta charset="UTF-8" />
-    <title>Request List - CoverMyMeds</title>
-    <link rel="icon" href="../new_photos/LG.png">
-    <link rel="stylesheet" href="/dummy/request/notification.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="css/dsl-fonts-WT5DQAQL.css" />
-    <link rel="stylesheet" href="css/dsl-styles-YCXHNMA7.css" />
-    <link rel="stylesheet" href="css/TopNav-L337IQDX.css" />
-    <link rel="stylesheet" href="css/main-YBGK6ACJ.css" />
-    <link rel="stylesheet" href="css/UnsupportedBrowser-KAWX53IV.css" />
-
-    <link rel="stylesheet" href="css/RequestList-BXHXX3ZG.css" />
-    <link rel="stylesheet" href="css/RequestCard-7EUGJETM.css" />
   </head>
 
   <body class="h-full">
-<<<<<<< HEAD
   <nav
       class="top-nav top-nav--with-side-nav"
       aria-label="top navigation links">
@@ -89,22 +76,20 @@
       </a>
       <ul class="top-nav__links"></ul>
     </nav>
-=======
->>>>>>> 1ff7b83 (Edit user is now working)
     <!-- Bootstrap Toast -->
-<div aria-live="polite" aria-atomic="true" class="toast-container row justify-content-center" style="z-index: 9999; top: 0; right: 0;">
-    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-header">
-            <strong class="me-auto">Success</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    <div aria-live="polite" aria-atomic="true" class="toast-container row justify-content-center" style="z-index: 9999; top: 0; right: 0;">
+        <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Success</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                User added successfully...
+            </div>
         </div>
-        <div class="toast-body">
-            User added successfully...
-        </div>
-    </div>
 
-    <!-- Second Toast for User already exists -->
-    <div id="userExistsToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <!-- Second Toast for User already exists -->
+    <div id="userExistsToast" class="toast" role="alert" aria-lisve="assertive" aria-atomic="true">
         <div class="toast-header">
             <strong class="me-auto">Warning</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -113,9 +98,9 @@
             User already exists...
         </div>
     </div>
-    <!-- End Bootstrap Toast for User already exists -->
+         <!-- End Bootstrap Toast for User already exists -->
 
-    <!-- Bootstrap Toast for Delete User Success -->
+        <!-- Bootstrap Toast for Delete User Success -->
     <div id="deleteSuccessToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
             <strong class="me-auto">Success</strong>
@@ -124,8 +109,8 @@
         <div class="toast-body">
             User deleted successfully...
         </div>
+
     </div>
-<<<<<<< HEAD
  
         </div>
     </div>
@@ -142,53 +127,6 @@
         </div>
     </div>
     <!-- End Bootstrap Toast -->
-=======
-    <!-- End Bootstrap Toast -->
-</div>
-
-<!-- Delete User Modal -->  
-<div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteUserModalLabel">Confirm Deletion</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete this user?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <!-- Unique ID for delete confirmation button -->
-        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
-      </div>
-    </div>
-  </div>
-</div>
-    
-    <noscript
-      ><iframe
-        src="index_1.html"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-        title="gtm-noscript"></iframe></noscript
-    ><a class="dsl-link dsl-link--primary dsl-u-skip-nav" href="#main"
-      >Skip to main content</a
-    >
-    <nav
-      class="top-nav top-nav--with-side-nav"
-      aria-label="top navigation links">
-      <a href="index.html" id="cmmLogoLink" aria-label="Home">
-        <img
-          style="height: 250px; width: 200px; padding-top: 4%"
-          id="logo"
-          src="../new_photos/PA-logo.png"
-          alt="" />
-      </a>
-      <ul class="top-nav__links"></ul>
-    </nav>
->>>>>>> 1ff7b83 (Edit user is now working)
 
     <div class="dsl-side-nav-wrapper slide-from-left-react-enter-done">
       <!-- Start of Sidebar -->
@@ -218,14 +156,14 @@
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="./user_management.php"
+                href="../request/user_management.html"
                 class="dsl-side-nav__item"
                 id="ga-qa-dsl-side-nav-item-logout"
                 ><img
                   alt=""
                   style="height: 50px";
                   src="../request/images/group.png" />
-                <div class="dsl-side-nav__item__title"> User Management </div>
+                <div class="dsl-side-nav__item__title">User Management</div>
               </a>
             </div>
           </li>
@@ -237,8 +175,7 @@
                 href="../request/settings.html"
                 class="dsl-side-nav__item"
                 id="ga-qa-dsl-side-nav-item-logout"
-                >
-                <img
+                ><img
                   alt=""
                   src="../request/images/icons8-settings.svg" />
                 <div class="dsl-side-nav__item__title">Settings</div>
@@ -269,9 +206,9 @@
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="../signout.php"
+                href="https://account.covermymeds.com/logout"
                 class="dsl-side-nav__item"
-                id="signOutBtn"
+                id="ga-qa-dsl-side-nav-item-logout"
                 ><img
                   alt=""
                   src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzEiIGhlaWdodD0iMzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGgKICAgICAgICAgICAgc3Ryb2tlPSIjMDE0MjZBIgogICAgICAgICAgICBkPSJNMTguNSA3VjEuNWgtMTd2MjhoMTdWMjQiCiAgICAgICAgLz4KICAgICAgICA8ZyBzdHJva2U9IiNFMDAwNEQiPgogICAgICAgICAgICA8cGF0aCBkPSJNMjAuNzAyIDlsNy45MzMgNi40OS03LjkzMyA2LjQ5TTExIDE1LjQ5aDE2LjE5MiIgLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=" />
@@ -284,8 +221,8 @@
       <!-- End of Sidebar -->
     </div>
 
+    <!-- main -->
     <main id="main" class="with-side-nav">
-      
       <div class="container">
         <br>
         <h3>Users</h3>
@@ -308,6 +245,12 @@
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 
     <script>
+  // Function to show the delete success toast
+  function showDeleteSuccessToast() {
+    var deleteSuccessToast = new bootstrap.Toast(document.getElementById("deleteSuccessToast"));
+    deleteSuccessToast.show();
+  }
+
   $(document).ready(function() {
     $('#documentTable').DataTable({
       "ajax": {
@@ -315,7 +258,7 @@
         "dataSrc": ""
       },
       "columns": [{
-          "data": "id"
+          "data": "user_id"
         },
         {
           "data": "username"
@@ -323,30 +266,22 @@
         {
           "data": null,
           "render": function(data, type, row) {
-            var editButton = '<a href="../request/edit_user.php?id=' + row.id +
+            var editButton = '<a href="../request/edit_user.php?user_id=' + row.user_id +
               '" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg></a>';
 
-            var deleteButton = '<button type="button" class="btn btn-danger deleteUserBtn" data-user-id="' + row.id + '" data-bs-toggle="modal" data-bs-target="#deleteUserModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/></svg></button>';
+            var deleteButton = '<button type="button" class="btn btn-danger deleteUserBtn" data-user-id="' + row.user_id + '" data-bs-toggle="modal" data-bs-target="#deleteUserModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16"><path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/></svg></button>';
             return editButton + " " + deleteButton;
           }
         },
       ]
     });
 
-    // Show delete confirmation modal when delete button is clicked
-    $('#documentTable').on('click', '.deleteUserBtn', function() {
-      var userId = $(this).data('user-id');
-      // Set unique ID for delete confirmation button
-      $('#confirmDeleteBtn').attr('data-user-id', userId);
-      console.log("Data-user-id set to: " + userId); // Debugging line
-    });
-
     // Delete confirmation
-    $(document).on('click', '#confirmDeleteBtn', function() {
+    $('#confirmDeleteBtn').click(function() {
       var userIdToDelete = $(this).data('user-id');
-      console.log("User ID to delete: " + userIdToDelete); // Debugging line
+
       $.ajax({
-        url: './request/delete_user.php',
+        url: '../request/delete_user.php',
         type: 'GET',
         data: { user_id: userIdToDelete },
         success: function(response) {
@@ -355,6 +290,7 @@
           showDeleteSuccessToast();
           // Reload the DataTable after successful deletion
           $('#documentTable').DataTable().ajax.reload();
+
           // Re-enable click on the rest of the screen
           $('body').removeClass('modal-open');
           $('.modal-backdrop').remove();
@@ -367,20 +303,19 @@
       $('#deleteUserModal').modal('hide');
     });
   });
-
-  // Function to show the delete success toast
-  function showDeleteSuccessToast() {
-    var deleteSuccessToast = new bootstrap.Toast(document.getElementById("deleteSuccessToast"));
-    deleteSuccessToast.show();
-  }
 </script>
 
-<br>
+
+      </div>
+      <br>
 
       <button type="button" class="btn btn-primary"><a class="link-offset-2 link-underline link-underline-opacity-0 text-light" href="../request/add_user.html">Add user</a>
         </button>
 
         <button type="button" class="btn btn-danger"><a class="link-offset-2 link-underline link-underline-opacity-0 text-light" href="../request/admin.html">Cancel</a>
         </button>
+      </div>
+      </div>
+    </main>
   </body>
 </html>
