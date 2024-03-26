@@ -9252,89 +9252,86 @@ session_start();
                         <!-- End of Prescriber Next Steps -->
 
                         <?php 
-// Establish your SQLi connection and query to fetch data
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "covermymeds";
+                            // Establish your SQLi connection and query to fetch data
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "";
+                            $dbname = "covermymeds";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+                            $conn = new mysqli($servername, $username, $password, $dbname);
+                            if ($conn->connect_error) {
+                                die("Connection failed: " . $conn->connect_error);
+                            }
 
-$sql = "SELECT FormID, FormName, QuestionID, QuestionText, answers FROM priorauthorizationquestions";
-$result = $conn->query($sql);
+                            $sql = "SELECT FormID, FormName, QuestionID, QuestionText, answers FROM priorauthorizationquestions";
+                            $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    // Fetch all rows into an array
-    $questions = $result->fetch_all(MYSQLI_ASSOC);
-} else {
-    echo "0 results";
-}
+                            if ($result->num_rows > 0) {
+                                // Fetch all rows into an array
+                                $questions = $result->fetch_all(MYSQLI_ASSOC);
+                            } else {
+                                echo "0 results";
+                            }
 
-// Close the connection
-$conn->close();
-?>
+                            // Close the connection
+                            $conn->close();
+                        ?>
 
-<!-- Start Question Section -->
-<section id="question-section">
-    <header>
-        <span class="arrow down" data-bind="hidden collapsed" style="display: inline">▼</span>
-        <span class="arrow right" data-bind="displayed collapsed" style="display: show">►</span>
-        <span data-bind="text">Questions</span>
-        <div class="renewal-verification" data-bind="renewal_verification">
-            <div class="verify-renewal-text"></div>
-        </div>
-        <div class="summary" data-bind="hidden collapsed" style="display: block">
-            <div data-bind="hidden sent" style="display: show"></div>
-        </div>
-    </header>
+                        <!-- Start Question Section -->
+                        <section id="question-section">
+                            <header>
+                                <span class="arrow down" data-bind="hidden collapsed" style="display: inline">▼</span>
+                                <span class="arrow right" data-bind="displayed collapsed" style="display: show">►</span>
+                                <span data-bind="text">Questions</span>
+                                <div class="renewal-verification" data-bind="renewal_verification">
+                                    <div class="verify-renewal-text"></div>
+                                </div>
+                                <div class="summary" data-bind="hidden collapsed" style="display: block">
+                                    <div data-bind="hidden sent" style="display: show"></div>
+                                </div>
+                            </header>
 
-    <p class="description" data-bind="description; hidden collapsed" style="display: block">
-        Case: 24067849698
-    </p>
+                            <p class="description" data-bind="description; hidden collapsed" style="display: block">
+                                Case: 24067849698
+                            </p>
 
-    <div class="rows" data-bind="hidden collapsed" style="display: block">
-        <?php foreach ($questions as $question) : ?>
-            <div class="row question" style="display: block">
-                <div class="title" data-bind="text"></div>
-                <div class="content">
-                    <div class="questions">
-                        <div class="question" style="display: block">
-                            <div>
-                                <span data-bind="text; class type" class="statement"><?php echo $question['QuestionText']; ?></span>
-                            </div>
-                        </div>
-                        <div class="question" style="display: block">
-                            <div>
-                                <?php if (!empty($question['answers'])) : ?>
-                                    <span class="radio"></span>
-                                    <div class="choices">
-                                        <label>
-                                            <input type="radio" name="answers" value="yes" checked="checked" disabled="disabled" />
-                                            YES
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="answers" value="no" disabled="disabled" />
-                                            NO
-                                        </label>
+                            <div class="rows" data-bind="hidden collapsed" style="display: block">
+                                <?php foreach ($questions as $question) : ?>
+                                    <div class="row question" style="display: block">
+                                        <div class="content">
+                                            <div class="question" style="display: block">
+                                                <div>
+                                                    <span class="statement"><?php echo $question['QuestionText']; ?></span>
+                                                </div>
+                                            </div>
+                                            <div class="question" style="display: block">
+                                                <div>
+                                                    <?php if (!empty($question['answers'])) : ?>
+                                                        <span class="radio"></span>
+                                                        <div class="choices">
+                                                            <label>
+                                                                <input type="radio" name="answers" value="yes" checked="checked" disabled="disabled" />
+                                                                YES
+                                                            </label>
+                                                            <label>
+                                                                <input type="radio" name="answers" value="no" disabled="disabled" />
+                                                                NO
+                                                            </label>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                <?php endif; ?>
+                                <?php endforeach; ?>
+                                <div class="add-row row" data-bind="displayed repeatable" style="display: show">
+                                    <div class="content">
+                                        <a href="#" data-bind="repeatable_text"></a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-        <div class="add-row row" data-bind="displayed repeatable" style="display: show">
-            <div class="content">
-                <a href="#" data-bind="repeatable_text"></a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Question Section -->
+                        </section>
+                        <!-- End Question Section -->
 
                         <section id="document-upload-section">
                             <header>

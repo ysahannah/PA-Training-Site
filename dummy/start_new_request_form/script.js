@@ -80,7 +80,7 @@ $(document).ready(function () {
     type: "GET",
     dataType: "json",
     success: function (data) {
-      $.each(data, function (_index, state) {});
+      $.each(data, function (_index, _state) {});
     },
     error: function () {
       alert("Error fetching insurance states");
@@ -95,7 +95,7 @@ function populateInsuranceStates() {
     type: "GET",
     dataType: "json",
     success: function (data) {
-      $.each(data, function (index, state) {
+      $.each(data, function (_index, state) {
         $("#insurance-state").append(
           '<option value="' +
             state.insurance_state_id +

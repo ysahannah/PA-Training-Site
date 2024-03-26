@@ -29,21 +29,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();  
 
-        // Verify the password
         if ($password === $row['password']) {
-            // Password is correct
-            // Set session variables
             $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['usertype'] = $row['usertype'];
 
             // Redirect user based on usertype
             switch ($row["usertype"]) {
-                case "user":
-                    header("Location: ./request/index.php");
-                    exit();
                 case "admin":
                     header("Location: ./request/admin.php");
+                    exit();
+                case "user":
+                    header("Location: ./request/index.php");
                     exit();
                 default:
                     echo "Invalid user type";
