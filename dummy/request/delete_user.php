@@ -13,22 +13,22 @@ if ($conn->connect_error) {
 }
 
 // Check if user_id is provided via GET request
-if (!isset($_GET["user_id"])) {
+if (!isset($_GET["id"])) {
     echo "Error: User ID not provided.";
     exit();
 }
 
-$user_id = $_GET["user_id"];
+$id = $_GET["id"];
 
 // Prepare a delete statement
-$sql = "DELETE FROM users WHERE user_id = ?";
+$sql = "DELETE FROM users WHERE id = ?";
 
 if ($stmt = $conn->prepare($sql)) {
     // Bind variables to the prepared statement as parameters
-    $stmt->bind_param("i", $param_user_id);
+    $stmt->bind_param("i", $param_id);
 
     // Set parameters
-    $param_user_id = $user_id;
+    $param_id = $id;
 
     // Attempt to execute the prepared statement
     if ($stmt->execute()) {

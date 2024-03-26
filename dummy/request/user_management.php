@@ -129,6 +129,26 @@ session_start();
     </div>
     <!-- End Bootstrap Toast -->
 
+
+    <!-- Add the modal markup -->
+<div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="deleteUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteUserModalLabel">Delete User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this user?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <div class="dsl-side-nav-wrapper slide-from-left-react-enter-done">
       <!-- Start of Sidebar -->
       <nav
@@ -313,9 +333,19 @@ session_start();
       ]
     });
 
-    // Delete confirmation
+     // Delete confirmation
+     $(document).on('click', '.deleteUserBtn', function() {
+        var userIdToDelete = $(this).data('id'); // Corrected the way of retrieving data-id
+
+        $('#confirmDeleteBtn').data('id', userIdToDelete); // Setting data-id to the confirm delete button
+
+        // Show delete confirmation modal
+        $('#deleteUserModal').modal('show');
+    });
+
     $('#confirmDeleteBtn').click(function() {
-      var userIdToDelete = $(this).data('id');
+        var userIdToDelete = $(this).data('id');
+
 
       $.ajax({
         url: '../request/delete_user.php',
@@ -327,6 +357,12 @@ session_start();
           showDeleteSuccessToast();
           // Reload the DataTable after successful deletion
           $('#documentTable').DataTable().ajax.reload();
+
+          $('.deleteUserBtn').off('click').on('click', function() {
+            var userIdToDelete = $(this).data('id');
+            $('#confirmDeleteBtn').data('id', userIdToDelete);
+          });
+        
 
           // Re-enable click on the rest of the screen
           $('body').removeClass('modal-open');
