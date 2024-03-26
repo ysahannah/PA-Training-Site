@@ -39,7 +39,8 @@
     </noscript>
     
     <a class="dsl-link dsl-link--primary  dsl-u-skip-nav" 
-      href="signup.html#main"></a>
+      href="signup.html#main">
+    </a>
 
     <nav class="top-nav " 
       aria-label="top navigation links">
@@ -86,11 +87,11 @@
     
     class = "box">
       <header 
-        style ='text-align: center ;font-size: 25px; font-weight: 600; padding: 10px 10px; margin-bottom: 10px;'> FAILED TO SIGN UP <br> Passwords do not match. </header>
+        style ='text-align: center ;font-size: 25px; font-weight: 600; padding: 10px 10px; margin-bottom: 10px;'> FAILED TO SIGN UP <br>Username, Password, or Confirm Password Cannot be Empty.</header>
         <form id = SignUp_Form action="signup.php" method="post" autocomplete="off">
           <div class="Container" style="font-size:16px; display:flex; flex-direction: column; align-items: center;">
 
-            <a href="./signup.html" class="button" > Go Back </a>
+            <a href="./signup.php" class="button"  style = "height: 35px; width:70%; background-color: rgb(231, 8, 101) ; border-radius: 28px; color:white; cursor:pointer; font-size: 25px; font-weight: bold; padding: 16px, 16px, 16px ,16px; text-decoration: none; text-align: center;"> Go Back </a>
                     
             <br>
             <br>
