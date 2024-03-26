@@ -233,7 +233,7 @@ session_start();
 
             <div class="card">
                 <div class="card-inner">
-                    <h3>USERS</h3>
+                    <h3>Total Users</h3>
                     <span class="material-icon-outlined">groups</span>
                 </div>
                 <h1>1500</h1>
@@ -241,7 +241,7 @@ session_start();
 
             <div class="card">
                 <div class="card-inner">
-                    <h3>USERS</h3>
+                    <h3>Total </h3>
                     <span class="material-icon-outlined">groups</span>
                 </div>
                 <h1>1500</h1>
@@ -249,7 +249,7 @@ session_start();
 
             <div class="card">
                 <div class="card-inner">
-                    <h3>USERS</h3>
+                    <h3>Total</h3>
                     <span class="material-icon-outlined">groups</span>
                 </div>
                 <h1>1500</h1>
@@ -257,7 +257,7 @@ session_start();
 
             <div class="card">
                 <div class="card-inner">
-                    <h3>USERS</h3>
+                    <h3>Total</h3>
                     <span class="material-icon-outlined">groups</span>
                 </div>
                 <h1>1500</h1>

@@ -91,7 +91,7 @@
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="../login.html"
+                href="http://localhost:3000/dummy/login.php"
                 class="dsl-side-nav__item"
                 id="ga-qa-dsl-side-nav-item-logout"
                 ><img

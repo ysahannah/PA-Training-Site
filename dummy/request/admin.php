@@ -140,7 +140,7 @@
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="../signout.php"
+                href="http://localhost:3000/dummy/login.php"
                 class="dsl-side-nav__item"
                 id="signOutBtn"
                 ><img
