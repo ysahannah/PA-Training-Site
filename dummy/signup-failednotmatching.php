@@ -2,7 +2,7 @@
 <html lang="en" class="h-full">
   <head>
     <meta charSet="utf-8"/>
-    <title>Sign Up | Prior Authorization Training Site</title>
+    <title>Sign Up | Prior Authorization Training Sites</title>
     <link rel="icon" href="../dummy/new_photos/LG.png">
 
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -18,7 +18,7 @@
         <script src="https://chat.covermymeds.com/javascripts/bundle-customer.js"></script>
         <script src="https://portal.covermymeds.com/js/chat.js"></script>
       <link rel="stylesheet" href ="/css/Signup.css"> 
-      <link rel="stylesheet" href ="signup.css">
+      <link rel="stylesheet" href ="/dummy/signup.css">
       
   </head>
 
@@ -39,7 +39,7 @@
     </noscript>
     
     <a class="dsl-link dsl-link--primary  dsl-u-skip-nav" 
-      href="signup.html#main">Skip to main content
+      href="signup.html#main">
     </a>
 
     <nav class="top-nav " 
@@ -87,22 +87,23 @@
     
     class = "box">
       <header 
-        style ='text-align: center ;font-size: 25px; font-weight: 600; padding: 10px 10px; margin-bottom: 10px;'> SIGN UP <BR> SUCCESSFUL!</header>
+        style ='text-align: center ;font-size: 25px; font-weight: 600; padding: 10px 10px; margin-bottom: 10px;'> FAILED TO SIGN UP <br> Not Matching Password.</header>
         <form id = SignUp_Form action="signup.php" method="post" autocomplete="off">
-          <div class="Container" style = "font-size:16px;">
-
+          <div class="Container" style="font-size:16px; display:flex; flex-direction: column; align-items: center;">
+                        
+            <a class="button" href="../dummy/signup.php" style = "height: 35px; width:70%; background-color: rgb(231, 8, 101) ; border-radius: 28px; color:white; cursor:pointer; font-size: 25px; font-weight: bold; padding: 16px, 16px, 16px ,16px; text-decoration: none; text-align: center;"> Go Back </a>
+            
+            <br>
+            <br>
+          <div class =link>
+            Already have an account? <a href="../dummy/login.html">Sign in</a>
+          </div>
         </div>
       </form>
     </div>
     </div>
   </main>
-  <script>
-  
-  setTimeout(function(){
-    window.location.href ="login.html";
-  }, 2000); //2 seconds.
-  
-  ((STORAGE_KEY, restoreKey) => {
+  <script>((STORAGE_KEY, restoreKey) => {
       if (!window.history.state || !window.history.state.key) {
         let key = Math.random().toString(32).slice(2);
         window.history.replaceState({
@@ -127,10 +128,7 @@
   import * as route1 from "/build/routes/signup-H77WHGR7.js";
   window.__remixRouteModules = {"root":route0,"routes/signup":route1};
   
-  import("/build/entry.client-KQVMYHZ3.js");
-  
- 
-  </script> 
+  import("/build/entry.client-KQVMYHZ3.js");</script> 
  
   
   

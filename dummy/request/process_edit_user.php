@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($sql) === TRUE) {
         // Redirect to user management page after successful update
         echo "Record updated successfully!";
-        header("Location: ../request/user_management.php?user_id=$user_id");
+        header("Location: ../request/user_management.php?user_id=$id");
         exit();
     } else {
         echo "Error updating user: " . $conn->error;

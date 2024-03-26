@@ -18,6 +18,7 @@
         <script src="https://chat.covermymeds.com/javascripts/bundle-customer.js"></script>
         <script src="https://portal.covermymeds.com/js/chat.js"></script>
       <link rel="stylesheet" href ="/css/Signup.css"> 
+      <link rel="stylesheet" href ="/dummy/signup.css">
       
   </head>
 
@@ -65,8 +66,7 @@
     </nav>
     
     <main id="main" class="">
-      <div 
-        style= 
+      <div style= 
           "display:flex;
           justify-content: center;
           align-items: center;
@@ -74,7 +74,8 @@
           margin: 0;
           border-style: solid;"
       class="container">
-        <div style ="background-color: white;
+        <div style =
+          "background-color: white;
           display: flex;
           flex-direction: column;
           padding: 25px 25px;
@@ -86,46 +87,15 @@
     
     class = "box">
       <header 
-        style ='text-align: center ;font-size: 25px; font-weight: 600; padding: 10px 10px; margin-bottom: 10px;'> SIGN UP!</header>
+        style ='text-align: center ;font-size: 25px; font-weight: 600; padding: 10px 10px; margin-bottom: 10px;'> FAILED TO SIGN UP <br>Username Already Exists</header>
         <form id = SignUp_Form action="signup.php" method="post" autocomplete="off">
-          <div class="Container" style="font-size:16px;">
+          <div class="Container" style="font-size:16px; display:flex; flex-direction: column; align-items: center;">
 
-            <p id="result"
-              style="
-              color: red;
-              font-weight: 600;
-              position: relative;
-              top: 5px;
-              text-align: center;"></p>
-
-            <div class="ripple" 
-              style = "display: flex; flex-direction: column; margin-bottom: 10px;">
-                <label class =LabelUP for="username" > Username</label>
-                <input type="text" id="username" name="username" 
-                  style = "height: 40px; width: 100%; font-size: 15px; padding: 0px 10px; border-radius: 5px; border-top: none; border-left: none; border-right: none; border-bottom: 1px solid; ">
-            </div>
-        
-            <div class ="ripple" 
-              style = "display: flex; flex-direction: column; margin-bottom: 10px;">
-                <label class =LabelUP for ="password"> Password</label>
-                <input type = "password" id="password" name ="password" 
-                  style = "height: 40px; width: 100%; font-size: 15px; padding: 0px 10px; border-radius: 5px; border-top: none; border-left: none; border-right: none; border-bottom: solid 1px;">
-                <div id=""></div>
-            </div>
-            
-    
-            <div class ="ripple" 
-              style = "display: flex; flex-direction: column; margin-bottom: 10px;">
-                <label class =LabelUP for ="Retype_Password">Retype Password</label>
-                <input type = "password" id="cpass" name ="cpass" 
-                  style = "height: 40px; width: 100%; font-size: 15px; padding: 0px 10px; border-radius: 5px; border-top: none; border-left: none; border-right: none; border-bottom: solid 1px;">
-            </div>
-        
-            <div class ="field" style = "display:flex; margin-bottom: 10px; flex-direction: column">
-            <input type="submit" id="btn" value ="Signup" name= "submit" 
-            style = "height: 35px; background-color: rgb(231, 8, 101) ; border-radius: 28px; color:white; cursor:pointer; font-size: 14px; font-weight: bold; padding: 16px, 16px, 16px ,16px;">
-          </div>
-          <div class =link>
+            <a href="./signup.php" class="button" style = "height: 35px; width:70%; background-color: rgb(231, 8, 101) ; border-radius: 28px; color:white; cursor:pointer; font-size: 25px; font-weight: bold; padding: 16px, 16px, 16px ,16px; text-decoration: none; text-align: center;"> Go Back </a>
+                    
+            <br>
+            <br>
+          <div class="link">
             Already have an account? <a href="./login.html">Sign in</a>
           </div>
         </div>

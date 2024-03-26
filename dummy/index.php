@@ -264,7 +264,7 @@
               </li>
               <li class="b-bare">
                 <a
-                  href="signup.html"
+                  href="signup.php"
                   class="b-cta c-nav__action u-fw-bold u-color-magenta u-tt-upper">
                   Create an Account
                   <span
@@ -519,7 +519,7 @@
               <a href="login.php" class="c-footer__link">Login</a>
             </li>
             <li class="b-bare u-mar-vt-20">
-              <a href="signup.html" class="c-footer__link">Sign up</a>
+              <a href="signup.php" class="c-footer__link">Sign up</a>
             </li>
             <li class="b-bare u-mar-vt-20">
               <a href="request/key/index.html" class="c-footer__link"

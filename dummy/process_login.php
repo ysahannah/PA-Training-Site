@@ -33,14 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($password === $row['password']) {
             // Password is correct
             // Set session variables
-            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['usertype'] = $row['usertype'];
 
             // Redirect user based on usertype
             switch ($row["usertype"]) {
                 case "user":
-                    header("Location: ./request/index.html");
+                    header("Location: ./request/index.php");
                     exit();
                 case "admin":
                     header("Location: ./request/admin.php");
