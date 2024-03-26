@@ -150,7 +150,7 @@ $password ="";
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="https://account.covermymeds.com/logout"
+                href="../login.php    "
                 class="dsl-side-nav__item"
                 id="ga-qa-dsl-side-nav-item-logout"
                 ><img

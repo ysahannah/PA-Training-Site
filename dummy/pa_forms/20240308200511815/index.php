@@ -1,4 +1,6 @@
-
+<?php 
+session_start();
+?>
 
 
 
@@ -8323,7 +8325,7 @@
                                 <h1>
                                     <strong>TIFFANY PORTER</strong>
                                     <?php
-                                    session_start();
+                                   
 
                                     // Check if the key is passed in the URL
                                     if(isset($_GET['key'])) {
