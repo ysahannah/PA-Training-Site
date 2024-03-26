@@ -24,6 +24,7 @@ session_start();
    
     <link rel="stylesheet" href="css/RequestList-BXHXX3ZG.css" />
     <link rel="stylesheet" href="css/RequestCard-7EUGJETM.css" />
+    <link rel="stylesheet" href="/dummy/request/user_management.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -224,9 +225,45 @@ session_start();
     <!-- main -->
     <main id="main" class="with-side-nav">
       <div class="container">
-        <br>
-        <h3>Users</h3>
-        <br>
+        <div class="main-title">
+            <h2>USERS</h2>
+        </div>
+      
+        <div class="main-cards">
+
+            <div class="card">
+                <div class="card-inner">
+                    <h3>USERS</h3>
+                    <span class="material-icon-outlined">groups</span>
+                </div>
+                <h1>1500</h1>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <h3>USERS</h3>
+                    <span class="material-icon-outlined">groups</span>
+                </div>
+                <h1>1500</h1>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <h3>USERS</h3>
+                    <span class="material-icon-outlined">groups</span>
+                </div>
+                <h1>1500</h1>
+            </div>
+
+            <div class="card">
+                <div class="card-inner">
+                    <h3>USERS</h3>
+                    <span class="material-icon-outlined">groups</span>
+                </div>
+                <h1>1500</h1>
+            </div>
+        </div>
+
       <div class="user-table">
         <table id="documentTable" class="table table-striped table-bordered">
         <thead>
