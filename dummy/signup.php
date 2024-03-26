@@ -46,8 +46,8 @@
         <a href="../dummy/index.html" id="cmmLogoLink" aria-label="Home">
           <img 
             src="new_photos/logo.o111-removebg-preview.png" 
-            width="350" 
-            height="80" 
+            width="300" 
+            height="70" 
             viewBox="0 0 242 40" 
             role="presentation"><title lang="en">CoverMyMeds logo</title>
           </img>

@@ -9,7 +9,7 @@
   data-scrapbook-title="Request List - CoverMyMeds">
   <head>
     <meta charset="UTF-8" />
-    <title>Request List - CoverMyMeds</title>
+    <title>Request List - Prior Authorization Training Site</title>
     <link rel="icon" href="../new_photos/LG.png">
     <link rel="stylesheet" href="/dummy/request/notification.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -53,9 +53,9 @@
       aria-label="top navigation links">
       <a href="index.html" id="cmmLogoLink" aria-label="Home">
         <img
-          style="height: 250px; width: 200px; padding-top: 4%"
+          style="height: 70px; width: 270px; padding-top: 2%"
           id="logo"
-          src="../new_photos/PA-logo.png"
+          src="/dummy/new_photos/logo.o111-removebg-preview.png"
           alt="" />
       </a>
       <ul class="top-nav__links"></ul>
@@ -140,7 +140,7 @@
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="../signout.php"
+                href="/dummy/login.php"
                 class="dsl-side-nav__item"
                 id="signOutBtn"
                 ><img

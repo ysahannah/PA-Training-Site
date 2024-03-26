@@ -20,7 +20,7 @@
         sizes="96x96" />
 
     <title>
-        Log In | CoverMyMeds, Prior Authorization Training Site
+        Log In | Prior Authorization Training Site
     </title>
     <link rel="icon" href="../dummy/new_photos/LG.png">
 
@@ -69,7 +69,7 @@
             <div class="mdc-top-app-bar__row">
                 <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                     <a class="mdc-top-app-bar__title" href="index.html"><img alt="OIDC"
-                            src="new_photos/PA-logo.png" /></a>
+                            src="/dummy/new_photos/logo.o111-removebg-preview.png" /></a>
                 </div>
 
                 <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">

@@ -40,9 +40,9 @@
       aria-label="top navigation links">
       <a href="index.html" id="cmmLogoLink" aria-label="Home">
         <img
-          style="height: 250px; width: 200px; padding-top: 4%"
+          style="height: 70px; width: 270px; padding-top: 2%"
           id="logo"
-          src="../new_photos/PA-logo.png"
+          src="/dummy/new_photos/logo.o111-removebg-preview.png"
           alt="" />
       </a>
       <ul class="top-nav__links"></ul>
@@ -91,7 +91,7 @@
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="../login.html"
+                href="http://localhost:3000/dummy/login.php"
                 class="dsl-side-nav__item"
                 id="ga-qa-dsl-side-nav-item-logout"
                 ><img

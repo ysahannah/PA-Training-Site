@@ -8737,8 +8737,6 @@ session_start();
                         <!-- End of Patient Information Section -->
 
                         <!-- Start of Prescriber Section -->
-
-
                         <!-- Intialize the variables -->
                         <?php 
         // Establish your SQLi connection and query to fetch data
@@ -8779,7 +8777,6 @@ session_start();
         // Close the connection
         $conn->close();
         ?>
-
 
                         <section id="prescriber-information-section">
                             <header>
@@ -8970,39 +8967,37 @@ session_start();
 
                         <!-- Initialize Variables -->
                         <?php 
-        // Establish your SQLi connection and query to fetch data
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "covermymeds";
-        
-        
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+                        // Establish your SQLi connection and query to fetch data
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "covermymeds";
+                          
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
 
-        $sql = "SELECT drug_id, patient_id, quantity, dosage, days_supply, primary_diagnosis, secondary_diagnosis FROM drug";
-        $result = $conn->query($sql);
+                        $sql = "SELECT drug_id, patient_id, quantity, dosage, days_supply, primary_diagnosis, secondary_diagnosis FROM drug";
+                        $result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-          $medication_id = $row['drug_id'];
-          $patient_id = $row['patient_id'];
-          $quantity =$row['quantity'];
-          $dosage =$row['dosage'];
-          $days_supply =$row['days_supply'];
-          $primary_dosage = $row['primary_diagnosis'];
-          $second_dosage = $row['secondary_diagnosis'];
-        } else {
-            echo "0 results";
-        }
-        
-        // Close the connection
-        $conn->close();
-        ?>
-
-                    
+                        if ($result->num_rows > 0) {
+                            $row = $result->fetch_assoc();
+                        $medication_id = $row['drug_id'];
+                        $patient_id = $row['patient_id'];
+                        $quantity =$row['quantity'];
+                        $dosage =$row['dosage'];
+                        $days_supply =$row['days_supply'];
+                        $primary_dosage = $row['primary_diagnosis'];
+                        $second_dosage = $row['secondary_diagnosis'];
+                        } else {
+                            echo "0 results";
+                        }
+                        
+                        // Close the connection
+                        $conn->close();
+                        ?>
+     
                         <section id="drug-and-diagnosis-information-section">
                             <header>
                                 <span class="arrow down" data-bind="hidden collapsed" style="display: show">▼</span>
@@ -9256,64 +9251,90 @@ session_start();
                         </section>
                         <!-- End of Prescriber Next Steps -->
 
-                        <!-- Start Question Section -->
-                        <section id="question-section">
-                            <header>
-                                <span class="arrow down" data-bind="hidden collapsed" style="display: inline">▼</span>
-                                <span class="arrow right" data-bind="displayed collapsed" style="display: show">►</span>
-                                <span data-bind="text">Questions</span>
-                                <div class="renewal-verification" data-bind="renewal_verification">
-                                    <div class="verify-renewal-text"></div>
-                                </div>
-                                <div class="summary" data-bind="hidden collapsed" style="display: block">
-                                    <div data-bind="hidden sent" style="display: show"></div>
-                                </div>
-                            </header>
+                        <?php 
+// Establish your SQLi connection and query to fetch data
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "covermymeds";
 
-                            <p class="description" data-bind="description; hidden collapsed" style="display: block">
-                                Case: 24067849698
-                            </p>
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-                            <div class="rows" data-bind="hidden collapsed" style="display: block">
-                                <div class="row question" style="display: block">
-                                    <div class="title" data-bind="text"></div>
-                                    <div class="content">
-                                        <div class="questions">
-                                            <div class="question" style="display: block">
-                                                <div>
-                                                    <span data-bind="text; class type" class="statement">
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="question" style="display: block">
-                                                <div>
-                                                    <span class="radio"></span>
-                                                    <div class="choices">
-                                                        <label>
-                                                            <input type="radio" name="" value="yes" checked="checked"
-                                                                disabled="disabled" />
-                                                            YES
-                                                        </label>
-                                                        <label>
-                                                            <input type="radio" name="" value="no"
-                                                                disabled="disabled" />
-                                                            NO
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+$sql = "SELECT FormID, FormName, QuestionID, QuestionText, answers FROM priorauthorizationquestions";
+$result = $conn->query($sql);
 
-                                <div class="add-row row" data-bind="displayed repeatable" style="display: show">
-                                    <div class="content">
-                                        <a href="#" data-bind="repeatable_text"></a>
-                                    </div>
-                                </div>
+if ($result->num_rows > 0) {
+    // Fetch all rows into an array
+    $questions = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+    echo "0 results";
+}
+
+// Close the connection
+$conn->close();
+?>
+
+<!-- Start Question Section -->
+<section id="question-section">
+    <header>
+        <span class="arrow down" data-bind="hidden collapsed" style="display: inline">▼</span>
+        <span class="arrow right" data-bind="displayed collapsed" style="display: show">►</span>
+        <span data-bind="text">Questions</span>
+        <div class="renewal-verification" data-bind="renewal_verification">
+            <div class="verify-renewal-text"></div>
+        </div>
+        <div class="summary" data-bind="hidden collapsed" style="display: block">
+            <div data-bind="hidden sent" style="display: show"></div>
+        </div>
+    </header>
+
+    <p class="description" data-bind="description; hidden collapsed" style="display: block">
+        Case: 24067849698
+    </p>
+
+    <div class="rows" data-bind="hidden collapsed" style="display: block">
+        <?php foreach ($questions as $question) : ?>
+            <div class="row question" style="display: block">
+                <div class="title" data-bind="text"></div>
+                <div class="content">
+                    <div class="questions">
+                        <div class="question" style="display: block">
+                            <div>
+                                <span data-bind="text; class type" class="statement"><?php echo $question['QuestionText']; ?></span>
                             </div>
-                        </section>
-                        <!-- End Question Section -->
+                        </div>
+                        <div class="question" style="display: block">
+                            <div>
+                                <?php if (!empty($question['answers'])) : ?>
+                                    <span class="radio"></span>
+                                    <div class="choices">
+                                        <label>
+                                            <input type="radio" name="answers" value="yes" checked="checked" disabled="disabled" />
+                                            YES
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="answers" value="no" disabled="disabled" />
+                                            NO
+                                        </label>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        <div class="add-row row" data-bind="displayed repeatable" style="display: show">
+            <div class="content">
+                <a href="#" data-bind="repeatable_text"></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Question Section -->
 
                         <section id="document-upload-section">
                             <header>
@@ -9650,9 +9671,9 @@ session_start();
         style="display: show"></ul>
     <span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./script.js"></script>
-    <script src="./script2.js"></script>
+    <script src="./script2.js"></script> -->
 
 </body>
 <quillbot-extension-portal style="
