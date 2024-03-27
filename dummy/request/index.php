@@ -1,3 +1,5 @@
+<?php include'../session_check.php'; ?>
+
 <!DOCTYPE html>
 <html
   lang="en"
@@ -22,6 +24,18 @@
     <link rel="stylesheet" href="css/RequestList-BXHXX3ZG.css" />
     <link rel="stylesheet" href="css/RequestCard-7EUGJETM.css" />
 
+    <script>
+        // JavaScript to save session variables in session storage
+        <?php
+        session_start(); // Start the session if not already started
+        if(isset($_SESSION['id']) && isset($_SESSION['username'])) {
+            echo "sessionStorage.setItem('id', " . json_encode($_SESSION['id']) . ");\n";
+            echo "sessionStorage.setItem('username', " . json_encode($_SESSION['username']) . ");\n";
+            // You can add other session variables here
+        }
+        ?>
+    </script>
+
   </head>
 
   <body class="h-full">
@@ -38,11 +52,11 @@
     <nav
       class="top-nav top-nav--with-side-nav"
       aria-label="top navigation links">
-      <a href="index.html" id="cmmLogoLink" aria-label="Home">
+      <a href="./index.php" id="cmmLogoLink" aria-label="Home">
         <img
-          style="height: 70px; width: 270px; padding-top: 2%"
+          style="height: 40vh;"
           id="logo"
-          src="/dummy/new_photos/logo.o111-removebg-preview.png"
+          src="../new_photos/PA-logo.png"
           alt="" />
       </a>
       <ul class="top-nav__links"></ul>
@@ -58,7 +72,7 @@
           <li>
             <div>
               <a
-                href="https://www.covermymeds.com/request/list"
+                href="#"
                 class="dsl-side-nav__item dsl-side-nav__item--is-selected"
                 id="ga-qa-dsl-side-nav-item-request"
                 ><img
@@ -91,7 +105,7 @@
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="http://localhost:3000/dummy/login.php"
+                href="../signout.php"
                 class="dsl-side-nav__item"
                 id="ga-qa-dsl-side-nav-item-logout"
                 ><img

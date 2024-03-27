@@ -23,8 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fax = $_POST['fax'];
     $review = $_POST['review'];
 
-    $sql = "INSERT INTO provider (npi, provider_firstName, provider_lastName, street, street2, city, state, zip_code, phone, fax, review)
-    VALUES ('$npi', '$provider_firstName', '$provider_lastName', '$street', '$street2', '$city', '$state', '$zip_code', '$phone', '$fax', '$review')";
+    $patient_id = $_SESSION['patient_id'];
+
+    $sql = "INSERT INTO provider (patient_id, npi, provider_firstName, provider_lastName, street, street2, city, state, zip_code, phone, fax, review)
+    VALUES ('$patient_id', '$npi', '$provider_firstName', '$provider_lastName', '$street', '$street2', '$city', '$state', '$zip_code', '$phone', '$fax', '$review')";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";

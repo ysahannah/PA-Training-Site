@@ -19,7 +19,9 @@ if ($_SERVER ["REQUEST_METHOD"] == "POST") {
     $primary_diagnosis = $_POST["primary_diagnosis"];
     $secondary_diagnosis = $_POST["secondary_diagnosis"];
 
-    $drug_sql = "INSERT INTO drug (quantity, dosage, days_supply, primary_diagnosis, secondary_diagnosis) VALUES ('$quantity', '$dosage', '$days_supply', '$primary_diagnosis', '$secondary_diagnosis')";
+    $patient_id = $_SESSION['patient_id'];
+
+    $drug_sql = "INSERT INTO drug (patient_id, quantity, dosage, days_supply, primary_diagnosis, secondary_diagnosis) VALUES ('$patient_id', '$quantity', '$dosage', '$days_supply', '$primary_diagnosis', '$secondary_diagnosis')";
 
     if ($conn->query($drug_sql) === TRUE) {
         echo "Drug prescription inserted successfully";

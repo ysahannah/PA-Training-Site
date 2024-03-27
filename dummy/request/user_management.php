@@ -1,8 +1,5 @@
-<?php 
-session_start();
+<?php include '../session_check.php'?>
 
-
-?>
 <!DOCTYPE html>
 <html
   lang="en"
@@ -62,13 +59,25 @@ session_start();
             }
         });
     </script>
+
+    <script>
+        // JavaScript to save session variables in session storage
+        <?php
+        session_start(); // Start the session if not already started
+        if(isset($_SESSION['id']) && isset($_SESSION['username'])) {
+            echo "sessionStorage.setItem('id', " . json_encode($_SESSION['id']) . ");\n";
+            echo "sessionStorage.setItem('username', " . json_encode($_SESSION['username']) . ");\n";
+            // You can add other session variables here
+        }
+        ?>
+    </script>
   </head>
 
   <body class="h-full">
   <nav
       class="top-nav top-nav--with-side-nav"
       aria-label="top navigation links">
-      <a href="index.html" id="cmmLogoLink" aria-label="Home">
+      <a href="index.php" id="cmmLogoLink" aria-label="Home">
         <img
           style="height: 250px; width: 200px; padding-top: 4%"
           id="logo"
@@ -193,6 +202,22 @@ session_start();
               <a
                 aria-expanded="false"
                 data-preview-links=""
+                href="../request/index.php"
+                class="dsl-side-nav__item"
+                id="ga-qa-dsl-side-nav-item-logout"
+                ><img
+                  alt="dummy/new_photos/dashboard50.png"
+                  style="height: 50px";
+                  src="dummy/new_photos/dashboard50.png" />
+                <div class="dsl-side-nav__item__title">Dashboard</div>
+              </a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <a
+                aria-expanded="false"
+                data-preview-links=""
                 href="../request/settings.html"
                 class="dsl-side-nav__item"
                 id="ga-qa-dsl-side-nav-item-logout"
@@ -227,7 +252,7 @@ session_start();
               <a
                 aria-expanded="false"
                 data-preview-links=""
-                href="https://account.covermymeds.com/logout"
+                href="../signout.php"
                 class="dsl-side-nav__item"
                 id="ga-qa-dsl-side-nav-item-logout"
                 ><img
@@ -247,41 +272,6 @@ session_start();
       <div class="container">
         <div class="main-title">
             <h2>USERS</h2>
-        </div>
-      
-        <div class="main-cards">
-
-            <div class="card">
-                <div class="card-inner">
-                    <h3>Total Users</h3>
-                    <span class="material-icon-outlined">groups</span>
-                </div>
-                <h1>1500</h1>
-            </div>
-
-            <div class="card">
-                <div class="card-inner">
-                    <h3>Total </h3>
-                    <span class="material-icon-outlined">groups</span>
-                </div>
-                <h1>1500</h1>
-            </div>
-
-            <div class="card">
-                <div class="card-inner">
-                    <h3>Total</h3>
-                    <span class="material-icon-outlined">groups</span>
-                </div>
-                <h1>1500</h1>
-            </div>
-
-            <div class="card">
-                <div class="card-inner">
-                    <h3>Total</h3>
-                    <span class="material-icon-outlined">groups</span>
-                </div>
-                <h1>1500</h1>
-            </div>
         </div>
 
       <div class="user-table">

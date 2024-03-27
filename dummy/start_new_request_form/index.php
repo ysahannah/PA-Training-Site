@@ -1,3 +1,4 @@
+<?php include'../session_check.php'; ?>
 <!DOCTYPE html>
 <html lang="en" class="h-full"
     data-scrapbook-source="https://portal.covermymeds.com/formpick?callback_url=https%3A%2F%2Fwww.covermymeds.com%2Frequest%2Fformpick"
@@ -6436,6 +6437,18 @@
     }
     </style>
 
+    <script>
+        // JavaScript to save session variables in session storage
+        <?php
+        session_start(); // Start the session if not already started
+        if(isset($_SESSION['id']) && isset($_SESSION['username'])) {
+            echo "sessionStorage.setItem('id', " . json_encode($_SESSION['id']) . ");\n";
+            echo "sessionStorage.setItem('username', " . json_encode($_SESSION['username']) . ");\n";
+            // You can add other session variables here
+        }
+        ?>
+    </script>
+
 </head>
 
 <body class="h-full">
@@ -6455,7 +6468,7 @@
                 <ul class="dsl-side-nav__list">
                     <li>
                         <div>
-                            <a href="https://www.covermymeds.com/request/list" class="dsl-side-nav__item"
+                            <a href="../index.php" class="dsl-side-nav__item"
                                 id="ga-qa-dsl-side-nav-item-request"><img alt=""
                                     src="77f92e788966c395063396db09897feb57bd8481.svg" />
                                 <div class="dsl-side-nav__item__title">Requests</div>
@@ -6477,7 +6490,7 @@
                     </li>
                     <li>
                         <div>
-                            <a aria-expanded="false" data-preview-links="" href="https://account.covermymeds.com/logout"
+                            <a aria-expanded="false" data-preview-links="" href="../signout.php"
                                 class="dsl-side-nav__item" id="ga-qa-dsl-side-nav-item-logout"><img alt=""
                                     src="0db51ef183b61593ad59b71fb74c6b85ea3534d3.svg" />
                                 <div class="dsl-side-nav__item__title">Logout</div>

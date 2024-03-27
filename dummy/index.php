@@ -54,7 +54,7 @@
     <div class="itcss">
       <nav class="b-caption c-nav" id="nav-container" data-primary-nav>
         <div class="c-nav__wrap">
-          <a href="index.html" aria-current="page" class="c-nav__logo-link">
+          <a href="index.php" aria-current="page" class="c-nav__logo-link">
             <img
               src="new_photos/PA-logo.png"
               class="c-nav__logo"

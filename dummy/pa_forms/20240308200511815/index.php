@@ -1,8 +1,4 @@
-<?php 
-session_start();
-?>
-
-
+<?php include'../session_check.php'; ?>
 
 <!DOCTYPE html>
 
@@ -27,6 +23,18 @@ session_start();
 <![endif]-->
 <html class="" data-scrapbook-source="https://dashboard.covermymeds.com/requests/BDE8K2HJ?preferv1"
     data-scrapbook-create="20240308200511815" data-scrapbook-title="BDE8K2HJ | PORTER | CoverMyMeds" data-scrapbook-link rel="icon" href="/dummy/new_photos/LG.png">
+
+<script>
+        // JavaScript to save session variables in session storage
+        <?php
+        session_start(); // Start the session if not already started
+        if(isset($_SESSION['id']) && isset($_SESSION['username'])) {
+            echo "sessionStorage.setItem('id', " . json_encode($_SESSION['id']) . ");\n";
+            echo "sessionStorage.setItem('username', " . json_encode($_SESSION['username']) . ");\n";
+            // You can add other session variables here
+        }
+        ?>
+    </script> 
 
 <head>
     <meta charset="UTF-8" />

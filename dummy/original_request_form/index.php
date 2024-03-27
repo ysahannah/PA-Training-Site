@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+include'../session_check.php'; 
 // Retrieve request key from session
 $request_key = $_SESSION['request_key'];
 ?>
@@ -7166,6 +7168,18 @@ $request_key = $_SESSION['request_key'];
     <style type="text/css" scoped="scoped" style="white-space: pre-wrap"
         class="pendo-style-cvJE8gwFfaZhjGFpdS6Tc1YmSPg"></style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        // JavaScript to save session variables in session storage
+        <?php
+        session_start(); // Start the session if not already started
+        if(isset($_SESSION['id']) && isset($_SESSION['username'])) {
+            echo "sessionStorage.setItem('id', " . json_encode($_SESSION['id']) . ");\n";
+            echo "sessionStorage.setItem('username', " . json_encode($_SESSION['username']) . ");\n";
+            // You can add other session variables here
+        }
+        ?>
+    </script>
 </head>
 
 <body>
@@ -7181,7 +7195,7 @@ $request_key = $_SESSION['request_key'];
                 <ul class="dsl-side-nav__list">
                     <li>
                         <div>
-                            <a id="ga-qa-dsl-side-nav-item-request" href="https://www.covermymeds.com/request/list"
+                            <a id="ga-qa-dsl-side-nav-item-request" href="../request/index.php"
                                 class="dsl-side-nav__item">
                                 <svg width="34" height="42" xmlns="http://www.w3.org/2000/svg" class="dsl-u-pe-none">
                                     <g fill="none" fill-rule="evenodd">
@@ -7203,7 +7217,7 @@ $request_key = $_SESSION['request_key'];
                 <ul class="dsl-side-nav__list">
                     <li>
                         <div>
-                            <a aria-expanded="false" data-preview-links="" href="https://account.covermymeds.com/logout"
+                            <a aria-expanded="false" data-preview-links="" href="../signout.php"
                                 class="dsl-side-nav__item" id="ga-qa-dsl-side-nav-item-logout">
                                 <svg width="31" height="31" xmlns="http://www.w3.org/2000/svg">
                                     <g stroke-width="3" fill="none" fill-rule="evenodd">
@@ -7228,7 +7242,7 @@ $request_key = $_SESSION['request_key'];
             <nav class="nav-primary--desktop">
                 <div class="nav__logo-container">
                     <img alt="CoverMyMeds" class="nav__logo" src="../new_photos/logo.o111-removebg-preview.png" />
-                    <a href="https://www.covermymeds.com/request/list">
+                    <a href="../index.php">
                     </a>
                 </div>
                 <div class="nav__list-container hidden-xs">
@@ -7381,7 +7395,7 @@ $request_key = $_SESSION['request_key'];
 
                                 <div class="clear"></div>
                             </div>
-                            <input type="hidden" name="drug_ddid" value="224230" />
+                            <input type="hidden" name="drug_id" value="224230" />
 
                             <section id="request-page-header" style="padding: 0">
                                 <form action="../request/connect_patient_information.php" method="POST"></form>
@@ -7805,8 +7819,8 @@ $request_key = $_SESSION['request_key'];
 
                         <!-- Start of Drug Section -->
                         <section id="drug-section">
-                            <form action="../original_request_form/process_drug_section.php" method="POST"
-                                class="form2">
+                            <form action="../original_request_form/process_drug_section.php" method="POST" class="form2">
+                                <input type="hidden" name="patient_id" value="<?php echo $_SESSION['patient_id']; ?>">
                                 <header>
                                     <span class="arrow down" data-bind="hidden collapsed"
                                         style="display: inline">▼</span>
@@ -8023,8 +8037,8 @@ $request_key = $_SESSION['request_key'];
 
                         <!-- Start of Provider Section -->
                         <section id="provider-section">
-                            <form action="../original_request_form/process_provider_section.php" method="POST"
-                                class="form3">
+                            <form action="../original_request_form/process_provider_section.php" method="POST" class="form3">
+                                <input type="hidden" name="patient_id" value="<?php echo $_SESSION['patient_id']; ?>">
                                 <header>
                                     <span class="arrow down" data-bind="hidden collapsed"
                                         style="display: inline">▼</span>
