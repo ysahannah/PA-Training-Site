@@ -6445,8 +6445,8 @@
             style="display: none; visibility: hidden" title="gtm-noscript"></iframe></noscript><a
         class="dsl-link dsl-link--primary dsl-u-skip-nav" href="#main">Skip to main content</a>
     <nav class="top-nav top-nav--with-side-nav" aria-label="top navigation links">
-        <a href="https://www.covermymeds.com/request/list" id="cmmLogoLink" aria-label="Home"><img
-                src="../new_photos/PA-logo.png" style="height: 275px;"></a>
+        <a href="../index.php" id="cmmLogoLink" aria-label="Home"><img
+                src="../new_photos/PA-logo.png" style="height: 40vh;"></a>
         <ul class="top-nav__links"></ul>
     </nav>
     <div>

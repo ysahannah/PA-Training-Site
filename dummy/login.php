@@ -68,8 +68,7 @@
         <nav class="mdc-top-app-bar" aria-label="header">
             <div class="mdc-top-app-bar__row">
                 <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                    <a class="mdc-top-app-bar__title" href="index.html"><img alt="OIDC"
-                            src="new_photos/PA-logo.png" /></a>
+                    <a class="mdc-top-app-bar__title" href="./index.php"><img alt="OIDC" src="new_photos/PA-logo.png" style="height: 40vh;" /></a>
                 </div>
 
                 <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">

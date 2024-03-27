@@ -53,9 +53,9 @@
       aria-label="top navigation links">
       <a href="index.html" id="cmmLogoLink" aria-label="Home">
         <img
-          style="height: 70px; width: 270px; padding-top: 2%"
+          style="height: 40vh;"
           id="logo"
-          src="/dummy/new_photos/logo.o111-removebg-preview.png"
+          src="../new_photos/PA-logo.png"
           alt="" />
       </a>
       <ul class="top-nav__links"></ul>
